@@ -1,0 +1,514 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const pageTitle = `The Partnership Alignment Framework | Frameworks | ${SITE_TITLE}`;
+const description = `Operational blueprint and 13-question diagnostic tool for structuring, running, and protecting business partnerships from systemic risk.`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={pageTitle} description={description} />
+		<!-- Speakable Schema for AEO/SEO Optimization -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"name": "The Partnership Alignment Framework",
+				"description": "Operational blueprint and diagnostic check for structuring, running, and protecting business partnerships.",
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<main class="framework-layout">
+			<!-- Index Map (Sidebar Table of Contents) -->
+			<aside class="index-map-sidebar">
+				<div class="sidebar-sticky">
+					<div class="sidebar-title">INDEX MAP</div>
+					<nav class="index-map-nav">
+						<a href="#bluf" class="sidebar-link active">01. BLUF Summary</a>
+						<a href="#myths" class="sidebar-link">02. Core Myths</a>
+						<a href="#diagnostic-questions" class="sidebar-link">03. 13 Questions</a>
+						<a href="#five-ds" class="sidebar-link">04. The 5D's Audits</a>
+						<a href="#buyout-mechanics" class="sidebar-link">05. Exit Mechanics</a>
+					</nav>
+				</div>
+			</aside>
+
+			<!-- Framework Content -->
+			<article class="framework-content-body">
+				<header class="framework-header">
+					<div class="category-tag">OPERATIONAL ARCHITECTURE &amp; GOVERNANCE</div>
+					<h1 class="aeo-speakable-title">The Partnership Alignment Framework</h1>
+					<p class="subtitle-desc">13 Questions and structural guardrails to insulate joint ventures from systemic operational failure.</p>
+				</header>
+
+				<!-- BLUF Section -->
+				<section id="bluf" class="content-section">
+					<h2>01. Bottom Line Up Front</h2>
+					<div class="bluf-box aeo-speakable-bluf">
+						<p><strong>BLUF:</strong> Business partnerships rarely fail because of bad markets or technical execution; they fail due to unvoiced expectations, mismatched personal values, and a lack of objective governance. Before signing any partnership agreement, operators must run an alignment stress-test to codify roles, financial parameters, exit pathways, and worst-case scenario protocols.</p>
+					</div>
+				</section>
+
+				<!-- The Core Myths -->
+				<section id="myths" class="content-section">
+					<h2>02. Debunking the Partnership Myths</h2>
+					<p>
+						Many entrepreneurs enter partnerships fueled by optimism, relying on unwritten assumptions. To build a resilient venture, you must first dismantle these common misconceptions:
+					</p>
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Misconception</th>
+									<th>Operational Reality</th>
+									<th>Downstream Impact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>"We are on the same page."</strong></td>
+									<td>Implicit assumptions go unvoiced until a crisis occurs.</td>
+									<td>Misalignment on strategy, ethics, or growth priorities.</td>
+								</tr>
+								<tr>
+									<td><strong>"People do what they say."</strong></td>
+									<td>Vague verbal commitments dissolve under financial pressure.</td>
+									<td>Resentment over unequal work inputs and skipped milestones.</td>
+								</tr>
+								<tr>
+									<td><strong>"Life situations remain stable."</strong></td>
+									<td>Marriages, health, and personal finances fluctuate over time.</td>
+									<td>Personal disruptions (e.g. divorce, illness) compromise the company.</td>
+								</tr>
+								<tr>
+									<td><strong>"We need a partner to launch."</strong></td>
+									<td>Fobia of solo risk leads to giving up equity unnecessarily.</td>
+									<td>Equity dilution when hiring contractors or admins was the correct path.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				<!-- The 13 Diagnostic Questions -->
+				<section id="diagnostic-questions" class="content-section">
+					<h2>03. The 13 Diagnostic Questions</h2>
+					<p>
+						Every partnership operating agreement should explicitly answer these core operational, financial, and legal questions:
+					</p>
+					
+					<div class="qa-block">
+						<h3>Operational &amp; Role Structure</h3>
+						<ul class="blueprint-list">
+							<li><strong>1. What specific roles will each partner own?</strong> Map responsibility boundaries for the 8 core business functions: Capital Raising, Marketing, Sales, Fulfillment, Operations, Support, Billing, and Administration.</li>
+							<li><strong>2. How will performance be measured?</strong> Define the key performance indicators (KPIs) for each assigned role.</li>
+							<li><strong>3. What are the minimum weekly time commitments?</strong> Codify estimated hours vs. expected output to ensure equal skin in the game.</li>
+							<li><strong>4. How are vacation and leave policies managed?</strong> Establish protocols for planned absences and operational cover.</li>
+						</ul>
+
+						<h3>Financial &amp; Equity Mechanics</h3>
+						<ul class="blueprint-list">
+							<li><strong>5. How will initial profits and losses be shared?</strong> Separate owner dividends from technician salaries. Compensate sales roles, management, and admin inputs at market rate.</li>
+							<li><strong>6. What is the reinvestment protocol?</strong> Define what percentage of profits must remain in the business to fund scale vs. what can be distributed.</li>
+							<li><strong>7. How are capital calls handled?</strong> If the business requires cash injections, determine how contributions are split and how failure to fund impacts equity.</li>
+							<li><strong>8. Who controls the banking and ledger systems?</strong> Define signature authorities and limits on discretionary spending.</li>
+						</ul>
+
+						<h3>Legal, IP &amp; Dispute Governance</h3>
+						<ul class="blueprint-list">
+							<li><strong>9. Who owns the intellectual property?</strong> Ensure all goodwill, client lists, software, and brand assets reside in the company, not with individual partners.</li>
+							<li><strong>10. What liability structures are in place?</strong> Secure appropriate General Liability and Errors &amp; Omissions insurance.</li>
+							<li><strong>11. How do we resolve standard voting deadlocks?</strong> Choose a tie-breaking mechanism (e.g., scoring method, mediation, or pre-selected industry advisor).</li>
+							<li><strong>12. What constitutes a material breach of the agreement?</strong> Define the threshold for forced buyout due to negligence or values misalignment.</li>
+							<li><strong>13. What is the communication backup plan?</strong> Mandate minimum meeting schedules (monthly/quarterly) and tools to prevent information gaps.</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- The 5D's Audits -->
+				<section id="five-ds" class="content-section">
+					<h2>04. The 5D's Audits</h2>
+					<p>
+						The 5D's represent the primary structural threats to any business partnership. If your agreement does not address these scenarios, you are borrowing operational debt:
+					</p>
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">01 // DEATH</div>
+							<h4>Probate &amp; Heirs Protection</h4>
+							<p>Prevent heirs or estranged spouses from becoming your new business partners. Secure key-person life insurance to fund an immediate buyout of the deceased partner's shares.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">02 // DISINTEREST</div>
+							<h4>Operational Drift &amp; Boredom</h4>
+							<p>When a partner stops pulling their weight or gets distracted by new ideas. Implement strict put/call options and vest equity over time based on milestone delivery. <a href="/thinking/shiny-object-syndrome" class="gold-link">Read case study &rarr;</a></p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">03 // DRUGS</div>
+							<h4>Addiction &amp; Negligence</h4>
+							<p>Substance abuse, gambling, or severe personal negligence. Draft protective provisions that trigger an automatic valuation discount and forced buyout if behavior threatens assets.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">04 // DIVORCE</div>
+							<h4>Marital Split Interventions</h4>
+							<p>Prevent a partner's divorce proceedings from tying up company stock. Require prenuptial/postnuptial business exclusions and transfer restrictions on corporate shares.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">05 // DISABILITY</div>
+							<h4>Cognitive &amp; Physical Capacity Floor</h4>
+							<p>Managing the chasm between a partner who wants to contribute but lacks physical or cognitive capacity. Fund disability buy-sell policies to support the disabled partner while preserving company cashflow.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Exit & Buyout Mechanics -->
+				<section id="buyout-mechanics" class="content-section">
+					<h2>05. Exit &amp; Buyout Mechanics</h2>
+					<p>
+						An exit strategy is not a sign of weakness; it is the ultimate design blueprint. Choose from these three structured buyout mechanics to ensure a clean, drama-free departure when a partner decides to exit:
+					</p>
+					
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Mechanism</th>
+									<th>How It Works</th>
+									<th>Pros</th>
+									<th>Cons</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Valuation Formula</strong></td>
+									<td>Predefined multiple of EBITDA or book value calculated annually.</td>
+									<td>Objective, clear, and leaves no room for debate.</td>
+									<td>Can mismatch actual market valuations in volatile sectors.</td>
+								</tr>
+								<tr>
+									<td><strong>The Shotgun Clause</strong></td>
+									<td>Partner A names a price. Partner B must either buy Partner A out or sell their own shares at that exact price.</td>
+									<td>Forces fair pricing and immediate resolution.</td>
+									<td>Requires significant liquidity; favors the wealthier partner.</td>
+								</tr>
+								<tr>
+									<td><strong>Deferred Payout / Earnout</strong></td>
+									<td>Exiting partner retains minor equity or receives structured payouts over 3-5 years out of cashflow.</td>
+									<td>Protects company liquidity from sudden drain.</td>
+									<td>Tethers the exiting partner to the company's future performance.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<blockquote class="accent-quote">
+						"The time to write the rules of divorce is on the wedding day when everyone is happy and logical. Waiting until conflict arises means negotiating with an adversary."
+					</blockquote>
+
+					<div class="cta-box">
+						<h3>Align Your Venture Today</h3>
+						<p>Protect your capital, your systems, and your peace of mind. Use our structured diagnostics to evaluate your partnership alignment before signing your next agreement.</p>
+						<div class="cta-buttons">
+							<a href="/thinking/unvoiced-values-failed-flips" class="btn btn-primary-gold">Read: Unvoiced Values case study &rarr;</a>
+							<a href="/thinking/shiny-object-syndrome" class="btn btn-primary-blue">Read: Shiny Object case study &rarr;</a>
+						</div>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+
+		<!-- Sticky Sidebar Active Link Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const links = document.querySelectorAll('.sidebar-link');
+				const sections = document.querySelectorAll('.content-section');
+
+				function changeActiveLink() {
+					let index = sections.length;
+
+					while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+					
+					links.forEach((link) => link.classList.remove('active'));
+					links[index].classList.add('active');
+				}
+
+				changeActiveLink();
+				window.addEventListener('scroll', changeActiveLink);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.framework-layout {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: 3rem;
+		width: var(--max-width-site);
+		margin: 0 auto;
+		padding: 4rem 1rem;
+	}
+	
+	/* Sidebar styling */
+	.index-map-sidebar {
+		position: relative;
+	}
+	.sidebar-sticky {
+		position: sticky;
+		top: 6rem;
+	}
+	.sidebar-title {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	.index-map-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.sidebar-link {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: var(--transition-smooth);
+		padding: 0.25rem 0;
+		border-left: 2px solid transparent;
+		padding-left: 0.75rem;
+	}
+	.sidebar-link:hover {
+		color: var(--text-primary);
+		padding-left: 1rem;
+	}
+	.sidebar-link.active {
+		color: var(--accent-blue-hover);
+		border-left-color: var(--accent-blue);
+		font-weight: 600;
+	}
+
+	/* Content Styling */
+	.framework-content-body {
+		max-width: var(--max-width-content);
+	}
+	.framework-header {
+		margin-bottom: 3.5rem;
+	}
+	.category-tag {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 0.75rem;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		letter-spacing: -0.04em;
+	}
+	.subtitle-desc {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		line-height: 1.6;
+		margin: 0;
+	}
+	
+	.content-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 6rem;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	
+	/* BLUF styling */
+	.bluf-box {
+		padding: 1.5rem 1.75rem;
+		background: rgba(59, 130, 246, 0.04);
+		border: 1px solid var(--border-color);
+		border-left: 4px solid var(--accent-blue);
+		border-radius: 0 10px 10px 0;
+	}
+	.bluf-box p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-primary);
+	}
+
+	/* Q&A / Blueprint Lists */
+	.qa-block h3 {
+		color: var(--text-primary);
+		font-size: 1.2rem;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	.blueprint-list {
+		padding-left: 1.25rem;
+		margin: 0 0 2rem 0;
+	}
+	.blueprint-list li {
+		margin-bottom: 0.75rem;
+		line-height: 1.6;
+		font-size: 0.95rem;
+	}
+	.blueprint-list li strong {
+		color: var(--text-primary);
+	}
+
+	/* Tables */
+	.data-table-container {
+		margin: 2rem 0;
+		overflow-x: auto;
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		background-color: var(--bg-card);
+	}
+	table {
+		margin: 0;
+	}
+	th {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	tr:last-child td {
+		border-bottom: none;
+	}
+
+	/* Grid cards */
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+	.grid-card {
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
+		transition: var(--transition-smooth);
+	}
+	.grid-card:hover {
+		border-color: var(--accent-blue);
+		box-shadow: var(--box-shadow-sm);
+	}
+	.card-num {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	.grid-card h4 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+	}
+	.grid-card p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+	}
+
+	.accent-quote {
+		border-left-color: var(--accent-gold);
+		font-size: 1.1rem;
+		line-height: 1.6;
+		padding: 1rem 1.5rem;
+		color: var(--text-primary);
+		background-color: var(--bg-card);
+	}
+	
+	.gold-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		border-bottom: 1px dashed var(--accent-gold);
+	}
+	.gold-link:hover {
+		color: var(--accent-gold-hover);
+		border-bottom-color: var(--accent-gold-hover);
+	}
+
+	/* CTA Box */
+	.cta-box {
+		margin-top: 3rem;
+		padding: 2.25rem;
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 60%), var(--bg-card);
+		border: 1px solid var(--border-gold);
+		border-radius: 12px;
+		box-shadow: var(--box-shadow-sm);
+	}
+	.cta-box h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		color: var(--accent-gold);
+		font-size: 1.4rem;
+	}
+	.cta-box p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+	}
+	.btn-primary-gold {
+		background-color: var(--accent-gold);
+		border-color: var(--accent-gold);
+		color: var(--bg-primary);
+		display: inline-block;
+	}
+	.btn-primary-gold:hover {
+		background-color: var(--accent-gold-hover);
+		border-color: var(--accent-gold-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+	}
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.btn-primary-blue {
+		background-color: var(--accent-blue);
+		border-color: var(--accent-blue);
+		color: var(--bg-primary);
+		display: inline-block;
+	}
+	.btn-primary-blue:hover {
+		background-color: var(--accent-blue-hover);
+		border-color: var(--accent-blue-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+	}
+
+	@media (max-width: 900px) {
+		.framework-layout {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 2rem 1rem;
+		}
+		.index-map-sidebar {
+			display: none;
+		}
+	}
+</style>

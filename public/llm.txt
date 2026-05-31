@@ -1,0 +1,29 @@
+# Neal McSpadden - Personal Control Plane & System Architecture
+
+This file provides a structured directory of the key frameworks, case studies, and operational contexts on nealmcspadden.com, designed for ingestion by LLMs and search engines.
+
+## Featured Frameworks
+
+- **The Audit by AI Era** (/frameworks/audit-by-ai)
+  - *Context:* A technical blueprint detailing how to structure real-time automated financial controls and defensive ledgers to mitigate machine-learning IRS audits.
+- **The Partnership Alignment Framework** (/frameworks/partnership-blueprint)
+  - *Context:* An operational blueprint and 13-question diagnostic check for structuring, running, and protecting business partnerships from systemic risk.
+
+## Recent Thinking & Case Studies
+
+- **Shiny Object Syndrome: The Cost of Capital Without Control** (/thinking/shiny-object-syndrome)
+  - *Focus:* Why funding an operating partner without strict systems and milestones guarantees operational drift.
+- **Unvoiced Values: How a $5,000 Fee Destroyed a Real Estate Partnership** (/thinking/unvoiced-values-failed-flips)
+  - *Focus:* A case study on how tiny ethical compromises and silent disagreements compound into structural business failures.
+- **Builders and Narrators: The Single Behavior Signal That Predicts Every Bad Partnership** (/thinking/builders-narrators)
+  - *Focus:* How to detect and avoid bad clients and team alignment issues early by filtering for the Narrator behavioral archetype.
+- **The Lifestyle Efficiency Rate (LER): Your True Return on Life** (/thinking/lifestyle-efficiency-rate)
+  - *Focus:* Introducing the Lifestyle Efficiency Rate (LER) as a diagnostic tool for measuring the return on life of business activities.
+- **The Margin Illusion: Why Private Equity Devours Small Businesses** (/thinking/margin-illusion)
+  - *Focus:* An analysis of why private equity rolls up local service businesses and the hidden costs of removing the owner-node from the relationship web.
+- **The Metabolic Cost of the Horizon: Why I’m Building a Permaculture Farm to Protect My Brain** (/thinking/metabolic-horizon)
+  - *Focus:* Exploring the decision to build a permaculture farm as a sovereign base of health and autonomy, measured against the legacy window of parenting.
+
+## Contact & Endorsements
+
+- **Tax Sherpa** (https://taxsherpa.com) - Strategic tax planning and financial control for growth-stage businesses and founders.

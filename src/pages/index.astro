@@ -31,15 +31,28 @@ const posts = (await getCollection('blog')).sort(
 
 			<section class="frameworks">
 				<h2>Featured Frameworks</h2>
-				<div class="framework-card">
-					<a href="/frameworks/audit-by-ai">
-						<div class="framework-content">
-							<div class="meta-tag">OPERATIONAL CONTEXT</div>
-							<h3 class="title">The Audit by AI Era</h3>
-							<p class="desc">An operational blueprint on how to build proactive tax strategy when IRS machine learning algorithms replace human auditors.</p>
-							<span class="read-more">Analyze framework &rarr;</span>
-						</div>
-					</a>
+				<div class="frameworks-list">
+					<div class="framework-card">
+						<a href="/frameworks/audit-by-ai">
+							<div class="framework-content">
+								<div class="meta-tag">OPERATIONAL CONTEXT</div>
+								<h3 class="title">The Audit by AI Era</h3>
+								<p class="desc">An operational blueprint on how to build proactive tax strategy when IRS machine learning algorithms replace human auditors.</p>
+								<span class="read-more">Analyze framework &rarr;</span>
+							</div>
+						</a>
+					</div>
+
+					<div class="framework-card">
+						<a href="/frameworks/partnership-blueprint">
+							<div class="framework-content">
+								<div class="meta-tag">GOVERNANCE // VALUE ALIGNMENT</div>
+								<h3 class="title">The Partnership Alignment Framework</h3>
+								<p class="desc">An operational blueprint and 13-question diagnostic check for structuring, running, and protecting business partnerships from systemic risk.</p>
+								<span class="read-more">Analyze framework &rarr;</span>
+							</div>
+						</a>
+					</div>
 				</div>
 			</section>
 
@@ -158,6 +171,12 @@ const posts = (await getCollection('blog')).sort(
 		margin-top: -0.75rem;
 		margin-bottom: 2rem;
 		font-size: 1rem;
+	}
+
+	.frameworks-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 
 	/* Framework styling */

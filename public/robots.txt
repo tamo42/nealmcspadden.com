@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nealmcspadden.com/sitemap-index.xml
