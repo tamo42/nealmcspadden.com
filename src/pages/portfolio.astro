@@ -9,67 +9,140 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={`Portfolio | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-				max-width: calc(100% - 2em);
-				margin: 0 auto;
-				padding: 3em 1em;
-			}
-			.portfolio-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-				gap: 2em;
-				margin-top: 2em;
-			}
-			.portfolio-card {
-				padding: 1.5em;
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 8px;
-				background: #fafafa;
-			}
-			.portfolio-card.primary {
-				border-color: var(--accent);
-				background: white;
-				box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-			}
-			.portfolio-card h3 {
-				margin-top: 0;
-				margin-bottom: 0.5em;
-			}
-			.portfolio-card a {
-				display: inline-block;
-				margin-top: 1em;
-				color: var(--accent);
-				font-weight: bold;
-				text-decoration: none;
-			}
-		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Endorsed Portfolio</h1>
-			<p>
-				The standalone apps, brands, and ventures that I endorse and operate.
-			</p>
+			<section class="portfolio-header">
+				<h1>Endorsed Portfolio</h1>
+				<p class="lead">
+					The standalone applications, companies, and ventures that I endorse, operate, and back.
+				</p>
+			</section>
 			
 			<div class="portfolio-grid">
 				<div class="portfolio-card primary">
+					<div class="card-badge">PRIMARY ENDORSEMENT</div>
 					<h3>Tax Sherpa</h3>
-					<p>Strategic tax planning and financial control for growth-stage businesses.</p>
-					<a href="https://taxsherpa.com" target="_blank">taxsherpa.com &rarr;</a>
+					<p class="desc">Strategic tax planning and financial control for growth-stage businesses. Implementing proactive advisory workflows to insulate founders from compliance risk.</p>
+					<a href="https://taxsherpa.com" target="_blank" class="card-link">taxsherpa.com &rarr;</a>
 				</div>
 				<div class="portfolio-card">
 					<h3>Resilient Roots</h3>
-					<p>Agricultural strategy and land resilience.</p>
+					<p class="desc">Agricultural strategy, rural land development, and ecological asset management focused on long-term sustainability and resource independence.</p>
+					<span class="card-status">Active Asset</span>
 				</div>
 				<div class="portfolio-card">
 					<h3>Fast Path Solutions</h3>
-					<p>Borrower intake and process automation.</p>
+					<p class="desc">Borrower intake and underwriting automation workflows designed for speed, scale, and high-fidelity verification checks.</p>
+					<span class="card-status">Active Asset</span>
 				</div>
 			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.portfolio-header {
+		margin-bottom: 3.5rem;
+	}
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 2.8rem;
+		letter-spacing: -0.03em;
+	}
+	.lead {
+		font-size: 1.15rem;
+		color: var(--text-secondary);
+		max-width: 800px;
+		margin-bottom: 0;
+	}
+	
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.portfolio-card {
+		padding: 2rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		transition: var(--transition-smooth);
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+	.portfolio-card h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 1.4rem;
+	}
+	.portfolio-card .desc {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		flex-grow: 1;
+	}
+	.portfolio-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--border-color-hover);
+		box-shadow: var(--box-shadow-md);
+	}
+	
+	/* Highlighting Tax Sherpa */
+	.portfolio-card.primary {
+		border: 1px solid var(--border-gold);
+		box-shadow: var(--box-shadow-sm);
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.03), transparent 60%), var(--bg-card);
+	}
+	.portfolio-card.primary:hover {
+		border-color: var(--accent-gold);
+		box-shadow: var(--box-shadow-gold);
+	}
+	.portfolio-card.primary h3 {
+		color: var(--accent-gold);
+	}
+	.card-badge {
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+		font-family: monospace;
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: var(--accent-gold);
+		background: rgba(245, 158, 11, 0.1);
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		border: 1px solid rgba(245, 158, 11, 0.2);
+	}
+	.card-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: var(--transition-smooth);
+	}
+	.card-link:hover {
+		color: var(--accent-gold-hover);
+		transform: translateX(4px);
+	}
+	.card-status {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		border-top: 1px solid var(--border-color);
+		padding-top: 0.75rem;
+		margin-top: auto;
+	}
+	
+	@media (max-width: 768px) {
+		.portfolio-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

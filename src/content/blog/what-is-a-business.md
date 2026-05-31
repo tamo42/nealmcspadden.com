@@ -2,7 +2,7 @@
 title: 'What is a Business, Really? (And the Leverage of the Unique Worldview)'
 description: 'Exploring the true nature of a business as a unique worldview and operating architecture.'
 pubDate: 'May 30 2026'
-heroImage: '../../assets/blog-placeholder-about.jpg'
+heroImage: '../../assets/what-is-business.png'
 ---
 
 # What is a Business, Really? (And the Leverage of the Unique Worldview)

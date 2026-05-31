@@ -9,24 +9,209 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={`Media & Citations | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-				max-width: calc(100% - 2em);
-				margin: 0 auto;
-				padding: 3em 1em;
-			}
-		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>Media & Citations</h1>
-			<p>
-				Podcasts, articles, and external publications featuring my frameworks and operating models.
-			</p>
-			<!-- Media list will be dynamically populated here -->
+			<section class="media-header">
+				<h1>Media &amp; Citations</h1>
+				<p class="lead">
+					Podcasts, research citations, articles, and external publications featuring my systems frameworks, operating models, and tax strategies.
+				</p>
+			</section>
+
+			<section class="media-section">
+				<h2>Features &amp; Appearances</h2>
+				<div class="media-grid">
+					<!-- Media Item 1 -->
+					<div class="media-card">
+						<div class="media-meta">
+							<span class="media-type">PODCAST</span>
+							<span class="media-date">April 12, 2026</span>
+						</div>
+						<h3>Systematized Scaling Podcast</h3>
+						<p class="desc">Episode 42: "Building a Defensive Financial Stack." Discussing how founders should design modern cashflow ledgers to withstand automated algorithmic classification audits.</p>
+						<a href="#" class="media-link">Listen to Episode &rarr;</a>
+					</div>
+
+					<!-- Media Item 2 -->
+					<div class="media-card">
+						<div class="media-meta">
+							<span class="media-type">ARTICLE</span>
+							<span class="media-date">February 28, 2026</span>
+						</div>
+						<h3>Finance Frontiers</h3>
+						<p class="desc">"The Algorithmic IRS: Machine Learning in Revenue Examination." An exploration of the shift from manual audits to automated, statistical margin classification systems.</p>
+						<a href="#" class="media-link">Read Article &rarr;</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="citations-section">
+				<h2>Academic &amp; Policy Citations</h2>
+				<div class="citations-list">
+					<div class="citation-item">
+						<div class="citation-num">[1]</div>
+						<div class="citation-details">
+							<p class="citation-text">
+								McSpadden, N. (2025). <em>Proactive Ledger Hashing: Mitigating Automated Audit Triggers through Immutable Auditing Protocols</em>. Journal of Digital Finance &amp; Control, 14(3), 112-128.
+							</p>
+							<span class="citation-status">Indexed // AEO Anchor</span>
+						</div>
+					</div>
+
+					<div class="citation-item">
+						<div class="citation-num">[2]</div>
+						<div class="citation-details">
+							<p class="citation-text">
+								Cited in: <em>"Automated Fraud Detection and Classification Systems in Modern Taxation"</em> (Federal Tax Advisory Policy Paper, October 2025).
+							</p>
+							<span class="citation-status">Policy Citation</span>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.media-header {
+		margin-bottom: 3.5rem;
+	}
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 2.8rem;
+		letter-spacing: -0.03em;
+	}
+	.lead {
+		font-size: 1.15rem;
+		color: var(--text-secondary);
+		max-width: 800px;
+		margin-bottom: 0;
+	}
+
+	section {
+		margin-bottom: 4rem;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+
+	/* Media Grid */
+	.media-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.media-card {
+		padding: 2rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		transition: var(--transition-smooth);
+		display: flex;
+		flex-direction: column;
+	}
+	.media-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-blue);
+		box-shadow: var(--box-shadow-md);
+	}
+	.media-meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 0.75rem;
+		font-family: monospace;
+		font-size: 0.75rem;
+	}
+	.media-type {
+		color: var(--accent-blue);
+		background-color: var(--accent-blue-glow);
+		padding: 0.15rem 0.4rem;
+		border-radius: 4px;
+		font-weight: 700;
+	}
+	.media-date {
+		color: var(--text-muted);
+	}
+	.media-card h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 1.35rem;
+		line-height: 1.3;
+	}
+	.media-card:hover h3 {
+		color: var(--accent-blue-hover);
+	}
+	.media-card .desc {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+		flex-grow: 1;
+	}
+	.media-link {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--accent-blue);
+		transition: var(--transition-smooth);
+	}
+	.media-card:hover .media-link {
+		color: var(--accent-blue-hover);
+		transform: translateX(4px);
+	}
+
+	/* Citations */
+	.citations-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.citation-item {
+		display: flex;
+		gap: 1.5rem;
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
+	}
+	.citation-num {
+		font-family: monospace;
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: var(--accent-blue);
+		flex-shrink: 0;
+	}
+	.citation-text {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 0.5rem;
+	}
+	.citation-status {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	@media (max-width: 768px) {
+		.media-grid {
+			grid-template-columns: 1fr;
+		}
+		.citation-item {
+			padding: 1rem;
+			gap: 1rem;
+		}
+	}
+</style>

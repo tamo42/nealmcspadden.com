@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import { Image } from 'astro:assets';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -20,61 +21,78 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section class="hero">
+				<div class="subtitle">CONTROL PLANE // SYSTEM ARCHITECT</div>
 				<h1>Neal McSpadden</h1>
 				<p class="bluf">
-					I build and scale resilient systems. Founder of <a href="https://taxsherpa.com" target="_blank">Tax Sherpa</a>. 
+					I build and scale resilient systems. Founder of <a href="https://taxsherpa.com" target="_blank" class="sherpa-inline-link">Tax Sherpa</a>. 
 					This is where I document the frameworks, failures, and operating architecture behind my portfolio.
 				</p>
 			</section>
 
 			<section class="frameworks">
 				<h2>Featured Frameworks</h2>
-				<ul class="featured-list">
-					<li>
-						<a href="/frameworks/audit-by-ai">
+				<div class="framework-card">
+					<a href="/frameworks/audit-by-ai">
+						<div class="framework-content">
+							<div class="meta-tag">OPERATIONAL CONTEXT</div>
 							<h3 class="title">The Audit by AI Era</h3>
-							<p>An operational context on how to build proactive tax strategy when IRS algorithms replace human auditors.</p>
-						</a>
-					</li>
-				</ul>
+							<p class="desc">An operational blueprint on how to build proactive tax strategy when IRS machine learning algorithms replace human auditors.</p>
+							<span class="read-more">Analyze framework &rarr;</span>
+						</div>
+					</a>
+				</div>
 			</section>
 
 			<section class="portfolio">
 				<h2>Endorsed Portfolio</h2>
+				<p class="section-desc">The primary ventures and independent standalone platforms I operate and endorse.</p>
 				<div class="portfolio-grid">
 					<div class="portfolio-card primary">
+						<div class="card-badge">PRIMARY ENDORSEMENT</div>
 						<h3>Tax Sherpa</h3>
-						<p>Strategic tax planning and financial control for growth-stage businesses.</p>
-						<a href="https://taxsherpa.com" target="_blank">taxsherpa.com &rarr;</a>
+						<p class="desc">Strategic tax planning and financial control for growth-stage businesses and founders.</p>
+						<a href="https://taxsherpa.com" target="_blank" class="card-link">taxsherpa.com &rarr;</a>
 					</div>
 					<div class="portfolio-card">
 						<h3>Resilient Roots</h3>
-						<p>Agricultural strategy and land resilience.</p>
+						<p class="desc">Agricultural operations strategy, land stewardship, and localized resource resilience.</p>
+						<span class="card-status">Active Asset</span>
 					</div>
 					<div class="portfolio-card">
 						<h3>Fast Path Solutions</h3>
-						<p>Borrower intake and process automation.</p>
+						<p class="desc">High-velocity borrower intake platforms, data verification, and process automation.</p>
+						<span class="card-status">Active Asset</span>
 					</div>
 				</div>
 			</section>
 
 			<section class="recent-thinking">
-				<h2>Recent Thinking</h2>
-				<ul>
+				<div class="section-header">
+					<h2>Recent Thinking</h2>
+					<a href="/thinking" class="view-all">View all &rarr;</a>
+				</div>
+				<ul class="thinking-list">
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/thinking/${post.slug}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+								<a href={`/thinking/${post.slug}/`} class="thinking-item">
+									{post.data.heroImage && (
+										<div class="thinking-thumbnail">
+											<Image width={180} height={110} src={post.data.heroImage} alt="" class="thumb-img" />
+										</div>
+									)}
+									<div class="thinking-details">
+										<div class="thinking-meta">
+											<FormattedDate date={post.data.pubDate} />
+										</div>
+										<h3 class="title">{post.data.title}</h3>
+										<p class="desc">{post.data.description}</p>
+									</div>
 								</a>
 							</li>
 						))
 					}
 				</ul>
-				<a href="/thinking" class="view-all">View all thinking &rarr;</a>
 			</section>
 		</main>
 		<Footer />
@@ -82,87 +100,301 @@ const posts = (await getCollection('blog')).sort(
 </html>
 
 <style>
-	main {
-		width: 960px;
-		max-width: calc(100% - 2em);
-		margin: 0 auto;
-		padding: 3em 1em;
+	.hero {
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+		position: relative;
 	}
-	section {
-		margin-bottom: 4em;
+	.subtitle {
+		font-family: monospace;
+		font-size: 0.85rem;
+		color: var(--accent-blue);
+		letter-spacing: 0.2em;
+		margin-bottom: 0.75rem;
+		font-weight: 600;
 	}
 	h1 {
-		font-size: 3em;
-		margin-bottom: 0.25em;
+		font-size: 3.5rem;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+		letter-spacing: -0.04em;
+		background: linear-gradient(to right, var(--text-primary) 50%, var(--text-secondary));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	.bluf {
-		font-size: 1.25em;
-		color: rgb(var(--gray-dark));
-		line-height: 1.6;
+		font-size: 1.3rem;
+		color: var(--text-secondary);
+		line-height: 1.7;
 		max-width: 800px;
+		margin-bottom: 0;
 	}
+	.sherpa-inline-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		border-bottom: 1px dashed var(--accent-gold);
+		transition: var(--transition-smooth);
+	}
+	.sherpa-inline-link:hover {
+		color: var(--accent-gold-hover);
+		border-bottom-color: var(--accent-gold-hover);
+		box-shadow: 0 2px 0 var(--accent-gold-glow);
+	}
+	
+	section {
+		margin-bottom: 5rem;
+	}
+	
 	h2 {
-		font-size: 2em;
-		border-bottom: 2px solid rgb(var(--gray-light));
-		padding-bottom: 0.5em;
-		margin-bottom: 1em;
+		font-size: 1.75rem;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.75rem;
 	}
-	.featured-list, .recent-thinking ul {
-		list-style-type: none;
-		padding: 0;
+	
+	.section-desc {
+		color: var(--text-muted);
+		margin-top: -0.75rem;
+		margin-bottom: 2rem;
+		font-size: 1rem;
 	}
-	.featured-list li, .recent-thinking li {
-		margin-bottom: 1.5em;
+
+	/* Framework styling */
+	.framework-card {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		transition: var(--transition-smooth);
+		overflow: hidden;
 	}
-	.featured-list a, .recent-thinking a {
-		text-decoration: none;
-		color: inherit;
+	.framework-card a {
 		display: block;
+		padding: 2.25rem;
+		color: inherit;
+		text-decoration: none;
 	}
-	.featured-list a:hover .title, .recent-thinking a:hover .title {
-		color: var(--accent);
+	.framework-card:hover {
+		border-color: var(--accent-blue);
+		transform: translateY(-3px);
+		box-shadow: var(--box-shadow-md), 0 0 25px var(--accent-blue-glow);
 	}
-	.title {
-		margin: 0 0 0.25em 0;
-		font-size: 1.25em;
+	.framework-card .meta-tag {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.75rem;
 	}
-	.date {
-		margin: 0;
-		color: rgb(var(--gray));
-		font-size: 0.9em;
+	.framework-card h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 1.6rem;
+		transition: var(--transition-smooth);
 	}
+	.framework-card:hover h3 {
+		color: var(--accent-blue-hover);
+	}
+	.framework-card .desc {
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+		max-width: 700px;
+	}
+	.framework-card .read-more {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--accent-blue);
+		display: inline-flex;
+		align-items: center;
+		transition: var(--transition-smooth);
+	}
+	.framework-card:hover .read-more {
+		color: var(--accent-blue-hover);
+		transform: translateX(5px);
+	}
+
+	/* Portfolio styling */
 	.portfolio-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2em;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
 	}
 	.portfolio-card {
-		padding: 1.5em;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		background: #fafafa;
-	}
-	.portfolio-card.primary {
-		border-color: var(--accent);
-		background: white;
-		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+		padding: 2rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		transition: var(--transition-smooth);
+		display: flex;
+		flex-direction: column;
+		position: relative;
 	}
 	.portfolio-card h3 {
 		margin-top: 0;
-		margin-bottom: 0.5em;
+		margin-bottom: 0.75rem;
+		font-size: 1.4rem;
 	}
-	.portfolio-card a {
-		display: inline-block;
-		margin-top: 1em;
-		color: var(--accent);
-		font-weight: bold;
-		text-decoration: none;
+	.portfolio-card .desc {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		flex-grow: 1;
+	}
+	.portfolio-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--border-color-hover);
+		box-shadow: var(--box-shadow-md);
+	}
+	
+	/* Highlighting Tax Sherpa */
+	.portfolio-card.primary {
+		border: 1px solid var(--border-gold);
+		box-shadow: var(--box-shadow-sm);
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.03), transparent 60%), var(--bg-card);
+	}
+	.portfolio-card.primary:hover {
+		border-color: var(--accent-gold);
+		box-shadow: var(--box-shadow-gold);
+	}
+	.portfolio-card.primary h3 {
+		color: var(--accent-gold);
+	}
+	.card-badge {
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+		font-family: monospace;
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: var(--accent-gold);
+		background: rgba(245, 158, 11, 0.1);
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		border: 1px solid rgba(245, 158, 11, 0.2);
+	}
+	.card-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: var(--transition-smooth);
+	}
+	.card-link:hover {
+		color: var(--accent-gold-hover);
+		transform: translateX(4px);
+	}
+	.card-status {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		border-top: 1px solid var(--border-color);
+		padding-top: 0.75rem;
+		margin-top: auto;
+	}
+
+	/* Recent thinking list */
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.75rem;
+		margin-bottom: 2rem;
+	}
+	.section-header h2 {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 	.view-all {
-		display: inline-block;
-		margin-top: 1em;
-		color: var(--accent);
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+	.thinking-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.thinking-item {
+		display: flex;
+		gap: 2rem;
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
 		text-decoration: none;
-		font-weight: bold;
+		color: inherit;
+		transition: var(--transition-smooth);
+		align-items: center;
+	}
+	.thinking-item:hover {
+		border-color: var(--accent-blue);
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow-sm);
+	}
+	.thinking-thumbnail {
+		width: 150px;
+		height: 95px;
+		border-radius: 6px;
+		overflow: hidden;
+		flex-shrink: 0;
+		border: 1px solid var(--border-color);
+	}
+	.thumb-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: var(--transition-smooth);
+	}
+	.thinking-item:hover .thumb-img {
+		transform: scale(1.05);
+	}
+	.thinking-details {
+		flex-grow: 1;
+	}
+	.thinking-meta {
+		font-family: monospace;
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		margin-bottom: 0.25rem;
+	}
+	.thinking-details h3 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+		transition: var(--transition-smooth);
+	}
+	.thinking-item:hover h3 {
+		color: var(--accent-blue-hover);
+	}
+	.thinking-details .desc {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		margin-bottom: 0;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2.5rem;
+		}
+		.thinking-item {
+			flex-direction: column;
+			gap: 1rem;
+			padding: 1.25rem;
+			align-items: flex-start;
+		}
+		.thinking-thumbnail {
+			width: 100%;
+			height: 180px;
+		}
+		.portfolio-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

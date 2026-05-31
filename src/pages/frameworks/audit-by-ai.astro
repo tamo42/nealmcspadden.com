@@ -1,0 +1,431 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const pageTitle = `The Audit by AI Era | Frameworks | ${SITE_TITLE}`;
+const description = `Operational blueprint for building proactive tax strategy and resilient financial defense when IRS machine learning models replace human auditors.`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={pageTitle} description={description} />
+		<!-- Speakable Schema for AEO/SEO Optimization -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"name": "The Audit by AI Era",
+				"description": "Operational blueprint for proactive tax strategy in the era of machine-learning IRS audits.",
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<main class="framework-layout">
+			<!-- Index Map (Sidebar Table of Contents) -->
+			<aside class="index-map-sidebar">
+				<div class="sidebar-sticky">
+					<div class="sidebar-title">INDEX MAP</div>
+					<nav class="index-map-nav">
+						<a href="#bluf" class="sidebar-link active">01. BLUF Summary</a>
+						<a href="#algorithmic-shift" class="sidebar-link">02. The Algorithmic Shift</a>
+						<a href="#defensive-architecture" class="sidebar-link">03. Defensive Architecture</a>
+						<a href="#operational-playbook" class="sidebar-link">04. Operational Playbook</a>
+						<a href="#tax-sherpa-blueprint" class="sidebar-link">05. Tax Sherpa Integration</a>
+					</nav>
+				</div>
+			</aside>
+
+			<!-- Framework Content -->
+			<article class="framework-content-body">
+				<header class="framework-header">
+					<div class="category-tag">SYSTEMS ARCHITECTURE &amp; TAX</div>
+					<h1 class="aeo-speakable-title">The Audit by AI Era</h1>
+					<p class="subtitle-desc">Defending high-net-worth and venture-backed entities against fully automated revenue examinations.</p>
+				</header>
+
+				<!-- BLUF Section -->
+				<section id="bluf" class="content-section">
+					<h2>01. Bottom Line Up Front</h2>
+					<div class="bluf-box aeo-speakable-bluf">
+						<p><strong>BLUF:</strong> Within 36 months, human IRS auditors will no longer be the primary threat. Examinations will be initiated, executed, and scored by machine learning classification models. To survive, businesses must shift from retrospective compliance (accounting) to real-time defensive architecture (continuous validation). This framework details how to design automated financial controls that match IRS algorithm criteria.</p>
+					</div>
+				</section>
+
+				<!-- The Algorithmic Shift -->
+				<section id="algorithmic-shift" class="content-section">
+					<h2>02. The Algorithmic Shift</h2>
+					<p>
+						Traditional tax defense is reactive. A business files a tax return, waits 12 to 18 months, and if flagged, receives a letter from a human auditor requesting receipts. 
+						This paradigm is dead.
+					</p>
+					<p>
+						Under the IRS modernisation effort, new models target anomalies in structured cashflow data, vendor-to-customer reconciliation, and industry-standard margin distributions. 
+						When a deviation exceeds statistical bounds, the system automatically triggers automated compliance demands.
+					</p>
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Metric</th>
+									<th>Human Auditor Era (Old)</th>
+									<th>Algorithmic Exam Era (New)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Trigger Time</strong></td>
+									<td>12 - 24 months post-filing</td>
+									<td>Immediate, batch-processed weekly</td>
+								</tr>
+								<tr>
+									<td><strong>Detection Vector</strong></td>
+									<td>Random samples, manual whistleblowers</td>
+									<td>Anomaly detection &amp; network analysis</td>
+								</tr>
+								<tr>
+									<td><strong>Evidence Format</strong></td>
+									<td>Scanned PDFs, paper receipts</td>
+									<td>Structured JSON-LD, validated ledgers</td>
+								</tr>
+								<tr>
+									<td><strong>Defense Strategy</strong></td>
+									<td>Post-hoc justification, negotiating</td>
+									<td>Pre-validated data, structural compliance</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				<!-- Defensive Architecture -->
+				<section id="defensive-architecture" class="content-section">
+					<h2>03. Defensive Architecture</h2>
+					<p>
+						To withstand automated audits, organizations must implement a <strong>Defensive Financial Architecture</strong>. 
+						This architecture is comprised of three distinct layers:
+					</p>
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">01</div>
+							<h4>Immutable Ledger Checks</h4>
+							<p>All transaction metadata must be hashed and indexed weekly, ensuring transaction logs cannot be reconstructed post-facto. If the record-keeping timestamps match the cashflow timestamps exactly, algorithmic scrutiny decreases.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">02</div>
+							<h4>Pre-Screening Scoring</h4>
+							<p>Run internal machine learning filters that mimic IRS classification engines to identify out-of-bounds metrics (e.g. erratic research and development tax credit claims) before returns are submitted.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">03</div>
+							<h4>Structured Citation Trees</h4>
+							<p>For high-risk deductions, compile supporting evidence (board resolutions, vendor logs, legal briefs) into structured citation trees referenced directly within the return's metadata.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Operational Playbook -->
+				<section id="operational-playbook" class="content-section">
+					<h2>04. Operational Playbook</h2>
+					<p>
+						Implementing defensive controls requires changes to standard operating procedures. The following steps form the core operational playbook:
+					</p>
+					<blockquote class="accent-quote">
+						"Compliance is no longer a cost center; it is a latency metric. The speed at which you reconcile and prove data integrity is the single greatest determinant of audit risk."
+					</blockquote>
+					<ol class="step-list">
+						<li>
+							<strong>Audit-Ready Ledger Formatting:</strong> Structure chart of accounts to match the standard taxonomy expected by IRS XML filing schemas. Avoid non-standard ledger categorizations.
+						</li>
+						<li>
+							<strong>Automated Vendor Verification:</strong> Implement automated APIs to verify vendor tax identification numbers and business statuses on every transaction over $10,000.
+						</li>
+						<li>
+							<strong>Quarterly Anomaly Runs:</strong> Run statistical regression checks against standard industry parameters (NAICS codes) to identify if your business's ratios are outliers.
+						</li>
+					</ol>
+				</section>
+
+				<!-- Tax Sherpa Integration -->
+				<section id="tax-sherpa-blueprint" class="content-section">
+					<h2>05. Tax Sherpa Integration</h2>
+					<p>
+						As the primary endorsed entity in this control plane, <a href="https://taxsherpa.com" target="_blank" class="gold-link">Tax Sherpa</a> is specifically built to deliver this defensive architecture.
+					</p>
+					<p>
+						Rather than acting as a standard accounting firm that files tax returns, Tax Sherpa builds the continuous data validation pipelines and defensive models required to withstand machine-learning audits.
+					</p>
+					<div class="cta-box">
+						<h3>Implement Proactive Auditing Controls</h3>
+						<p>Insulate your company from automated audit risk. Let our systems architecture team pre-validate your data structures before submission.</p>
+						<a href="https://taxsherpa.com" target="_blank" class="btn btn-primary-gold">Schedule Control Audit &rarr;</a>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+
+		<!-- Sticky Sidebar Active Link Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const links = document.querySelectorAll('.sidebar-link');
+				const sections = document.querySelectorAll('.content-section');
+
+				function changeActiveLink() {
+					let index = sections.length;
+
+					while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+					
+					links.forEach((link) => link.classList.remove('active'));
+					links[index].classList.add('active');
+				}
+
+				changeActiveLink();
+				window.addEventListener('scroll', changeActiveLink);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.framework-layout {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: 3rem;
+		width: var(--max-width-site);
+		margin: 0 auto;
+		padding: 4rem 1rem;
+	}
+	
+	/* Sidebar styling */
+	.index-map-sidebar {
+		position: relative;
+	}
+	.sidebar-sticky {
+		position: sticky;
+		top: 6rem;
+	}
+	.sidebar-title {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	.index-map-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.sidebar-link {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: var(--transition-smooth);
+		padding: 0.25rem 0;
+		border-left: 2px solid transparent;
+		padding-left: 0.75rem;
+	}
+	.sidebar-link:hover {
+		color: var(--text-primary);
+		padding-left: 1rem;
+	}
+	.sidebar-link.active {
+		color: var(--accent-blue-hover);
+		border-left-color: var(--accent-blue);
+		font-weight: 600;
+	}
+
+	/* Content Styling */
+	.framework-content-body {
+		max-width: var(--max-width-content);
+	}
+	.framework-header {
+		margin-bottom: 3.5rem;
+	}
+	.category-tag {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 0.75rem;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		letter-spacing: -0.04em;
+	}
+	.subtitle-desc {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		line-height: 1.6;
+		margin: 0;
+	}
+	
+	.content-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 6rem;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	
+	/* BLUF styling */
+	.bluf-box {
+		padding: 1.5rem 1.75rem;
+		background: rgba(59, 130, 246, 0.04);
+		border: 1px solid var(--border-color);
+		border-left: 4px solid var(--accent-blue);
+		border-radius: 0 10px 10px 0;
+	}
+	.bluf-box p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-primary);
+	}
+
+	/* Tables */
+	.data-table-container {
+		margin: 2rem 0;
+		overflow-x: auto;
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		background-color: var(--bg-card);
+	}
+	table {
+		margin: 0;
+	}
+	th {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	tr:last-child td {
+		border-bottom: none;
+	}
+
+	/* Grid cards */
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+	.grid-card {
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
+		transition: var(--transition-smooth);
+	}
+	.grid-card:hover {
+		border-color: var(--accent-blue);
+		box-shadow: var(--box-shadow-sm);
+	}
+	.card-num {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	.grid-card h4 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+	}
+	.grid-card p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+	}
+
+	.accent-quote {
+		border-left-color: var(--accent-gold);
+		font-size: 1.1rem;
+		line-height: 1.6;
+		padding: 1rem 1.5rem;
+		color: var(--text-primary);
+		background-color: var(--bg-card);
+	}
+
+	.step-list {
+		padding-left: 1.25rem;
+		margin: 1.5rem 0;
+	}
+	.step-list li {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+	
+	.gold-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		border-bottom: 1px dashed var(--accent-gold);
+	}
+	.gold-link:hover {
+		color: var(--accent-gold-hover);
+		border-bottom-color: var(--accent-gold-hover);
+	}
+
+	/* CTA Box */
+	.cta-box {
+		margin-top: 3rem;
+		padding: 2.25rem;
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 60%), var(--bg-card);
+		border: 1px solid var(--border-gold);
+		border-radius: 12px;
+		box-shadow: var(--box-shadow-sm);
+	}
+	.cta-box h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		color: var(--accent-gold);
+		font-size: 1.4rem;
+	}
+	.cta-box p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+	}
+	.btn-primary-gold {
+		background-color: var(--accent-gold);
+		border-color: var(--accent-gold);
+		color: var(--bg-primary);
+		display: inline-block;
+	}
+	.btn-primary-gold:hover {
+		background-color: var(--accent-gold-hover);
+		border-color: var(--accent-gold-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+	}
+
+	@media (max-width: 900px) {
+		.framework-layout {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 2rem 1rem;
+		}
+		.index-map-sidebar {
+			display: none;
+		}
+	}
+</style>
