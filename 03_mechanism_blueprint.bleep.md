@@ -17,18 +17,21 @@
 
     <STATE_01_IDEATION>
       <INSTRUCTIONS>
-        1. User creates scratchpads and rough notes in `neal-os/02-workbench/00-Personal/`.
-        2. Concepts are expanded upon during conversational planning.
+        1. User records raw voice memos or "Reverse Interviews" detailing real-world insights, failures, and lessons.
+        2. AI acts as a transcriber and formatter to structure the thoughts into initial Markdown drafts.
+        3. Initial drafts and rough notes are stored in `neal-os/02-workbench/00-Personal/nhq-blog-drafting/`.
       </INSTRUCTIONS>
-      <TRANSITION_CRITERIA>Draft is fully formatted in Markdown and approved.</TRANSITION_CRITERIA>
+      <TRANSITION_CRITERIA>Initial AI-formatted draft is ready for human polish.</TRANSITION_CRITERIA>
     </STATE_01_IDEATION>
 
     <STATE_02_REFINEMENT>
       <INSTRUCTIONS>
-        1. Antigravity transfers the finalized Markdown file from `neal-os` to `nealmcspadden.com/src/content/blog/`.
-        2. Ensure frontmatter contains valid parameters (`title`, `description`, `pubDate`, `heroImage`).
+        1. User performs a strict Human Polish in `neal-os/02-workbench/00-Personal/nhq-blog-drafting/` to ensure authenticity and "Flaws Forward" framing.
+        2. Antigravity transfers the finalized Markdown file to `nealmcspadden.com/src/content/blog/`.
+        3. Ensure frontmatter contains valid parameters (`title`, `description`, `pubDate`, `heroImage`).
+        4. Validate that facts are front-loaded and structured data (including speakable schema) is supported.
       </INSTRUCTIONS>
-      <TRANSITION_CRITERIA>File is present and valid in the Astro content collection.</TRANSITION_CRITERIA>
+      <TRANSITION_CRITERIA>File is fully polished, present, and valid in the Astro content collection.</TRANSITION_CRITERIA>
     </STATE_02_REFINEMENT>
 
     <STATE_03_DEPLOYMENT>

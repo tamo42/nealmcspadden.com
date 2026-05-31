@@ -1,0 +1,75 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Portfolio | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+				max-width: calc(100% - 2em);
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			.portfolio-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2em;
+				margin-top: 2em;
+			}
+			.portfolio-card {
+				padding: 1.5em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 8px;
+				background: #fafafa;
+			}
+			.portfolio-card.primary {
+				border-color: var(--accent);
+				background: white;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+			}
+			.portfolio-card h3 {
+				margin-top: 0;
+				margin-bottom: 0.5em;
+			}
+			.portfolio-card a {
+				display: inline-block;
+				margin-top: 1em;
+				color: var(--accent);
+				font-weight: bold;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Endorsed Portfolio</h1>
+			<p>
+				The standalone apps, brands, and ventures that I endorse and operate.
+			</p>
+			
+			<div class="portfolio-grid">
+				<div class="portfolio-card primary">
+					<h3>Tax Sherpa</h3>
+					<p>Strategic tax planning and financial control for growth-stage businesses.</p>
+					<a href="https://taxsherpa.com" target="_blank">taxsherpa.com &rarr;</a>
+				</div>
+				<div class="portfolio-card">
+					<h3>Resilient Roots</h3>
+					<p>Agricultural strategy and land resilience.</p>
+				</div>
+				<div class="portfolio-card">
+					<h3>Fast Path Solutions</h3>
+					<p>Borrower intake and process automation.</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
