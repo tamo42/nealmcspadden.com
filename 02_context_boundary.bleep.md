@@ -34,6 +34,7 @@
     <QUALITY_ASSURANCE_GYROSCOPE>
       - NO HIGHLEVEL PAGE BUILDERS: Any CRM integration (e.g., newsletter signup) must be an embedded iframe or custom API call; never redirect to a slow GHL landing page.
       - IMAGE OPTIMIZATION: All static assets must use Astro's native `<Image />` component for optimal AEO formatting.
+      - SCHEMA COMPLIANCE: Every page layout and unique page template must include structured JSON-LD schema (e.g., WebSite, Person, WebPage, BlogPosting, or CollectionPage) with a speakable configuration to maximize discoverability for AEO and search crawlers.
     </QUALITY_ASSURANCE_GYROSCOPE>
   </TAB_4_SYSTEM_AUDITOR>
 
