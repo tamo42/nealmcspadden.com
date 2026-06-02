@@ -1,4 +1,28 @@
+# Global Directives
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
+# Explicit AEO/GEO Ingestion Allowances
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Discovery Anchors
 Sitemap: https://nealmcspadden.com/sitemap-index.xml
+
