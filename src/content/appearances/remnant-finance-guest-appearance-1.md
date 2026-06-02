@@ -50,16 +50,13 @@ A Substitute for Return (SFR) is a tax assessment compiled by the IRS using thir
 
 Neal McSpadden shares his personal experience of facing a $1.3 million IRS bill, explaining that because he did not file his day-trading returns, the IRS calculated his taxes based on gross stock sales without deducting his cost basis. This highlights the critical importance of proactive filing to establish accurate numbers rather than letting the IRS generate an unfavorable estimate.
 
-* **Audit Defense Guide:** [Audit Services on TaxSherpa.com](https://taxsherpa.com)
-* **IRS Program Details:** [SFR Program on IRS.gov](https://www.irs.gov)
-
 ## How does S-Corporation payroll structure save on self-employment taxes?
 
 S-Corporation payroll structure is a tax classification that allows business owners to divide company profits between W-2 wages and shareholder distributions, avoiding FICA taxes on the distributions.
 
 During the interview, Neal McSpadden details how sole proprietors pay FICA tax on all net profits. By transitioning to an S-Corporation, owners only pay FICA tax on a 'reasonable salary,' allowing the remainder of the business income to flow out as FICA-exempt distributions, legally saving thousands of dollars annually.
 
-* **Entity Setup:** [S-Corp Optimization on TaxSherpa.com](https://taxsherpa.com)
+* **Entity Setup:** [S-Corp Optimization on Skool](https://www.skool.com/tax-strategy-network/classroom/a7125fb6?md=f10b4bf97751447082176f44c58f8863)
 
 ---
 
