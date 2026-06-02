@@ -1,8 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const appearances = (await getCollection('appearances')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <!doctype html>
@@ -23,27 +30,50 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			<section class="media-section">
 				<h2>Features &amp; Appearances</h2>
 				<div class="media-grid">
-					<!-- Media Item 1 -->
-					<div class="media-card">
-						<div class="media-meta">
-							<span class="media-type">PODCAST</span>
-							<span class="media-date">April 12, 2026</span>
-						</div>
-						<h3>Systematized Scaling Podcast</h3>
-						<p class="desc">Episode 42: "Building a Defensive Financial Stack." Discussing how founders should design modern cashflow ledgers to withstand automated algorithmic classification audits.</p>
-						<a href="#" class="media-link">Listen to Episode &rarr;</a>
-					</div>
-
-					<!-- Media Item 2 -->
-					<div class="media-card">
-						<div class="media-meta">
-							<span class="media-type">ARTICLE</span>
-							<span class="media-date">February 28, 2026</span>
-						</div>
-						<h3>Finance Frontiers</h3>
-						<p class="desc">"The Algorithmic IRS: Machine Learning in Revenue Examination." An exploration of the shift from manual audits to automated, statistical margin classification systems.</p>
-						<a href="#" class="media-link">Read Article &rarr;</a>
-					</div>
+					{
+						appearances.map((item) => (
+							<div class="media-card">
+								<a href={`/media/${item.id}/`} class="card-link">
+									{item.data.heroImage ? (
+										<div class="image-wrapper">
+											<Image 
+												width={450} 
+												height={250} 
+												src={item.data.heroImage} 
+												alt={item.data.title} 
+												class="media-img"
+											/>
+										</div>
+									) : (
+										<div class="image-wrapper placeholder-gradient">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon">
+												<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+												<path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
+												<line x1="12" x2="12" y1="19" y2="22"></line>
+											</svg>
+										</div>
+									)}
+									<div class="card-content">
+										<div class="media-meta">
+											<span class={`media-type ${item.data.type}`}>{item.data.type.toUpperCase()}</span>
+											<span class="media-date">
+												<FormattedDate date={item.data.pubDate} />
+											</span>
+										</div>
+										<h3>{item.data.title}</h3>
+										<p class="host-info">Host: {item.data.host}</p>
+										<p class="desc">{item.data.description}</p>
+										<div class="card-footer">
+											<span class="media-link">
+												{item.data.hasTranscript ? "View Transcript & Watch" : "Listen / View Details"} &rarr;
+											</span>
+											{item.data.hasTranscript && <span class="transcript-badge">TRANSCRIPT</span>}
+										</div>
+									</div>
+								</a>
+							</div>
+						))
+					}
 				</div>
 			</section>
 
@@ -108,14 +138,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	/* Media Grid */
 	.media-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 2rem;
 	}
 	.media-card {
-		padding: 2rem;
 		background-color: var(--bg-card);
 		border: 1px solid var(--border-color);
 		border-radius: 12px;
+		overflow: hidden;
 		transition: var(--transition-smooth);
 		display: flex;
 		flex-direction: column;
@@ -125,6 +155,54 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		border-color: var(--accent-blue);
 		box-shadow: var(--box-shadow-md);
 	}
+	.card-link {
+		color: inherit;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	.image-wrapper {
+		position: relative;
+		overflow: hidden;
+		background: #0f121a;
+		aspect-ratio: 16 / 9;
+		border-bottom: 1px solid var(--border-color);
+	}
+	.media-img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: var(--transition-smooth);
+	}
+	.media-card:hover .media-img {
+		transform: scale(1.03);
+	}
+	
+	.placeholder-gradient {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, hsl(222, 20%, 8%), hsl(222, 18%, 15%));
+	}
+	.placeholder-icon {
+		color: var(--accent-gold);
+		opacity: 0.6;
+		transition: var(--transition-smooth);
+	}
+	.media-card:hover .placeholder-icon {
+		transform: scale(1.08);
+		opacity: 0.9;
+	}
+
+	.card-content {
+		padding: 1.75rem;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
 	.media-meta {
 		display: flex;
 		justify-content: space-between;
@@ -134,24 +212,39 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		font-size: 0.75rem;
 	}
 	.media-type {
-		color: var(--accent-blue);
 		background-color: var(--accent-blue-glow);
+		color: var(--accent-blue-hover);
 		padding: 0.15rem 0.4rem;
 		border-radius: 4px;
 		font-weight: 700;
 	}
+	.media-type.podcast {
+		background-color: var(--accent-gold-glow);
+		color: var(--accent-gold-hover);
+	}
 	.media-date {
 		color: var(--text-muted);
 	}
+
 	.media-card h3 {
 		margin-top: 0;
-		margin-bottom: 0.75rem;
-		font-size: 1.35rem;
-		line-height: 1.3;
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
+		line-height: 1.35;
+		color: var(--text-primary);
+		transition: var(--transition-smooth);
 	}
 	.media-card:hover h3 {
 		color: var(--accent-blue-hover);
 	}
+	
+	.host-info {
+		font-family: monospace;
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		margin-bottom: 1rem;
+	}
+
 	.media-card .desc {
 		color: var(--text-secondary);
 		font-size: 0.95rem;
@@ -159,6 +252,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		margin-bottom: 1.5rem;
 		flex-grow: 1;
 	}
+
+	.card-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: auto;
+	}
+
 	.media-link {
 		font-size: 0.9rem;
 		font-weight: 600;
@@ -168,6 +269,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.media-card:hover .media-link {
 		color: var(--accent-blue-hover);
 		transform: translateX(4px);
+	}
+
+	.transcript-badge {
+		font-family: monospace;
+		font-size: 0.7rem;
+		font-weight: 700;
+		background-color: rgba(16, 185, 129, 0.15);
+		color: rgb(52, 211, 153);
+		padding: 0.15rem 0.4rem;
+		border-radius: 4px;
+		letter-spacing: 0.05em;
 	}
 
 	/* Citations */

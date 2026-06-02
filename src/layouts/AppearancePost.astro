@@ -1,0 +1,496 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	pubDate: Date;
+	url: string;
+	youtubeId?: string;
+	host: string;
+	type: 'podcast' | 'video' | 'article' | 'appearance';
+	hasTranscript: boolean;
+	heroImage?: any;
+}
+
+const { title, description, pubDate, url, youtubeId, host, type, hasTranscript, heroImage } = Astro.props;
+
+// Schema.org structured data
+const jsonLd = youtubeId 
+	? {
+		"@context": "https://schema.org",
+		"@type": "VideoObject",
+		"name": title,
+		"description": description,
+		"uploadDate": pubDate.toISOString(),
+		"thumbnailUrl": `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
+		"embedUrl": `https://www.youtube.com/embed/${youtubeId}`,
+		"url": url
+	  }
+	: {
+		"@context": "https://schema.org",
+		"@type": "PodcastEpisode",
+		"name": title,
+		"description": description,
+		"datePublished": pubDate.toISOString(),
+		"url": url,
+		"partOfSeries": {
+			"@type": "PodcastSeries",
+			"name": host
+		}
+	  };
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} | Media & Appearances`} description={description} />
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+	</head>
+
+	<body>
+		<Header />
+		<main class="appearance-layout">
+			<a href="/media" class="back-link">&larr; Back to Media & Citations</a>
+			
+			<article class="appearance-card">
+				<header class="appearance-header">
+					<div class="meta-tags">
+						<span class={`type-badge ${type}`}>{type.toUpperCase()}</span>
+						<span class="host-name">Host: {host}</span>
+						<span class="pub-date">
+							<FormattedDate date={pubDate} />
+						</span>
+					</div>
+					<h1>{title}</h1>
+					<p class="lead">{description}</p>
+				</header>
+
+				<!-- Media Embed Player -->
+				<div class="media-container">
+					{youtubeId ? (
+						<div class="video-wrapper">
+							<iframe
+								src={`https://www.youtube.com/embed/${youtubeId}`}
+								title={title}
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen
+							></iframe>
+						</div>
+					) : (
+						<div class="podcast-external-card">
+							<div class="podcast-info">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="podcast-icon">
+									<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+									<path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
+									<line x1="12" x2="12" y1="19" y2="22"></line>
+								</svg>
+								<div>
+									<h3>Listen to this episode on Apple Podcasts</h3>
+									<p>This is an audio-only podcast appearance hosted on Apple Podcasts.</p>
+								</div>
+							</div>
+							<a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+								Listen on Apple Podcasts &rarr;
+							</a>
+						</div>
+					)}
+				</div>
+
+				<hr />
+
+				<!-- Transcript Section -->
+				<div class="transcript-section">
+					<h2>
+						<span>Transcript &amp; Summary</span>
+						{hasTranscript && <span class="status-pill green">SEARCHABLE</span>}
+					</h2>
+
+					{hasTranscript ? (
+						<div class="transcript-wrapper">
+							<div class="search-bar">
+								<div class="search-input-wrapper">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+										<circle cx="11" cy="11" r="8"></circle>
+										<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+									</svg>
+									<input 
+										type="text" 
+										id="transcript-search" 
+										placeholder="Search keywords within transcript..." 
+										autocomplete="off"
+									/>
+								</div>
+								<span id="match-count" class="match-badge hidden">0 matches</span>
+							</div>
+
+							<div id="transcript-content" class="transcript-content">
+								<slot />
+							</div>
+						</div>
+					) : (
+						<div class="no-transcript-card">
+							<p>A full transcript is not available for this episode, but you can listen to the complete discussion directly on the host platform using the link above.</p>
+						</div>
+					)}
+				</div>
+			</article>
+		</main>
+		<Footer />
+
+		{hasTranscript && (
+			<script is:inline>
+				const searchInput = document.getElementById('transcript-search');
+				const matchCount = document.getElementById('match-count');
+				const transcriptContainer = document.getElementById('transcript-content');
+				
+				// Store original HTML of all elements inside slot to restore later
+				const originalParas = [];
+				const childNodes = Array.from(transcriptContainer.children);
+				
+				childNodes.forEach((node, index) => {
+					originalParas.push({
+						element: node,
+						originalHTML: node.innerHTML,
+						originalText: node.textContent || node.innerText
+					});
+				});
+
+				searchInput.addEventListener('input', (e) => {
+					const query = e.target.value.toLowerCase().trim();
+					
+					if (!query) {
+						// Reset everything
+						originalParas.forEach(item => {
+							item.element.innerHTML = item.originalHTML;
+							item.element.style.opacity = '1';
+							item.element.style.display = '';
+						});
+						matchCount.classList.add('hidden');
+						return;
+					}
+
+					let totalMatches = 0;
+
+					originalParas.forEach(item => {
+						const text = item.originalText;
+						const lowerText = text.toLowerCase();
+						
+						if (lowerText.includes(query)) {
+							item.element.style.opacity = '1';
+							item.element.style.display = '';
+							
+							// Escape regex special characters
+							const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+							const regex = new RegExp(`(${escapedQuery})`, 'gi');
+							
+							// Replace matches within text nodes only to avoid breaking HTML tags
+							// Since this is a simple text search, we can replace inside a cloned text segment
+							// We can do a safe replace since we saved the clean text
+							const highlightedHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
+							item.element.innerHTML = highlightedHTML;
+							
+							// Count occurrences
+							const matches = lowerText.split(query).length - 1;
+							totalMatches += matches;
+						} else {
+							item.element.style.opacity = '0.25';
+							// Option: hide completely if users prefer a filtered view
+							// item.element.style.display = 'none';
+						}
+					});
+
+					// Update badge
+					if (totalMatches > 0) {
+						matchCount.textContent = `${totalMatches} match${totalMatches > 1 ? 'es' : ''}`;
+						matchCount.classList.remove('hidden');
+					} else {
+						matchCount.textContent = '0 matches';
+						matchCount.classList.remove('hidden');
+					}
+				});
+			</script>
+		)}
+	</body>
+</html>
+
+<style>
+	.appearance-layout {
+		width: var(--max-width-content);
+		max-width: calc(100% - 2rem);
+		margin: 0 auto;
+		padding: 2rem 1rem;
+	}
+
+	.back-link {
+		display: inline-flex;
+		align-items: center;
+		color: var(--text-muted);
+		font-family: monospace;
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+		transition: var(--transition-smooth);
+	}
+	.back-link:hover {
+		color: var(--accent-blue-hover);
+		transform: translateX(-4px);
+	}
+
+	.appearance-card {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 14px;
+		padding: 3rem;
+		box-shadow: var(--box-shadow-md);
+	}
+
+	.appearance-header {
+		margin-bottom: 2.5rem;
+	}
+
+	.meta-tags {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		font-family: monospace;
+		font-size: 0.8rem;
+	}
+
+	.type-badge {
+		background-color: var(--accent-blue-glow);
+		color: var(--accent-blue-hover);
+		padding: 0.15rem 0.5rem;
+		border-radius: 4px;
+		font-weight: 700;
+	}
+	.type-badge.podcast {
+		background-color: var(--accent-gold-glow);
+		color: var(--accent-gold-hover);
+	}
+
+	.host-name {
+		color: var(--text-secondary);
+		border-right: 1px solid var(--border-color);
+		padding-right: 1rem;
+	}
+	.pub-date {
+		color: var(--text-muted);
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		line-height: 1.25;
+		letter-spacing: -0.03em;
+	}
+
+	.lead {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+	}
+
+	.media-container {
+		margin-bottom: 3rem;
+	}
+
+	.video-wrapper {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		height: 0;
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid var(--border-color);
+	}
+
+	.video-wrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.podcast-external-card {
+		padding: 2.5rem;
+		border-radius: 10px;
+		border: 1px solid var(--border-color);
+		background: radial-gradient(circle at top right, var(--bg-card-hover), var(--bg-card));
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+
+	.podcast-info {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	.podcast-info h3 {
+		margin: 0;
+		font-size: 1.25rem;
+	}
+	.podcast-info p {
+		margin: 0.25rem 0 0 0;
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+	.podcast-icon {
+		color: var(--accent-gold);
+		flex-shrink: 0;
+	}
+
+	.transcript-section h2 {
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 0;
+		margin-bottom: 2rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.75rem;
+	}
+
+	.status-pill {
+		font-family: monospace;
+		font-size: 0.75rem;
+		padding: 0.15rem 0.4rem;
+		border-radius: 4px;
+	}
+	.status-pill.green {
+		background-color: rgba(16, 185, 129, 0.15);
+		color: rgb(52, 211, 153);
+	}
+
+	.search-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.search-input-wrapper {
+		position: relative;
+		flex-grow: 1;
+		max-width: 450px;
+	}
+	
+	.search-icon {
+		position: absolute;
+		left: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--text-muted);
+		pointer-events: none;
+	}
+
+	#transcript-search {
+		width: 100%;
+		padding: 0.75rem 1rem 0.75rem 2.75rem;
+		background-color: var(--bg-primary);
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		color: var(--text-primary);
+		font-size: 0.95rem;
+		transition: var(--transition-smooth);
+	}
+	#transcript-search:focus {
+		border-color: var(--accent-blue);
+		outline: none;
+		box-shadow: 0 0 10px var(--accent-blue-glow);
+	}
+
+	.match-badge {
+		font-family: monospace;
+		font-size: 0.85rem;
+		color: var(--accent-gold);
+		background-color: var(--accent-gold-glow);
+		padding: 0.35rem 0.75rem;
+		border-radius: 20px;
+		border: 1px solid var(--border-gold);
+		transition: opacity 0.2s ease;
+	}
+	.match-badge.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.transcript-content {
+		max-height: 600px;
+		overflow-y: auto;
+		padding-right: 1.5rem;
+		font-size: 1rem;
+		line-height: 1.8;
+		color: var(--text-secondary);
+		mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+		/* Custom scrollbar */
+		scrollbar-width: thin;
+		scrollbar-color: var(--border-color) transparent;
+	}
+	.transcript-content::-webkit-scrollbar {
+		width: 6px;
+	}
+	.transcript-content::-webkit-scrollbar-thumb {
+		background-color: var(--border-color);
+		border-radius: 10px;
+	}
+
+	/* Highlights */
+	:global(.search-highlight) {
+		background-color: var(--accent-gold-glow);
+		color: var(--accent-gold-hover);
+		padding: 0.1rem 0.2rem;
+		border-radius: 4px;
+		box-shadow: 0 0 4px var(--accent-gold-glow);
+		font-weight: 600;
+	}
+
+	.no-transcript-card {
+		padding: 2rem;
+		border-radius: 8px;
+		background-color: var(--bg-primary);
+		border: 1px solid var(--border-color);
+		color: var(--text-muted);
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.appearance-card {
+			padding: 1.5rem;
+		}
+		h1 {
+			font-size: 1.8rem;
+		}
+		.meta-tags {
+			gap: 0.5rem;
+		}
+		.host-name {
+			border-right: none;
+			padding-right: 0;
+			width: 100%;
+		}
+		.search-bar {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 1rem;
+		}
+		.search-input-wrapper {
+			max-width: 100%;
+		}
+		.podcast-info {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+	}
+</style>

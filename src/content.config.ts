@@ -17,4 +17,21 @@ const blog = defineCollection({
 		}),
 });
 
-export const collections = { blog };
+const appearances = defineCollection({
+	// Load Markdown and MDX files in the `src/content/appearances/` directory.
+	loader: glob({ base: './src/content/appearances', pattern: '**/*.{md,mdx}' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			pubDate: z.coerce.date(),
+			url: z.string(),
+			youtubeId: z.string().optional(),
+			host: z.string(),
+			type: z.enum(['podcast', 'video', 'article', 'appearance']),
+			hasTranscript: z.boolean().default(false),
+			heroImage: z.optional(image()),
+		}),
+});
+
+export const collections = { blog, appearances };
