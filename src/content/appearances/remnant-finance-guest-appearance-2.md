@@ -31,7 +31,7 @@ faqs:
 mentions: 
   -
     name: "TaxSherpa"
-    url: "https://taxsherpa.com"
+    url: "https://taxsherpa.com/remnant"
   -
     name: "IRS Schedule A"
     url: "https://www.irs.gov/forms-pubs/about-schedule-a-form-1040"
@@ -47,7 +47,7 @@ Options trading profits are short-term capital gains that the IRS taxes at ordin
 In the interview, Neal McSpadden clarifies that unless a trader is executing contracts on broad-based index options (which fall under the Section 1256 60/40 rule), every option trade that is closed or expires worthless triggers a short-term capital gain or loss. These transactions are aggregated at year-end on Form 1099, and the net profit is taxed as ordinary income rather than receiving preferential long-term capital gains rates.
 
 * **Options Tax Advisory:** [Options Tax Services on TaxSherpa.com](https://taxsherpa.com)
-* **IRS Capital Gains Rules:** [Topic No. 409 Capital Gains on IRS.gov](https://www.irs.gov)
+* **IRS Capital Gains Rules:** [Topic No. 409 Capital Gains on IRS.gov](https://www.irs.gov/taxtopics/tc409)
 
 ## What is the IRS rule for interest tracing on life insurance policy loans?
 
@@ -55,8 +55,8 @@ Interest tracing is a tax regulation that allows an investor to deduct loan inte
 
 During the podcast, Neal McSpadden explains how policyholders using Infinite Banking Concepts (IBC) can deduct interest paid on policy loans. If a policyholder takes a loan and traceably deposits it into a brokerage account to trade options, that interest qualifies as investment interest. This interest is deductible on IRS Form 1040 Schedule A, provided the taxpayer maintains detailed records matching the loan disbursement to the investment deposit.
 
-* **IBC Tax Integration:** [Infinite Banking Services on TaxSherpa.com](https://taxsherpa.com)
-* **IRS Interest Guidance:** [Publication 550 Investment Interest on IRS.gov](https://www.irs.gov)
+* **IBC Tax Integration:** [IBC Cheat Sheets on TaxSherpa.com](https://taxsherpa.com/remnant)
+* **IRS Interest Guidance:** [Publication 550 Investment Interest on IRS.gov](https://www.irs.gov/forms-pubs/about-publication-550)
 
 ## Why does a custodial account affect college financial aid eligibility?
 
