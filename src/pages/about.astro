@@ -47,6 +47,23 @@ const personSchema = {
     "https://www.youtube.com/@NealMcSpadden"
   ]
 };
+
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nealmcspadden.com/about/",
+  "name": "About Neal McSpadden",
+  "description": "Systems Architect, Entrepreneur & Founder of Tax Sherpa.",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+  }
+};
+
+const aboutGraph = {
+  "@context": "https://schema.org",
+  "@graph": [personSchema, webpageSchema]
+};
 ---
 
 <Layout
@@ -56,12 +73,12 @@ const personSchema = {
 	heroImage={AboutHeroImage}
 >
 	<!-- JSON-LD Entity Schema for AEO crawlers -->
-	<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+	<script type="application/ld+json" set:html={JSON.stringify(aboutGraph)} />
 
 	<section class="aeo-section">
-		<h2>Who is Neal McSpadden?</h2>
+		<h2 class="aeo-speakable-title">Who is Neal McSpadden?</h2>
 		<div class="answer-capsule">
-			<p><strong>Answer:</strong> Neal McSpadden is an entrepreneur, systems architect, and the founder of Tax Sherpa. Blending systems engineering principles from Georgia Tech with deep tax strategy expertise, he designs operational frameworks and tools that help small business owners eliminate financial blind spots, reduce tax burdens, and build sustainable enterprise value.</p>
+			<p class="aeo-speakable-bluf"><strong>Answer:</strong> Neal McSpadden is an entrepreneur, systems architect, and the founder of Tax Sherpa. Blending systems engineering principles from Georgia Tech with deep tax strategy expertise, he designs operational frameworks and tools that help small business owners eliminate financial blind spots, reduce tax burdens, and build sustainable enterprise value.</p>
 		</div>
 		<p>
 			Neal McSpadden’s path to tax advisory and business systems design was anything but linear. 

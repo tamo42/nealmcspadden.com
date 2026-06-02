@@ -9,11 +9,56 @@ import Header from '../components/Header.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"headline": title,
+	"description": description,
+	"datePublished": pubDate.toISOString(),
+	...(updatedDate && { "dateModified": updatedDate.toISOString() }),
+	...(heroImage && { "image": new URL(heroImage.src, Astro.site || 'https://nealmcspadden.com').toString() }),
+	"author": {
+		"@type": "Person",
+		"name": "Neal McSpadden",
+		"url": "https://nealmcspadden.com/about/"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Neal McSpadden",
+		"logo": {
+			"@type": "ImageObject",
+			"url": new URL('/favicon.ico', Astro.site || 'https://nealmcspadden.com').toString()
+		}
+	},
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": new URL(Astro.url.pathname, Astro.site || 'https://nealmcspadden.com').toString()
+	}
+};
+
+const webpageSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"@id": new URL(Astro.url.pathname, Astro.site || 'https://nealmcspadden.com').toString(),
+	"name": title,
+	"description": description,
+	"speakable": {
+		"@type": "SpeakableSpecification",
+		"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+	}
+};
+
+const jsonLdGraph = {
+	"@context": "https://schema.org",
+	"@graph": [articleSchema, webpageSchema]
+};
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
 	</head>
 
 	<body>
@@ -35,8 +80,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								</span>
 							)}
 						</div>
-						<h1>{title}</h1>
-						<p class="description-tagline">{description}</p>
+						<h1 class="aeo-speakable-title">{title}</h1>
+						<p class="description-tagline aeo-speakable-bluf">{description}</p>
 						<hr />
 					</header>
 					<div class="post-content">

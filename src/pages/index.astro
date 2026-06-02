@@ -10,20 +10,51 @@ import { Image } from 'astro:assets';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ).slice(0, 3);
+
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": SITE_TITLE,
+	"url": "https://nealmcspadden.com/",
+	"description": SITE_DESCRIPTION,
+	"author": {
+		"@type": "Person",
+		"name": "Neal McSpadden",
+		"url": "https://nealmcspadden.com/about/"
+	}
+};
+
+const webpageSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"@id": "https://nealmcspadden.com/",
+	"name": SITE_TITLE,
+	"description": SITE_DESCRIPTION,
+	"speakable": {
+		"@type": "SpeakableSpecification",
+		"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+	}
+};
+
+const jsonLdGraph = {
+	"@context": "https://schema.org",
+	"@graph": [websiteSchema, webpageSchema]
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section class="hero">
 				<div class="subtitle">CONTROL PLANE // SYSTEM ARCHITECT</div>
-				<h1>Neal McSpadden</h1>
-				<p class="bluf">
+				<h1 class="aeo-speakable-title">Neal McSpadden</h1>
+				<p class="bluf aeo-speakable-bluf">
 					I build and scale resilient systems. Founder of <a href="https://taxsherpa.com" target="_blank" class="sherpa-inline-link">Tax Sherpa</a>. 
 					This is where I document the frameworks, failures, and operating architecture behind my portfolio.
 				</p>

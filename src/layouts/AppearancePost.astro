@@ -94,6 +94,18 @@ if (mentions && mentions.length > 0) {
 	});
 }
 
+// Layer 4: WebPage + speakable schema
+schemas.push({
+	"@type": "WebPage",
+	"@id": new URL(Astro.url.pathname, Astro.site || 'https://nealmcspadden.com').toString(),
+	"name": title,
+	"description": description,
+	"speakable": {
+		"@type": "SpeakableSpecification",
+		"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+	}
+});
+
 const jsonLdGraph = {
 	"@context": "https://schema.org",
 	"@graph": schemas
@@ -124,12 +136,12 @@ const jsonLdGraph = {
 						</div>
 						
 						<!-- AEO H1 override or title -->
-						<h1>{authorityH1 || title}</h1>
+						<h1 class="aeo-speakable-title">{authorityH1 || title}</h1>
 						
 						<!-- Provenance Metadata Block -->
 						{provenance && (
 							<div class="provenance-block">
-								<p>{provenance}</p>
+								<p class="aeo-speakable-bluf">{provenance}</p>
 							</div>
 						)}
 					</header>

@@ -3,19 +3,117 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const portfolioSchema = {
+	"@context": "https://schema.org",
+	"@type": "CollectionPage",
+	"name": "Endorsed Portfolio | Neal McSpadden",
+	"description": "The standalone applications, companies, and ventures that Neal McSpadden operates and backs.",
+	"url": "https://nealmcspadden.com/portfolio/",
+	"about": {
+		"@type": "Person",
+		"name": "Neal McSpadden",
+		"url": "https://nealmcspadden.com/about/"
+	},
+	"mainEntity": {
+		"@type": "ItemList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@type": "Organization",
+					"name": "Tax Sherpa",
+					"url": "https://taxsherpa.com",
+					"description": "Strategic tax planning and financial control for growth-stage businesses."
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"item": {
+					"@type": "SoftwareApplication",
+					"name": "Bookkeeping Buddy",
+					"url": "https://usebookkeepingbuddy.com",
+					"description": "AI-powered bookkeeping automation software for business owners.",
+					"applicationCategory": "BusinessApplication"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"item": {
+					"@type": "SoftwareApplication",
+					"name": "Council of Ages",
+					"url": "https://councilofages.com/",
+					"description": "AI-powered cognitive consensus platform. Consult a virtual advisory board of historical leaders.",
+					"applicationCategory": "BusinessApplication"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 4,
+				"item": {
+					"@type": "SoftwareApplication",
+					"name": "Ad Creative Strategist",
+					"url": "https://adbrief.ai/",
+					"description": "Competitive intelligence and ad creative strategy engine.",
+					"applicationCategory": "BusinessApplication"
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 5,
+				"item": {
+					"@type": "Organization",
+					"name": "Resilient Roots",
+					"url": "https://landwithroots.com",
+					"description": "Agricultural strategy, rural land development, and ecological asset management."
+				}
+			},
+			{
+				"@type": "ListItem",
+				"position": 6,
+				"item": {
+					"@type": "Organization",
+					"name": "Fast Path Solutions",
+					"description": "Borrower intake and underwriting automation workflows."
+				}
+			}
+		]
+	}
+};
+
+const webpageSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"@id": "https://nealmcspadden.com/portfolio/",
+	"name": "Endorsed Portfolio | Neal McSpadden",
+	"description": "The standalone applications, companies, and ventures that Neal McSpadden operates and backs.",
+	"speakable": {
+		"@type": "SpeakableSpecification",
+		"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+	}
+};
+
+const jsonLdGraph = {
+	"@context": "https://schema.org",
+	"@graph": [portfolioSchema, webpageSchema]
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={`Portfolio | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section class="portfolio-header">
-				<h1>Endorsed Portfolio</h1>
-				<p class="lead">
+				<h1 class="aeo-speakable-title">Endorsed Portfolio</h1>
+				<p class="lead aeo-speakable-bluf">
 					The standalone applications, companies, and ventures that I endorse, operate, and back.
 				</p>
 			</section>
