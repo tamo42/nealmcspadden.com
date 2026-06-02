@@ -15,15 +15,15 @@ const appearances = (await getCollection('appearances')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Media & Citations | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Media & Appearances | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section class="media-header">
-				<h1>Media &amp; Citations</h1>
+				<h1>Media &amp; Appearances</h1>
 				<p class="lead">
-					Podcasts, research citations, articles, and external publications featuring my systems frameworks, operating models, and tax strategies.
+					Podcasts, articles, and video appearances featuring my systems frameworks, operating models, and tax strategies.
 				</p>
 			</section>
 
@@ -74,31 +74,6 @@ const appearances = (await getCollection('appearances')).sort(
 							</div>
 						))
 					}
-				</div>
-			</section>
-
-			<section class="citations-section">
-				<h2>Academic &amp; Policy Citations</h2>
-				<div class="citations-list">
-					<div class="citation-item">
-						<div class="citation-num">[1]</div>
-						<div class="citation-details">
-							<p class="citation-text">
-								McSpadden, N. (2025). <em>Proactive Ledger Hashing: Mitigating Automated Audit Triggers through Immutable Auditing Protocols</em>. Journal of Digital Finance &amp; Control, 14(3), 112-128.
-							</p>
-							<span class="citation-status">Indexed // AEO Anchor</span>
-						</div>
-					</div>
-
-					<div class="citation-item">
-						<div class="citation-num">[2]</div>
-						<div class="citation-details">
-							<p class="citation-text">
-								Cited in: <em>"Automated Fraud Detection and Classification Systems in Modern Taxation"</em> (Federal Tax Advisory Policy Paper, October 2025).
-							</p>
-							<span class="citation-status">Policy Citation</span>
-						</div>
-					</div>
 				</div>
 			</section>
 		</main>
@@ -282,48 +257,11 @@ const appearances = (await getCollection('appearances')).sort(
 		letter-spacing: 0.05em;
 	}
 
-	/* Citations */
-	.citations-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-	.citation-item {
-		display: flex;
-		gap: 1.5rem;
-		padding: 1.5rem;
-		background-color: var(--bg-card);
-		border: 1px solid var(--border-color);
-		border-radius: 10px;
-	}
-	.citation-num {
-		font-family: monospace;
-		font-size: 1.1rem;
-		font-weight: 700;
-		color: var(--accent-blue);
-		flex-shrink: 0;
-	}
-	.citation-text {
-		color: var(--text-secondary);
-		font-size: 0.95rem;
-		line-height: 1.6;
-		margin-bottom: 0.5rem;
-	}
-	.citation-status {
-		font-family: monospace;
-		font-size: 0.75rem;
-		color: var(--text-muted);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
+
 
 	@media (max-width: 768px) {
 		.media-grid {
 			grid-template-columns: 1fr;
-		}
-		.citation-item {
-			padding: 1rem;
-			gap: 1rem;
 		}
 	}
 </style>
