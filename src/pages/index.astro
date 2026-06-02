@@ -119,7 +119,7 @@ const jsonLdGraph = {
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/thinking/${post.slug}/`} class="thinking-item">
+								<a href={`/thinking/${post.id}/`} class="thinking-item">
 									{post.data.heroImage && (
 										<div class="thinking-thumbnail">
 											<Image width={180} height={110} src={post.data.heroImage} alt="" class="thumb-img" />

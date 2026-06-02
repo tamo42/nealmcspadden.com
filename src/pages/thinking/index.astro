@@ -30,7 +30,7 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post, idx) => (
 							<div class={idx === 0 ? "post-card featured" : "post-card"}>
-								<a href={`/thinking/${post.slug}/`}>
+								<a href={`/thinking/${post.id}/`}>
 									{post.data.heroImage && (
 										<div class="image-wrapper">
 											<Image 
