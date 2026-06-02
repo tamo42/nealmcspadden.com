@@ -66,11 +66,25 @@ Think of the history of computing terminals:
 * **2000s–2010s:** Web interfaces pulled processing back to cloud servers, using the local terminal as a thin rendering client.
 * **2020s:** We are abstracting the information *within the thoughts and rules of the organization*. The terminal is no longer just rendering pixels; it is orchestrating cognitive context.
 
-```mermaid
-graph TD
-    Ingest[1. Ingestion Layer<br>Raw Data, Transcripts, PDFs, APIs] --> Transform[2. Intelligence Layer<br>Probabilistic AI + Deterministic Logic]
-    Transform --> Output[3. Presentation Layer<br>Bespoke Markdown, PDFs, Dashboards]
-```
+<div class="flowchart">
+	<div class="flowchart-step">
+		<span class="step-number">01. INGESTION LAYER</span>
+		<h4>Ingest</h4>
+		<p>Raw Data, Transcripts, PDFs, APIs</p>
+	</div>
+	<div class="flowchart-connector">→</div>
+	<div class="flowchart-step">
+		<span class="step-number">02. INTELLIGENCE LAYER</span>
+		<h4>Transform</h4>
+		<p>Probabilistic AI + Deterministic Logic</p>
+	</div>
+	<div class="flowchart-connector">→</div>
+	<div class="flowchart-step">
+		<span class="step-number">03. PRESENTATION LAYER</span>
+		<h4>Output</h4>
+		<p>Bespoke Markdown, PDFs, Dashboards</p>
+	</div>
+</div>
 
 ---
 

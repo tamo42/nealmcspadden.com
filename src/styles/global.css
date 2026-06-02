@@ -246,3 +246,73 @@ th {
 		padding: 2rem 1rem;
 	}
 }
+
+/* ==========================================================================
+   Custom Flowchart Components (Responsive & Theme-Integrated)
+   ========================================================================== */
+.flowchart {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: 2.5rem 0;
+}
+
+.flowchart-step {
+	flex: 1;
+	background-color: var(--bg-card);
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	padding: 1.5rem;
+	position: relative;
+	transition: var(--transition-smooth);
+}
+
+.flowchart-step:hover {
+	border-color: var(--accent-blue);
+	box-shadow: 0 4px 15px var(--accent-blue-glow);
+}
+
+.flowchart-step .step-number {
+	font-family: monospace;
+	font-size: 0.75rem;
+	color: var(--accent-blue);
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.flowchart-step h4 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-size: 1.1rem;
+	color: var(--text-primary);
+}
+
+.flowchart-step p {
+	margin: 0;
+	font-size: 0.85rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+}
+
+.flowchart-connector {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-muted);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+@media (max-width: 768px) {
+	.flowchart {
+		flex-direction: column;
+	}
+	.flowchart-connector {
+		transform: rotate(90deg);
+		margin: 0.5rem 0;
+	}
+}
+
