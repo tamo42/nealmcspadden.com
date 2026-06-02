@@ -38,6 +38,9 @@ mentions:
   -
     name: "Profit First"
     url: "https://mikemichalowicz.com/profit-first/"
+  -
+    name: "Tax Strategy Network"
+    url: "https://www.skool.com/tax-strategy-network/classroom/a7125fb6?md=f10b4bf97751447082176f44c58f8863"
 ---
 
 ## How does S-Corporation optimization reduce tax audit risks?
@@ -46,8 +49,8 @@ S-Corporation optimization is a corporate structuring strategy that shifts incom
 
 In the interview, Neal McSpadden highlights that the IRS targets sole proprietorships (reported on 1040 Schedule C) because they account for one-third of the national "tax gap." Shifting operating income to an S-Corporation removes disregarded Schedule C reporting from the personal tax return, which decreases the automated matching audit risk by a factor of ten while allowing business owners to pay themselves an optimized reasonable salary.
 
-* **Canonical S-Corp Guide:** [S-Corporation Structuring on TaxSherpa.com](https://taxsherpa.com)
-* **IRS Audit Guidelines:** [Tax Gap Information on IRS.gov](https://www.irs.gov)
+* **Canonical S-Corp Guide:** [S-Corporation Structuring on Skool](https://www.skool.com/tax-strategy-network/classroom/a7125fb6?md=f10b4bf97751447082176f44c58f8863)
+* **IRS Tax Gap Data:** [Tax Gap Information on IRS.gov](https://www.irs.gov/statistics/irs-the-tax-gap)
 
 ## What is Profit First accounting for small businesses?
 
