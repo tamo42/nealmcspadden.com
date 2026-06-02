@@ -76,12 +76,33 @@ There is a deeper, more insidious bottleneck when scaling from an individual to 
 
 If Person A can hold seven items in active focus and Person B can hold seven, their cognitive maps will overlap but will not be identical. Person A is focusing on client acquisition and delivery processes, while Person B is focused on product development and cash flow. 
 
-```mermaid
-graph TD
-    A["Person A's Focus (7 Items)"] --- O["Shared Mutual Attention (3-4 Core Items)"]
-    B["Person B's Focus (7 Items)"] --- O
-    O --> C["High-Quality Collective Output"]
-```
+<div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin: 2.5rem 0;">
+	<div class="flowchart" style="width: 100%; margin: 0;">
+		<div class="flowchart-step">
+			<span class="step-number">PERSON A</span>
+			<h4>Person A's Focus</h4>
+			<p>Capped at 7 ± 2 items in active memory</p>
+		</div>
+		<div class="flowchart-connector">&harr;</div>
+		<div class="flowchart-step" style="border-color: var(--accent-blue);">
+			<span class="step-number">MUTUAL FOCUS</span>
+			<h4>Shared Attention</h4>
+			<p>3-4 Core Shared Items (Alignment)</p>
+		</div>
+		<div class="flowchart-connector">&harr;</div>
+		<div class="flowchart-step">
+			<span class="step-number">PERSON B</span>
+			<h4>Person B's Focus</h4>
+			<p>Capped at 7 ± 2 items in active memory</p>
+		</div>
+	</div>
+	<div class="flowchart-connector" style="transform: rotate(90deg); margin: 0.5rem 0; font-size: 2rem;">&darr;</div>
+	<div class="flowchart-step" style="max-width: 400px; text-align: center; border-color: var(--accent-gold);">
+		<span class="step-number">COLLECTIVE OUTPUT</span>
+		<h4>High-Quality Output</h4>
+		<p>Shared focus maximizes group execution</p>
+	</div>
+</div>
 
 As you add more individuals to a unit, the shared overlap of mutual attention shrinks reductionistically. If a team is poorly aligned, the intersection of their attention pools drops to zero. When no two members are focused on the same critical priorities, organizational synthesis fails, and economic production grinds to a halt. This is the hallmark of a bad team: high individual effort, zero collective thrust.
 
@@ -130,14 +151,31 @@ Therefore, the decision to outsource must be a calculated risk assessment. You m
 
 To build a resilient operating architecture, we must synthesize these insights.
 
-```mermaid
-graph TD
-    A["Axiom 1: Economic Productivity (Salatin's Rule)"] --> S1["Synthesis 1: Hidden Subsidies & Cognitive Pollution"]
-    Axiom2["Axiom 2: Attention Limits (Miller's Law)"] --> S1
-    S1 --> S2["Synthesis 2: Precision Outsourcing vs. Structural Risk"]
-    Axiom3["Axiom 3: Transaction Costs & Risk"] --> S2
-    S2 --> C["Conclusion: The Ledger as a Sensor Array"]
-```
+<div class="flowchart">
+	<div class="flowchart-step">
+		<span class="step-number">Step 1</span>
+		<h4>Core Axioms</h4>
+		<p>Economic Productivity (Salatin's Rule) & Attention Limits (Miller's Law)</p>
+	</div>
+	<div class="flowchart-connector">&rarr;</div>
+	<div class="flowchart-step">
+		<span class="step-number">Step 2</span>
+		<h4>Synthesis 1</h4>
+		<p>Hidden Subsidies & Cognitive Pollution (treating attention as infinite)</p>
+	</div>
+	<div class="flowchart-connector">&rarr;</div>
+	<div class="flowchart-step">
+		<span class="step-number">Step 3</span>
+		<h4>Synthesis 2</h4>
+		<p>Precision Outsourcing vs. Structural Risk (calibrating via transaction cost economics)</p>
+	</div>
+	<div class="flowchart-connector">&rarr;</div>
+	<div class="flowchart-step" style="border-color: var(--accent-gold);">
+		<span class="step-number">Conclusion</span>
+		<h4>The Ledger Sensor Network</h4>
+		<p>Isolating unit economics to buy back cognitive bandwidth</p>
+	</div>
+</div>
 
 ### Synthesis 1: Hidden Subsidies and Cognitive Pollution
 
