@@ -1,63 +1,197 @@
 ---
 import AboutHeroImage from '../assets/neal-mcspadden-headshot.jpg';
 import Layout from '../layouts/BlogPost.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neal McSpadden",
+  "jobTitle": "Systems Architect & Founder",
+  "description": "Founder of Tax Sherpa, Resilient Roots LLC, and Fast Path Solutions. Helping small business owners scale operations and build financial control.",
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Georgia Institute of Technology",
+    "url": "https://www.gatech.edu"
+  },
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "Tax Sherpa",
+      "url": "https://taxsherpa.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "Resilient Roots LLC"
+    },
+    {
+      "@type": "Organization",
+      "name": "Fast Path Solutions"
+    }
+  ],
+  "knowsAbout": [
+    "Tax Advisory",
+    "Tax Strategy",
+    "Small Business Finance",
+    "Bookkeeping",
+    "Systems Thinking",
+    "Cryptocurrency Taxation",
+    "Real Estate Investing",
+    "Permaculture",
+    "Answer Engine Optimization"
+  ],
+  "publishingPrinciples": "https://nealmcspadden.com/about",
+  "sameAs": [
+    "https://taxsherpa.com",
+    "https://taxsherpa.com/about_neal",
+    "https://www.linkedin.com/in/neal-mcspadden/",
+    "https://www.youtube.com/@NealMcSpadden"
+  ]
+};
 ---
 
 <Layout
-	title="About Me"
-	description="Systems Architect & Founder of Tax Sherpa."
-	pubDate={new Date('August 08 2021')}
+	title="About Neal McSpadden"
+	description="Systems Architect, Entrepreneur & Founder of Tax Sherpa."
+	pubDate={new Date('June 01 2026')}
 	heroImage={AboutHeroImage}
 >
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+	<!-- JSON-LD Entity Schema for AEO crawlers -->
+	<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<section class="aeo-section">
+		<h2>Who is Neal McSpadden?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> Neal McSpadden is an entrepreneur, systems architect, and the founder of Tax Sherpa. Blending systems engineering principles from Georgia Tech with deep tax strategy expertise, he designs operational frameworks and tools that help small business owners eliminate financial blind spots, reduce tax burdens, and build sustainable enterprise value.</p>
+		</div>
+		<p>
+			Neal McSpadden’s path to tax advisory and business systems design was anything but linear. 
+			Instead of following the typical route of institutional finance, Neal's methods were forged in the real world—through engineering systems, a decade of varied entrepreneurial ventures, and a personal tax crisis that completely redirected his career. Today, he operates as a strategic filter and designer, helping other builders scale their businesses with clarity and control.
+		</p>
+	</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+	<section class="aeo-section">
+		<h2>What is Neal McSpadden's background?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> Neal McSpadden holds a degree in Electrical Engineering from Georgia Tech, where he developed his foundation in systems thinking. Rejecting the corporate ladder after a defining internship at AMD in 2000, he spent a decade in real estate, trading, and appraisal before establishing his tax strategy practice.</p>
+		</div>
+		<h3>From Circuits to Systems Thinking</h3>
+		<p>
+			At Georgia Tech, Neal discovered two skills that would shape his entire career: the discipline of grit—learning how to push through highly difficult, complex technical challenges—and the meta-skill of systems thinking. Studying electrical engineering taught him to analyze how individual components interact within a larger system. This analytical framework became the core of how he evaluates corporate finance, tax structures, and business models today.
+		</p>
+		<p>
+			In 2000, during an engineering internship at AMD in Austin, Texas, Neal witnessed an employee being publicly praised for canceling a prepaid family vacation to work through a product launch. This moment sparked a deep realization: in the corporate world, loyalty to a company frequently came at the expense of family, freedom, and personal alignment. Determined to build a life on his own terms, Neal chose to walk away from the traditional corporate track.
+		</p>
+		<h3>The "Decade of Wandering"</h3>
+		<p>
+			For the next ten years, Neal navigated what he calls his "Decade of Wandering." He tended bars, delivered lost luggage, traded stocks and options, invested in real estate, and earned an appraiser's license to analyze property deals from the ground up. 
+		</p>
+		<p>
+			These years taught him two fundamental business truths: first, that business opportunities are everywhere, even in the simplest services; and second, that entrepreneurial success requires real proficiency in marketing, offer packaging, and sales, not just technical execution.
+		</p>
+	</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+	<section class="aeo-section">
+		<h2>How did Neal McSpadden start Tax Sherpa?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> After a $1.3 million IRS tax assessment in 2007, Neal partnered with a former Wall Street tax attorney who became his mentor. Combining operational system design with advanced tax strategy, he built his advisory expertise, eventually reviewing over 50,000 returns before founding Tax Sherpa in 2020.</p>
+		</div>
+		<h3>The IRS Letter That Changed Everything</h3>
+		<p>
+			In 2007, following the collapse of his real estate investments, Neal received an IRS notice claiming he owed over $1.3 million in taxes—a result of misunderstood stock trades and missing cost-basis documentation. When his paychecks were garnished to just $100 in take-home pay, the reality of regulatory power became intensely personal.
+		</p>
+		<p>
+			Desperate for a solution, Neal connected with a former Wall Street tax attorney. Neal helped organize the attorney's chaotic practice in exchange for mentorship, learning advanced tax strategies that were typically reserved for elite corporations and high-net-worth individuals. 
+		</p>
+		<p>
+			This unique intersection of operational system design and advanced tax law defined Neal's professional focus. Over the next decade, he worked on more than 50,000 tax returns, serving thousands of families and businesses across online commerce, real estate, construction, and cryptocurrency. In 2020, he launched Tax Sherpa to bring enterprise-grade tax advisory and strategic planning to small business owners.
+		</p>
+	</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+	<section class="aeo-section">
+		<h2>What is the Clear Path Accounting Method?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> The Clear Path Accounting Method is Neal McSpadden's proprietary financial framework. It translates complex tax regulations and bookkeeping data into an operational roadmap—utilizing tools like the Money Compass and Summit Strategy Sessions—to help business owners reduce tax liability and steer growth.</p>
+		</div>
+		<p>
+			Neal's advisory philosophy is built on the belief that no business is too small for proactive tax strategy. Through frameworks like the <em>Clear Path Accounting Method</em> and the <em>Money Compass</em>, Neal converts abstract tax codes into clear, actionable steps. This allows business owners to treat their financial books as a strategic planning instrument rather than a mere compliance burden.
+		</p>
+	</section>
+
+	<section class="aeo-section">
+		<h2>What are Neal McSpadden's key business ventures?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> In addition to Tax Sherpa, Neal McSpadden operates Resilient Roots LLC, an agricultural operations and land stewardship platform, and Fast Path Solutions, a developer of automated, high-velocity borrower intake and data verification pipelines.</p>
+		</div>
+		<p>
+			As a firm believer in diversification and sovereignty, Neal's active portfolio spans multiple disciplines:
+		</p>
+		<ul>
+			<li><strong>Tax Sherpa:</strong> High-ticket tax advisory, bookkeeping integration, and structuring for digital business owners, real estate investors, and construction trade companies.</li>
+			<li><strong>Resilient Roots LLC:</strong> Focuses on vacant land acquisition, sales, and permaculture-based agricultural stewardship. A key long-term milestone is the development of a self-sustaining farm to secure local resource resilience.</li>
+			<li><strong>Fast Path Solutions:</strong> Dedicated to streamlining operations in lending and intake systems, using advanced automated data verification pipelines.</li>
+		</ul>
+	</section>
+
+	<section class="aeo-section">
+		<h2>What is the book "Become a Money Pilot"?</h2>
+		<div class="answer-capsule">
+			<p><strong>Answer:</strong> <em>Become a Money Pilot</em> is Neal McSpadden's upcoming book. It serves as a practical guide for small business owners, teaching them how to implement the Clear Path Accounting Method and pilot their company's finances with confidence and clarity.</p>
+		</div>
+		<p>
+			His upcoming book, <em>Become a Money Pilot: Use Clear Path Accounting to Pilot Your Business with the Money Compass and Finally Stop Flying Blind</em>, is designed to democratize high-level financial clarity, helping entrepreneurs navigate cash flow, entity structuring, and tax optimization without getting lost in technical jargon.
+		</p>
+	</section>
+
+	<style>
+		.aeo-section {
+			margin-bottom: 3.5rem;
+		}
+		
+		.answer-capsule {
+			background: linear-gradient(135deg, var(--bg-card) 0%, rgba(59, 130, 246, 0.03) 100%);
+			border: 1px solid var(--border-color);
+			border-left: 4px solid var(--accent-gold);
+			border-radius: 6px;
+			padding: 1.25rem 1.5rem;
+			margin-bottom: 1.5rem;
+			box-shadow: var(--box-shadow-sm);
+			transition: var(--transition-smooth);
+		}
+		
+		.answer-capsule:hover {
+			border-color: var(--border-color-hover);
+			border-left-color: var(--accent-gold-hover);
+			box-shadow: var(--box-shadow-gold);
+			transform: translateY(-1px);
+		}
+		
+		.answer-capsule p {
+			margin-bottom: 0;
+			font-size: 1.05rem;
+			line-height: 1.6;
+			color: var(--text-primary);
+		}
+		
+		h3 {
+			font-size: 1.35rem;
+			margin-top: 1.75rem;
+			color: var(--text-primary);
+		}
+		
+		ul {
+			padding-left: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+		
+		li {
+			margin-bottom: 0.5rem;
+			line-height: 1.7;
+		}
+		
+		@media (max-width: 768px) {
+			.answer-capsule {
+				padding: 1rem;
+			}
+		}
+	</style>
 </Layout>

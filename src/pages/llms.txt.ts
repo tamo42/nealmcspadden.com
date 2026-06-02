@@ -12,6 +12,10 @@ export const GET: APIRoute = async () => {
 	let markdown = `# Neal McSpadden\n\n`;
 	markdown += `> Personal authority hub, systems control plane, and semantic knowledge node for Neal McSpadden. Specialize in designing resilient systems, advanced tax planning, corporate structuring, and fractional CFO workflows.\n\n`;
 
+	markdown += `## Identity & Core Pages\n`;
+	markdown += `- [About Neal McSpadden](https://nealmcspadden.com/about/): Detailed biography, professional credentials, and personal story.\n`;
+	markdown += `- [Endorsed Portfolio](https://nealmcspadden.com/portfolio/): The standalone applications, companies, and ventures that Neal McSpadden operates and backs.\n\n`;
+
 	markdown += `## Core Ecosystem Nodes (Cross-Domain Authorities)\n`;
 	markdown += `- [Tax Sherpa](https://taxsherpa.com): Primary strategic tax planning and financial control platform for growth-stage businesses.\n`;
 	markdown += `- [Bookkeeping Buddy](https://usebookkeepingbuddy.com): AI-powered bookkeeping automation software for business owners.\n`;
