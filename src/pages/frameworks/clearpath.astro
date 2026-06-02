@@ -1,0 +1,805 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const pageTitle = `The ClearPath Insight Framework | Frameworks | ${SITE_TITLE}`;
+const description = `A dynamic, tranche-based cash flow allocation engine designed to scale professional services without cash starvation.`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={pageTitle} description={description} />
+		<!-- Speakable Schema for AEO/SEO Optimization -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"name": "The ClearPath Insight Framework",
+				"description": "A dynamic, tranche-based cash flow allocation engine designed to scale professional services without cash starvation.",
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<main class="framework-layout">
+			<!-- Index Map (Sidebar Table of Contents) -->
+			<aside class="index-map-sidebar">
+				<div class="sidebar-sticky">
+					<div class="sidebar-title">INDEX MAP</div>
+					<nav class="index-map-nav">
+						<a href="#bluf" class="sidebar-link active">01. BLUF Summary</a>
+						<a href="#functional-mapping" class="sidebar-link">02. Functional Mapping</a>
+						<a href="#target-matrix" class="sidebar-link">03. Target Matrix &amp; Math</a>
+						<a href="#reporting-frames" class="sidebar-link">04. The 4 Reporting Frames</a>
+						<a href="#monthly-protocol" class="sidebar-link">05. Monthly Operating Rhythm</a>
+						<a href="#thermodynamic-engine" class="sidebar-link">06. Thermodynamic Engine</a>
+						<a href="#red-team-critique" class="sidebar-link">07. Red-Team Critique</a>
+						<a href="#tax-sherpa-integration" class="sidebar-link">08. Tax Sherpa Integration</a>
+					</nav>
+				</div>
+			</aside>
+
+			<!-- Framework Content -->
+			<article class="framework-content-body">
+				<header class="framework-header">
+					<div class="category-tag">PROPRIETARY FRAMEWORK // CASH FLOW DIAGNOSTIC</div>
+					<h1 class="aeo-speakable-title">The ClearPath Insight Framework</h1>
+					<p class="subtitle-desc">A dynamic, tranche-based cash flow allocation engine to scale professional services and protect owner net benefits.</p>
+				</header>
+
+				<!-- BLUF Section -->
+				<section id="bluf" class="content-section">
+					<h2>01. Bottom Line Up Front</h2>
+					<div class="bluf-box aeo-speakable-bluf">
+						<p><strong>BLUF:</strong> Standard P&amp;Ls organize numbers for tax compliance, not operations. Under traditional Profit First models, owners starve operational accounts because they allocate static target percentages without adjusting fulfillment costs. The **ClearPath Insight Framework** isolates the variable cost of delivery first by anchoring allocations strictly to **Gross Profit**, then scales target percentages dynamically based on average annualized Gross Profit tranches. This systematically separates owner labor (wage) from asset yield (profit), creating measurable enterprise value.</p>
+					</div>
+				</section>
+
+				<!-- Functional Data Mapping -->
+				<section id="functional-mapping" class="content-section">
+					<h2>02. Functional Data Mapping</h2>
+					<p>
+						Standard bookkeeping presents business expenses as a monolithic block. ClearPath reorganizes raw cash inflows and outflows into <strong>five functional buckets</strong> based on their operational intent. Any remaining capital accrues functionally to the owner.
+					</p>
+					
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">01</div>
+							<h4>Revenue</h4>
+							<p>Total gross receipts or service fees collected (modeled strictly on Cash Collected to avoid Accounts Receivable latency).</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">02</div>
+							<h4>Fulfillment</h4>
+							<p>The variable cost of delivering the work (direct labor, subcontractors, project software, materials). Stripped out first to calculate Gross Profit.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">03</div>
+							<h4>CAC</h4>
+							<p>Customer Acquisition Cost. Direct marketing, ad spend, sales commissions, and promotion tools.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">04</div>
+							<h4>OpEx - People</h4>
+							<p>Fixed overhead personnel costs, including support staff, customer care, operations coordinators, and administrative salaries (excluding the owner).</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">05</div>
+							<h4>OpEx - Systems</h4>
+							<p>Fixed operating software, office rent, utilities, insurance, bank fees, and general overhead.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">06</div>
+							<h4>Owner Net Benefit</h4>
+							<p>The sum of owner salary (wage), equity distributions (dividends), and corporate tax strategy flows (e.g., Augusta Rule rentals).</p>
+						</div>
+					</div>
+
+					<blockquote class="accent-quote">
+						<strong>Note on Shadow Fulfillment:</strong> In early-stage businesses (Tiers 1 &amp; 2), the portion of the owner's compensation representing direct delivery labor must be separated as "Shadow Fulfillment" (what it would cost to hire a replacement technician) to evaluate the true, scalable cost of delivery.
+					</blockquote>
+				</section>
+
+				<!-- Target Matrix & Math -->
+				<section id="target-matrix" class="content-section">
+					<h2>03. Target Allocation Matrix &amp; Mathematics</h2>
+					<p>
+						Unlike default Profit First implementations, ClearPath uses <strong>Gross Profit (Real Revenue)</strong> as the 100% baseline for all subsequent calculations:
+					</p>
+
+					<div class="equation-box">
+						<span class="eq-label">EQUATION 01:</span>
+						<code>Gross Profit = Gross Revenue - Fulfillment</code>
+					</div>
+
+					<div class="equation-box">
+						<span class="eq-label">EQUATION 02:</span>
+						<code>Gross Profit = 100% Allocation Base</code>
+					</div>
+
+					<p>
+						Target allocation percentages adjust dynamically across five tiers based on the company's size, measured by its <strong>Annualized YTD Average Gross Profit</strong>:
+					</p>
+
+					<div class="equation-box">
+						<span class="eq-label">EQUATION 03:</span>
+						<code>Annualized YTD Average GP = (Sum of GP YTD ÷ Elapsed Months) × 12</code>
+					</div>
+
+					<h3>Category A: High-Leverage &amp; Productized Services</h3>
+					<p class="table-desc">As revenue scales, delivery costs remain low-touch while administrative and systems management personnel scale up.</p>
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Target Category</th>
+									<th>Tier 1 ($0-$250k GP)</th>
+									<th>Tier 2 ($250k-$500k GP)</th>
+									<th>Tier 3 ($500k-$1M GP)</th>
+									<th>Tier 4 ($1M-$5M GP)</th>
+									<th>Tier 5 ($5M-$10M GP)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Owner Share - Profit</strong></td>
+									<td>5%</td>
+									<td>10%</td>
+									<td>15%</td>
+									<td>10%</td>
+									<td>15%</td>
+								</tr>
+								<tr>
+									<td><strong>Owner Share - Owner Comp</strong></td>
+									<td>50%</td>
+									<td>35%</td>
+									<td>20%</td>
+									<td>10%</td>
+									<td>5%</td>
+								</tr>
+								<tr>
+									<td><strong>Owner Share - Tax</strong></td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+								</tr>
+								<tr class="highlight-row">
+									<td><strong>Total Owner Net Benefit</strong></td>
+									<td><strong>70%</strong></td>
+									<td><strong>60%</strong></td>
+									<td><strong>50%</strong></td>
+									<td><strong>35%</strong></td>
+									<td><strong>35%</strong></td>
+								</tr>
+								<tr>
+									<td><strong>CAC (Marketing/Sales)</strong></td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+								</tr>
+								<tr>
+									<td><strong>OpEx - Systems</strong></td>
+									<td>10%</td>
+									<td>10%</td>
+									<td>10%</td>
+									<td>10%</td>
+									<td>10%</td>
+								</tr>
+								<tr>
+									<td><strong>OpEx - People (Admin/Mgmt)</strong></td>
+									<td>5%</td>
+									<td>15%</td>
+									<td>25%</td>
+									<td>40%</td>
+									<td>40%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<h3>Category B: Traditional &amp; Human-Delivered Services</h3>
+					<p class="table-desc">As revenue scales, delivery labor scales inside Fulfillment. Administrative overhead (OpEx People) exhibits operating leverage and scales down to preserve owner returns.</p>
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Target Category</th>
+									<th>Tier 1 ($0-$250k GP)</th>
+									<th>Tier 2 ($250k-$500k GP)</th>
+									<th>Tier 3 ($500k-$1M GP)</th>
+									<th>Tier 4 ($1M+ GP)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>OpEx - People (Admin/Mgmt)</strong></td>
+									<td>&lt; 5%</td>
+									<td>15% - 20%</td>
+									<td>15% - 20%</td>
+									<td>10% - 15%</td>
+								</tr>
+								<tr class="highlight-row">
+									<td><strong>Total Owner Net Benefit</strong></td>
+									<td><strong>70%</strong></td>
+									<td><strong>50% - 55%</strong></td>
+									<td><strong>50% - 55%</strong></td>
+									<td><strong>55% - 60%</strong></td>
+								</tr>
+								<tr>
+									<td><strong>OpEx - Systems</strong></td>
+									<td>10%</td>
+									<td>10%</td>
+									<td>10%</td>
+									<td>10%</td>
+								</tr>
+								<tr>
+									<td><strong>CAC (Marketing/Sales)</strong></td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+									<td>15%</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<h3>Actual Cash Allocation Mechanics</h3>
+					<p>
+						Because actual spending on operations fluctuates, the cash available to distribute to the owner is calculated as a net remainder, preventing defunding errors and keeping sub-accounts self-balancing.
+					</p>
+
+					<div class="equation-box">
+						<span class="eq-label">STEP 1:</span>
+						<code>Actual Net Cash = Actual Gross Profit - Actual CAC - Actual OpEx People - Actual OpEx Systems</code>
+					</div>
+
+					<div class="equation-box">
+						<span class="eq-label">STEP 2:</span>
+						<code>Actual Profit Allocation = max(0, Actual Net Cash × (Target Profit % ÷ Target Owner Sum))</code>
+					</div>
+
+					<div class="equation-box">
+						<span class="eq-label">STEP 3:</span>
+						<code>Actual Comp Allocation = max(0, Actual Net Cash × (Target Owner Comp % ÷ Target Owner Sum))</code>
+					</div>
+
+					<div class="equation-box">
+						<span class="eq-label">STEP 4:</span>
+						<code>Actual Tax Allocation = max(0, Actual Net Cash × (Target Tax % ÷ Target Owner Sum))</code>
+					</div>
+				</section>
+
+				<!-- The 4 Reporting Frames -->
+				<section id="reporting-frames" class="content-section">
+					<h2>04. The Four Reporting Frames</h2>
+					<p>
+						To catch structural profit leaks without falling victim to explanation fatigue, the remapped functional metrics are analyzed across four distinct, standard timeframes:
+					</p>
+					
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">FRAME 01</div>
+							<h4>Standalone Month</h4>
+							<p>The raw performance of the closed monthly period.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">FRAME 02</div>
+							<h4>MoM / YoY Comparison</h4>
+							<p>Comparing performance to the prior month, or matching seasonal months (e.g. May 2026 vs May 2025) to strip out seasonal noise.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">FRAME 03</div>
+							<h4>Rolling QoQ</h4>
+							<p>Analyzing the current rolling 3-month block against the prior 3-month block to identify steady-state trends.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">FRAME 04</div>
+							<h4>Year-to-Date (YTD)</h4>
+							<p>Comparing current cumulative YTD performance against prior year's YTD to track macro growth.</p>
+						</div>
+					</div>
+
+					<blockquote class="accent-quote">
+						<strong>The Variance Filter (Focus Protection):</strong> Evaluating all 5 buckets + Owner Benefit across 4 frames yields 20 distinct data points. Written explanations are **only required** for trend data points where the monthly or quarterly variance deviates from the baseline by more than **10% AND $1,500**. Normal fluctuations below this threshold are noted but do not consume executive focus.
+					</blockquote>
+				</section>
+
+				<!-- Monthly Operating Rhythm -->
+				<section id="monthly-protocol" class="content-section">
+					<h2>05. Monthly Operating Rhythm</h2>
+					<p>
+						A monthly diagnostic checklist designed to shift the business owner from "Technician" to "Owner/Manager" through closed-loop feedback controls:
+					</p>
+
+					<ol class="step-list">
+						<li>
+							<strong>Closed-Loop Initialization:</strong> Before looking at new financial data, review the company's active **Operating Rules Registry**. Test all monthly proposals against these rules to prevent erratic, short-term overcorrections.
+						</li>
+						<li>
+							<strong>Trend &amp; Explanation Audit:</strong> Audit the 20 trend data points. Run them through the Variance Filter and write down the operational explanation for any deviations that exceed the threshold.
+						</li>
+						<li>
+							<strong>Prior Month Plan Audit:</strong> Review the upcoming targets set during the prior month's meeting. Measure the steady-state error between projections and actual cash outcomes.
+						</li>
+						<li>
+							<strong>Operating Rules Abstraction:</strong> If a specific operational issue or metric deviation (e.g., software sprawl exceeding the 10% systems cap) triggers a warning for **three consecutive months**, it represents systemic noise. Abstract this feedback into a permanent **Operating Rule** in the registry (e.g., "Implement a strict freeze on new software subscriptions unless an active subscription of equal cost is canceled").
+						</li>
+						<li>
+							<strong>Upcoming Month's Plan:</strong> Synthesize the trend data, explanations, and operating rules to draft concrete targets for the next 30 days.
+						</li>
+						<li>
+							<strong>CFO Prescription:</strong> Output a Red/Yellow/Green stoplight scorecard for Fulfillment, Systems, CAC, and People to highlight immediate operational focus areas.
+						</li>
+					</ol>
+				</section>
+
+				<!-- Thermodynamic Engine -->
+				<section id="thermodynamic-engine" class="content-section">
+					<h2>06. The Thermodynamic Engine Model</h2>
+					<p>
+						ClearPath models business dynamics through the lens of physical system dynamics, treating operations like a <strong>refrigeration/heat pump cycle</strong>:
+					</p>
+					
+					<ul>
+						<li><strong>Organizational Heat (Q):</strong> Represents market noise, client pain points, operational friction, or distracting opportunities.</li>
+						<li><strong>System Pressure (P):</strong> Represents internal focus, resource concentration, and organizational energy.</li>
+						<li><strong>Working Fluid (Refrigerant):</strong> The flow of insights, assets, capital, and value moving through the business.</li>
+					</ul>
+
+					<!-- Flowchart Diagram -->
+					<div class="flowchart">
+						<div class="flowchart-step">
+							<span class="step-number">PHASE 01</span>
+							<h4>Compression</h4>
+							<p>Consolidate raw, low-density data (invoices, client requests) under high pressure into actionable strategic insights.</p>
+						</div>
+						<div class="flowchart-connector">&rarr;</div>
+						<div class="flowchart-step">
+							<span class="step-number">PHASE 02</span>
+							<h4>Condensation</h4>
+							<p>Deliberately reject organizational heat (distractions, shiny ideas) to solidify strategy into execution-ready assets and SOPs.</p>
+						</div>
+						<div class="flowchart-connector">&rarr;</div>
+						<div class="flowchart-step">
+							<span class="step-number">PHASE 03</span>
+							<h4>Expansion</h4>
+							<p>Rapidly drop internal friction and entry barriers to allow fluid, low-pressure Go-To-Market deployment and adoption.</p>
+						</div>
+						<div class="flowchart-connector">&rarr;</div>
+						<div class="flowchart-step">
+							<span class="step-number">PHASE 04</span>
+							<h4>Evaporation</h4>
+							<p>Resolve customer pain points in the market ("absorb heat"). This transaction converts value back into raw data to restart the loop.</p>
+						</div>
+					</div>
+
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Phase</th>
+									<th>Mechanical Stage</th>
+									<th>State Transition</th>
+									<th>Business System</th>
+									<th>Core Objective</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Phase 1</strong></td>
+									<td>Compression</td>
+									<td>Low P Gas &rarr; High P Gas</td>
+									<td>Data Analytics &amp; Synthesis</td>
+									<td>Consolidate raw data into unified, actionable insights.</td>
+								</tr>
+								<tr>
+									<td><strong>Phase 2</strong></td>
+									<td>Condensation</td>
+									<td>High P Gas &rarr; High P Liquid</td>
+									<td>Resource Allocations &amp; SOPs</td>
+									<td>Solidify plans by shedding distractions ("heat").</td>
+								</tr>
+								<tr>
+									<td><strong>Phase 3</strong></td>
+									<td>Expansion</td>
+									<td>High P Liquid &rarr; Low P Liquid</td>
+									<td>GTM &amp; Sales Launch</td>
+									<td>Remove friction to allow fluid market adoption.</td>
+								</tr>
+								<tr>
+									<td><strong>Phase 4</strong></td>
+									<td>Evaporation</td>
+									<td>Low P Liquid &rarr; Low P Gas</td>
+									<td>Fulfillment &amp; Customer Success</td>
+									<td>Solve pain points ("absorb heat") and collect feedback.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
+				<!-- Red-Team Critique -->
+				<section id="red-team-critique" class="content-section">
+					<h2>07. Red-Team Critique &amp; Guardrails</h2>
+					<p>
+						While mathematically consistent, the framework requires specific operational guardrails to prevent real-world implementation failure:
+					</p>
+
+					<ul class="blueprint-list">
+						<li>
+							<strong>The Step-Function Hiring Trap (GP-per-Employee Friction):</strong> ClearPath models a baseline productivity of $250,000 GP per employee. However, hiring is a step-function. Adding an admin or technician instantly reduces GP-per-employee in the short term, triggering a Red Stoplight. 
+							<br />
+							<em>The Guardrail:</em> Frame new hires with a **90-180 day J-Curve Transition Window** where the cost is treated as capital investment rather than operational waste, checking if Gross Profit scales to absorb the hire over time.
+						</li>
+						<li>
+							<strong>Model Toggles in Tech-Enabled Models:</strong> A strict 10% cap on Systems software may penalize modern businesses that leverage AI/software to replace human headcount.
+							<br />
+							<em>The Guardrail:</em> Implement a **Systems-Leveraged Toggle** allowing the systems budget to expand (e.g. to 20%), provided there is a matching, documented reduction in the OpEx People budget.
+						</li>
+						<li>
+							<strong>A/R Latency Deficit:</strong> Allocating distributions on accrued revenue (P&amp;L paper revenue) before the cash clears creates working capital deficits.
+							<br />
+							<em>The Guardrail:</em> ClearPath allocations must operate **strictly on cash collected**. Receivables are ignored until they clear.
+						</li>
+						<li>
+							<strong>The Fragility of Tier 3 Cruising Altitude:</strong> Tier 3 ($500k-$1M GP) is lifestyle-optimized (50% owner benefit, low hours), but represents structural risk because it runs on 2-4 employees. If a key coordinator leaves, the owner is forced back into the technician role.
+							<br />
+							<em>The Guardrail:</em> The owner's primary task during Tier 3 must be systemizing and testing the transmissibility of their processes so that every team member is replaceable.
+						</li>
+					</ul>
+				</section>
+
+				<!-- Tax Sherpa Integration -->
+				<section id="tax-sherpa-integration" class="content-section">
+					<h2>08. Tax Sherpa Integration</h2>
+					<p>
+						The ClearPath framework is designed to integrate directly with **Tax Sherpa Summit Strategy Sessions** using the **Augusta Rule (IRC Section 280A(g))** framework:
+					</p>
+
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">01</div>
+							<h4>The Board Meeting</h4>
+							<p>The business owner conducts their monthly ClearPath management meeting at their primary residence.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">02</div>
+							<h4>Tax-Free Rental</h4>
+							<p>The operating business rents the home from the owner for the day of the meeting, claiming a **rental deduction** while the owner receives the income **100% tax-free** under Section 280A(g).</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">03</div>
+							<h4>Administrative Batching</h4>
+							<p>Other routine tasks (payroll execution, Accountable Plan reimbursements, signing board minutes) are batched and executed during the meeting to reduce cognitive context switching.</p>
+						</div>
+					</div>
+
+					<div class="cta-box">
+						<h3>Implement the ClearPath System</h3>
+						<p>Establish a financial sensor network for your multi-entity portfolio. Let Tax Sherpa implement the ClearPath framework and align your corporate compliance rhythms.</p>
+						<a href="https://taxsherpa.com" target="_blank" class="btn btn-primary-gold">Schedule ClearPath Onboarding &rarr;</a>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+
+		<!-- Sticky Sidebar Active Link Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const links = document.querySelectorAll('.sidebar-link');
+				const sections = document.querySelectorAll('.content-section');
+
+				function changeActiveLink() {
+					let index = sections.length;
+
+					while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+					
+					links.forEach((link) => link.classList.remove('active'));
+					links[index].classList.add('active');
+				}
+
+				changeActiveLink();
+				window.addEventListener('scroll', changeActiveLink);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.framework-layout {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: 3rem;
+		width: var(--max-width-site);
+		margin: 0 auto;
+		padding: 4rem 1rem;
+	}
+	
+	/* Sidebar styling */
+	.index-map-sidebar {
+		position: relative;
+	}
+	.sidebar-sticky {
+		position: sticky;
+		top: 6rem;
+	}
+	.sidebar-title {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	.index-map-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.sidebar-link {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: var(--transition-smooth);
+		padding: 0.25rem 0;
+		border-left: 2px solid transparent;
+		padding-left: 0.75rem;
+	}
+	.sidebar-link:hover {
+		color: var(--text-primary);
+		padding-left: 1rem;
+	}
+	.sidebar-link.active {
+		color: var(--accent-blue-hover);
+		border-left-color: var(--accent-blue);
+		font-weight: 600;
+	}
+
+	/* Content Styling */
+	.framework-content-body {
+		max-width: var(--max-width-content);
+	}
+	.framework-header {
+		margin-bottom: 3.5rem;
+	}
+	.category-tag {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 0.75rem;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		letter-spacing: -0.04em;
+	}
+	.subtitle-desc {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		line-height: 1.6;
+		margin: 0;
+	}
+	
+	.content-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 6rem;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	
+	/* BLUF styling */
+	.bluf-box {
+		padding: 1.5rem 1.75rem;
+		background: rgba(59, 130, 246, 0.04);
+		border: 1px solid var(--border-color);
+		border-left: 4px solid var(--accent-blue);
+		border-radius: 0 10px 10px 0;
+	}
+	.bluf-box p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-primary);
+	}
+
+	/* Equation Boxes */
+	.equation-box {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		padding: 1rem 1.5rem;
+		margin: 1.25rem 0;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	.eq-label {
+		font-family: monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--accent-blue);
+		letter-spacing: 0.1em;
+		flex-shrink: 0;
+	}
+	.equation-box code {
+		color: var(--text-primary);
+		font-size: 1rem;
+		border: none;
+		background: transparent;
+		padding: 0;
+	}
+
+	/* Tables */
+	.data-table-container {
+		margin: 2rem 0;
+		overflow-x: auto;
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		background-color: var(--bg-card);
+	}
+	.table-desc {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		margin-top: -0.75rem;
+		margin-bottom: 1.25rem;
+	}
+	table {
+		margin: 0;
+	}
+	th {
+		background-color: rgba(0, 0, 0, 0.2);
+		white-space: nowrap;
+	}
+	tr:last-child td {
+		border-bottom: none;
+	}
+	.highlight-row td {
+		background-color: rgba(59, 130, 246, 0.03);
+		color: var(--text-primary);
+	}
+
+	/* Grid cards */
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.grid-card {
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
+		transition: var(--transition-smooth);
+	}
+	.grid-card:hover {
+		border-color: var(--accent-blue);
+		box-shadow: var(--box-shadow-sm);
+	}
+	.card-num {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	.grid-card h4 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+	}
+	.grid-card p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+	}
+
+	.accent-quote {
+		border-left-color: var(--accent-gold);
+		font-size: 1.05rem;
+		line-height: 1.6;
+		padding: 1.25rem 1.75rem;
+		color: var(--text-primary);
+		background-color: var(--bg-card);
+	}
+
+	.step-list {
+		padding-left: 1.25rem;
+		margin: 1.5rem 0;
+	}
+	.step-list li {
+		margin-bottom: 1.25rem;
+		line-height: 1.7;
+	}
+	
+	.gold-link {
+		color: var(--accent-gold);
+		font-weight: 600;
+		border-bottom: 1px dashed var(--accent-gold);
+	}
+	.gold-link:hover {
+		color: var(--accent-gold-hover);
+		border-bottom-color: var(--accent-gold-hover);
+	}
+	
+	.blueprint-list {
+		padding-left: 1.25rem;
+		margin: 1.5rem 0;
+	}
+	.blueprint-list li {
+		margin-bottom: 1.25rem;
+		line-height: 1.7;
+	}
+	.blueprint-list li strong {
+		color: var(--text-primary);
+	}
+
+	/* CTA Box */
+	.cta-box {
+		margin-top: 3rem;
+		padding: 2.25rem;
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 60%), var(--bg-card);
+		border: 1px solid var(--border-gold);
+		border-radius: 12px;
+		box-shadow: var(--box-shadow-sm);
+	}
+	.cta-box h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		color: var(--accent-gold);
+		font-size: 1.4rem;
+	}
+	.cta-box p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+	}
+	.btn-primary-gold {
+		background-color: var(--accent-gold);
+		border-color: var(--accent-gold);
+		color: var(--bg-primary);
+		display: inline-block;
+	}
+	.btn-primary-gold:hover {
+		background-color: var(--accent-gold-hover);
+		border-color: var(--accent-gold-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+	}
+
+	@media (max-width: 900px) {
+		.framework-layout {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 2rem 1rem;
+		}
+		.index-map-sidebar {
+			display: none;
+		}
+	}
+</style>
