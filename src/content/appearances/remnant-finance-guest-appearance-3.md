@@ -8,8 +8,65 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-3.jpg"
+authorityH1: "Neal McSpadden on Kamala's Unrealized Capital Gains Proposal and Macro Inflation"
+provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Hans on Remnant Finance. Recorded in September 2024, the episode deconstructs the economic and constitutional arguments surrounding unrealized capital gains taxes and price controls. It expands upon the foundational dynamics of monetary inflation, government spending, and wealth compounding."
+sidebarFacts: 
+  - "Key Proposal: Unrealized Capital Gains Tax"
+  - "Proposed Tax Rate: 25%"
+  - "Constitutional Basis: 16th Amendment Income Definition"
+  - "Historical Context: Gold Window Closure (1971)"
+  - "Net Worth Threshold: $100 Million (Initial)"
+  - "Host: Hans"
+  - "Platform: YouTube"
+faqs: 
+  -
+    question: "What is an unrealized capital gain and is it taxable under the US Constitution?"
+    answer: "An unrealized capital gain is the paper increase in an asset's value before a sale; under the 16th Amendment, it is generally considered unconstitutional to tax it as income because no realization event has occurred."
+  -
+    question: "How do price controls affect market supply and product quality?"
+    answer: "Price controls prevent market clearing rates, historically resulting in supply shortages, black markets, and a reduction in product quality because sellers cannot cover their production costs."
+  -
+    question: "What was the buy, borrow, die tax strategy mentioned in the podcast?"
+    answer: "Buy, borrow, die is a financial planning model where investors acquire assets, borrow against their growing value to fund operations tax-free, and pass the assets to heirs who receive a stepped-up cost basis."
+mentions: 
+  -
+    name: "TaxSherpa"
+    url: "https://taxsherpa.com"
+  -
+    name: "16th Amendment"
+    url: "https://www.archives.gov/milestone-documents/16th-amendment"
+  -
+    name: "Buy Borrow Die Strategy"
+    url: "https://taxsherpa.com"
 ---
 
+## What is an unrealized capital gain and is it taxable under the US Constitution?
+
+An unrealized capital gain is an increase in the market value of an asset that has not yet been sold for cash or other property.
+
+During the appearance, Neal McSpadden explains that under current US law, capital gains must be 'realized' through a transaction to be taxed as income. The 16th Amendment permits Congress to tax 'incomes, from whatever source derived,' which legal scholars argue requires a realization event. Taxing paper gains on unsold assets is therefore widely considered unconstitutional and introduces massive compliance and valuation challenges for business owners.
+
+* **Constitutional Tax Planning:** [Asset Protection Services on TaxSherpa.com](https://taxsherpa.com)
+
+## How do price controls affect market supply and product quality?
+
+Price controls are government-mandated limits on the prices that can be charged for goods and services in a market.
+
+Neal McSpadden outlines the historical failure of price controls, such as gasoline price ceilings in the 1970s and municipal rent control. By preventing prices from adjusting to supply and demand, price controls remove the incentive for producers to supply goods, resulting in severe shortages and decreased investment in product quality. Instead of solving inflation, price controls mask the root cause, which is excessive government spending and currency expansion.
+
+* **Inflation Protection Tactics:** [Macro Tax Planning on TaxSherpa.com](https://taxsherpa.com)
+
+## What is the buy, borrow, die tax strategy mentioned in the podcast?
+
+Buy, borrow, die is an estate planning methodology where high-net-worth individuals purchase assets, borrow against their equity to access cash tax-free, and hold them until death to receive a stepped-up basis.
+
+In this segment, Neal McSpadden details the mechanics of the 'buy, borrow, die' strategy. Because loan proceeds are not considered taxable income under IRS rules, borrowing against appreciated assets (like stocks or real estate) provides liquidity without triggering capital gains taxes. Upon the owner's death, the assets pass to heirs with a stepped-up cost basis to current market value, effectively eliminating the capital gains tax liability on the lifetime appreciation.
+
+* **Advanced Estate Structuring:** [Estate Tax Advisory on TaxSherpa.com](https://taxsherpa.com)
+
+---
+
+<div id="raw-transcript">
 I went through a very old school kind of apprenticeship sort of process where over the last 15 years you know I was working 100 hours a week did over 50,000 tax returns and you know billions of dollars worth of client earnings and my tribe is the independent contractors the small business owners the solopreneurs because what happens in the tax world in the tax professional world is that there's kind of two different levels the planning is is absolutely critical and it's not just about the end result it's about going through the process of making sure everything's set up in the right way just no there's nothing more patriotic there's nothing more American to doing everything you possibly can to minimize your tax liability us at Remnant Finance we're we're big fans of investing in your own business and investing in yourself we think that it should be a massive portion of the money
 
 that comes in on the face of it unconstitutional they're already trying to get around that by talking about it as it's a prepayment so it's not actually a tax it's a prepayment on tax that you're eventually going to have when you do sell it's like a Scooby-Doo episode where there you know we' we've caught this grocery gouging and then they pull off the hood and it's Congress spending capital gains is the only place in the tax world where we pay Uh current dollars in tax on old money that is not inflation adjusted until there there is the political will to cut spending which is really really hard cuz now you're cutting off somebody's gravy train then you know we're just going to get deeper and deeper into an inflationary [Music] scenario hey welcome back for another episode of Remnant Finance we're excited we have a special guest today this is
@@ -199,3 +256,4 @@ they can get some understanding of how things like IBC impact you know your tax 
 so much you can do and it's worse the Investments you know for me I I paid I paid a high fee like for this tax planing relative to any other tax thing I've done or for most things I've done like for me it was a large number but it was returned six times in my tax savings which is really really cool because all of this stuff exists you just are you gonna go dig in the tax Coda I would highly recommend diving deeper into taxes with with tax Sherpa and finding out what what's already out there you just don't know about it yeah and the way I look at it I mean yes we do charge money but effectively it's more than free so because you're always gonna get more out than than you put in so it's you know agreed yep I had the same experience and man that was a good
 
 conversation had a lot of fun I learned quite a bit I appreciate the time yeah happy to be here and keep on doing again all right sounds like a plan see you guys all right bye take care n [Music]
+</div>

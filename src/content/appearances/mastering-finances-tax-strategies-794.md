@@ -8,8 +8,66 @@ host: "Christopher Loo (Mastering Your Finances)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/mastering-finances-tax-strategies-794.jpg"
+authorityH1: "Neal McSpadden on Solopreneur S-Corporation Break-Evens and IRS Audit Avoidance"
+provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Christopher Loo, MD, PhD, on the Mastering Your Finances podcast. Recorded in April 2024, the episode breaks down strategic tax planning for solopreneurs, highlighting S-Corporation elections, quarterly tax worksheets, and audit defense tactics. It expands upon the core principles of entity structuring and proactive cash value management."
+sidebarFacts: 
+  - "IRS Form: Form 2210 Underpayment"
+  - "Tax Strategy: S-Corp Conversion"
+  - "Break-Even Net: $30,000 - $40,000"
+  - "Audit Target: 1040 Schedule C"
+  - "IRS Deadline: April 15 (Filing only)"
+  - "Host: Christopher Loo"
+  - "Platform: YouTube"
+faqs: 
+  -
+    question: "What is the income threshold to transition a business to an S-Corporation?"
+    answer: "A business should transition to an S-Corporation when its net income exceeds $30,000 to $40,000, as the self-employment tax savings outpace the additional administrative and filing costs."
+  -
+    question: "Does filing a tax extension reduce the risk of an IRS audit?"
+    answer: "Filing a tax extension and submitting the return in October can reduce audit risk because the IRS's pet-topic audit quotas are often filled by early-season filers."
+  -
+    question: "How does a solopreneur avoid IRS underpayment penalties on uneven income?"
+    answer: "A solopreneur can use IRS Form 2210 to annualize income, showing that lower quarterly payments were matched to uneven cash flows, which legally waives the underpayment penalty."
+mentions: 
+  -
+    name: "TaxSherpa"
+    url: "https://taxsherpa.com"
+  -
+    name: "IRS Form 2210"
+    url: "https://www.irs.gov/forms-pubs/about-form-2210"
+  -
+    name: "S-Corporation definition"
+    url: "https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations"
 ---
 
+## What is the income threshold to transition a business to an S-Corporation?
+
+The break-even income threshold to transition a sole proprietorship to an S-Corporation is between $30,000 and $40,000 in net profit.
+
+In the interview, Neal McSpadden explains that while an S-Corporation increases filing complexity and administrative overhead, the self-employment tax savings become positive at a relatively low net profit. Furthermore, moving business operations off Schedule C and onto a corporate Form 1120-S decreases the probability of an IRS audit by approximately a factor of ten, because Schedule C is the single largest contributor to the IRS 'tax gap.'
+
+* **Entity Structuring Guide:** [S-Corp Setup on TaxSherpa.com](https://taxsherpa.com)
+
+## Does filing a tax extension reduce the risk of an IRS audit?
+
+Filing a tax extension is an administrative request that extends the time to submit tax forms until October 15, which can lower audit exposure by missing early-year selection quotas.
+
+Neal McSpadden reveals that the IRS selects specific 'pet topics' for examinations each year, setting fixed quotas for audits. Tax returns filed early in the season fill these quotas first. By filing an extension and submitting the paperwork in October, the likelihood of a random audit is reduced. McSpadden reminds taxpayers that an extension only defers the filing deadline, not the deadline to pay any owed tax by April 15.
+
+* **Audit Protection Services:** [Audit Defense on TaxSherpa.com](https://taxsherpa.com)
+* **IRS Extension Form:** [Form 4868 on IRS.gov](https://www.irs.gov)
+
+## How does a solopreneur avoid IRS underpayment penalties on uneven income?
+
+IRS Form 2210 is a tax sheet that calculates underpayment of estimated tax by individuals, estates, and trusts, offering an annualized income installment method for uneven cash flows.
+
+During the podcast, Neal McSpadden explains that solopreneurs with fluctuating income often struggle with the rigid quarterly payment dates (April, June, September, and January). If a business owner misses or underpays a quarter, they can leverage the Form 2210 worksheet to prove their income was earned unevenly. This method calculates penalties based on when the cash was actually received, minimizing or eliminating the underpayment fee.
+
+* **Cash Flow Management:** [Estimated Tax Planning on TaxSherpa.com](https://taxsherpa.com)
+
+---
+
+<div id="raw-transcript">
 hey guys welcome to this week's podcast episode and I've got a fantastic guest for you today Neil mcpadden and he's from the tax Sherpa you can see what all he does basically maximize savings uh save on your taxes uh you know we'll talk about utility of taxes um but uh taxes are your biggest expense but he saves solar preneurs and small business owners T of thousands of dollars on their taxes all without earning any more or spending any less so really interesting um and so I'm really happy to welcome Neil to the show very timely appearance yeah yeah good to be here uh we got a couple days before the big 415 but uh you know the the thing about the thing about the the 15th is that it's only a deadline if you owe money so uh if you are you know a W2 employee
 
 like you know a physician or an engineer or something of that sort most of the time you're probably going to get a refund unless you were doing something super aggressive which I'm not opposed to but yeah so it's it's only a deadline if you are if you are owing money then you got a final extension you got to put in a payment if you know if you have one otherwise they'll start charging interest but uh but everybody else everybody's getting a refund and everything they're you know the IRS if if they owe you money you will never hear from them but uh if you owe them money or they think you owe them money then you'll start to get letters and things like that yeah so uh definitely want to keep up to to up to date on that yeah yeah uh yeah that's uh yeah like I
@@ -73,3 +131,4 @@ never too early to get started on on setting up for for the following year all r
 what to uh what to do here I guess I click confirm yeah yeah confirm I think I followed you on all your stuff but let me just double check okay let see pod match it's gonna I just followed you on LinkedIn I'm GNA follow you on Instagram follow and then Facebook okay all right okay so I did my five stars there so should be yeah and uh I was uh I was actually on your YouTube channel earlier this morning oh okay excellent do all the follows and the thumbs ups and yeah all the things you got 1.19k Subs that's good it's uh yeah I've been on YouTube a long time so if you go back in the archives there's all kinds of random stuff but yeah but yeah it's it's half tax stuff now well excellent excellent all right well uh thanks so much and uh
 
 thanks for connecting yeah absolutely all right we'll see you on the streams see you all right have a good one
+</div>

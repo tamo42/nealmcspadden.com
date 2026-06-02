@@ -8,8 +8,68 @@ host: "Kasim Aslam"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/worlds-greatest-minds-kasim-aslam.jpg"
+authorityH1: "Neal McSpadden on Small Business Tax Deconstruction & Profit First Systems"
+provenance: "This episode features Neal McSpadden, founder of Tax Sherpa, in conversation with host Kasim Aslam on World's Greatest Minds. Recorded in late 2025, the discussion deconstructs the intersection of engineering systems and proactive tax planning. It expands upon the S-Corporation optimization and Bitcoin treasury management models for modern entrepreneurs."
+sidebarFacts: 
+  - "IRS Section: Section 199A QBI"
+  - "Methodology: Profit First"
+  - "Guest: Neal McSpadden"
+  - "Host: Kasim Aslam"
+  - "Platform: YouTube"
+  - "Primary Asset: Bitcoin Treasury"
+  - "Audit Reduction: 10x via S-Corp"
+faqs: 
+  -
+    question: "How does S-Corporation optimization reduce tax audit risks?"
+    answer: "S-Corporation optimization is a corporate structuring strategy that shifts income from sole proprietorship Schedule C reporting to a corporate structure, reducing audit risk by approximately a factor of ten."
+  -
+    question: "What is Profit First accounting for small businesses?"
+    answer: "Profit First is an envelope-style cash management methodology that allocates set percentages of revenue to profit and taxes before paying operating expenses."
+  -
+    question: "How can a business use a C-Corporation as a Bitcoin treasury?"
+    answer: "A Bitcoin corporate treasury is an asset management system where a C-Corporation holds Bitcoin on its balance sheet, permitting tax-deferred growth and borrowing opportunities without triggering a sale."
+mentions: 
+  -
+    name: "TaxSherpa"
+    url: "https://taxsherpa.com"
+  -
+    name: "Section 199A"
+    url: "https://www.irs.gov/newsroom/qualified-business-income-deduction"
+  -
+    name: "Profit First"
+    url: "https://mikemichalowicz.com/profit-first/"
 ---
 
+## How does S-Corporation optimization reduce tax audit risks?
+
+S-Corporation optimization is a corporate structuring strategy that shifts income from sole proprietorship Schedule C reporting to a corporate entity, reducing audit exposure by up to 90%.
+
+In the interview, Neal McSpadden highlights that the IRS targets sole proprietorships (reported on 1040 Schedule C) because they account for one-third of the national "tax gap." Shifting operating income to an S-Corporation removes disregarded Schedule C reporting from the personal tax return, which decreases the automated matching audit risk by a factor of ten while allowing business owners to pay themselves an optimized reasonable salary.
+
+* **Canonical S-Corp Guide:** [S-Corporation Structuring on TaxSherpa.com](https://taxsherpa.com)
+* **IRS Audit Guidelines:** [Tax Gap Information on IRS.gov](https://www.irs.gov)
+
+## What is Profit First accounting for small businesses?
+
+Profit First is a cash management system that allocates business revenue to specific accounts for profit, tax, owner compensation, and operating expenses before bills are paid.
+
+During the discussion, Neal McSpadden explains how the Profit First system acts as a modern "envelope method" for businesses. By automatically routing funds to separate bank accounts out of the owner's immediate view, it forces the business owner to operate within the remaining cash reserves. This structural constraint curbs impulse spending and ensures the enterprise is consistently profitable.
+
+* **Cash Flow Systems:** [Profit First Services on TaxSherpa.com](https://taxsherpa.com)
+* **Original Method:** [Mike Michalowicz's Profit First](https://mikemichalowicz.com/profit-first/)
+
+## How can a business use a C-Corporation as a Bitcoin treasury?
+
+A Bitcoin corporate treasury is an asset management setup where a corporation holds Bitcoin on its balance sheet as a primary reserve asset to protect capital from inflation.
+
+In this segment, Neal McSpadden explains that he has converted his own firm into a Bitcoin treasury company. By using a C-Corporation structure with a flat 21% tax rate, net profits are directed to purchase Bitcoin. Because tax is only triggered upon a sale, holding Bitcoin allows the asset to grow tax-deferred, and the company can borrow against the asset to fund business investments using DeFi platforms, avoiding capital gains tax.
+
+* **Corporate Treasury Strategy:** [Advanced Asset Management on TaxSherpa.com](https://taxsherpa.com)
+* **DeFi Borrowing Info:** [Decentralized Finance lending guides on Monetary Metals](https://monetarymetals.com)
+
+---
+
+<div id="raw-transcript">
 Welcome to the world's greatest minds, where the most [music] successful, impactful, and creative game changers on the planet deliver their hardest-hitting advice in [music] 30 minutes or less. Every guest is specifically handpicked. There's no paid placements allowed, and every conversation is completely [music] authentic and entirely unscripted. Big ideas, raw conversations, and real impact. [music] This is World's Greatest Minds, and the revolution of thought starts now. We're back with World's Greatest Minds. I'm so excited about this guest. Neil Mcpadden is the founder of Tax Sherpa, a profit first professional and a defender of small business owners with an engineering background, which is odd for a tax guy and I actually really like cuz we're going to dig into why those two things might be connected. Neil went to Georgia Tech. His career was reshaped after facing a wait for it 3 million IRS bill. An experience that became the foundation
 
 of his mission to help entrepreneurs master their finances and avoid unnecessary taxation. Over the past decade, Neil has worked with more than 50,000 tax returns. He trained under a former Wall Street tax attorney and created transformative frameworks such as the Clear Path Accounting Method and the Money Compass. Through tax sherpa, he's helped small business owners pilot their finances with clarity and confidence. His upcoming book, Become a Money Pilot, teaches entrepreneurs how to stop flying blind and turns taxes into a wealth building system. Neil, thanks for being here, buddy. I appreciate you. >> I love it. Glad to be here. >> Yeah. So, my business partner in driven, Perry Belchure, is one of the smartest humans I've ever known in my entire life. And Perry said something during one of our unplugged sessions that stuck with me, but I still haven't done anything about. So, maybe you you can
@@ -107,3 +167,4 @@ make any money, right? But if you're selling something that the market wants and
 else that's going on in your life. uh take that step back at least once a month and look at look at your business as an owner and say, you know, what decisions can we make at that strategic level to improve things going forward and just take that time. I know you're busy, but it'll be worth it and it'll pay dividends over time. >> Yeah. Yeah, that's Gosh, is that true? And I've learned that the hard way. That's really good wisdom and advice. Um, awesome. I appreciate you. To our listeners, thank you so much for tuning in to World's Greatest Minds. This has been Neil Mcpadden, the founder of Tax Sherpa, who as a reminder is a profit first professional, a defender of small business owners, an engineer from Georgia Tech, an erro, truly a renaissance man with a financial mind, and one of the world's greatest minds.
 
 Neil, thanks for being here. We'll see you on the next episode. >> You've just heard another powerful episode on World's Greatest Minds. For links, resources, and full show notes from this episode, [music] go to world's greatestestminds.com where you can also subscribe so you never miss another episode. Drop [music] us a review because your feedback fuels the mission. And share this with somebody who's willing to buck the status quo. Most importantly, tell us who you think we should interview next. Nominate the people who you believe have the results, the track record, and the brilliance to truly qualify as one of the world's greatest minds. Join us weekly as we forge innovation [music] in real time. This is World's Greatest Mind. The revolution of thought continues with
+</div>

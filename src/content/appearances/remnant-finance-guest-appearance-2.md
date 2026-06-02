@@ -8,8 +8,68 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-2.jpg"
+authorityH1: "Neal McSpadden on Low-Stress Options Trading Tax Strategy and Interest Tracing"
+provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Hans on Remnant Finance. Recorded in November 2025, the episode explores the tax implications of low-stress options trading and infinite banking policy loans. It provides foundational guidance on S-Corporation setups, interest tracing, and child investment accounts."
+sidebarFacts: 
+  - "Primary Asset: Options Contracts"
+  - "Tax Rate: Ordinary Income Rates"
+  - "Loss Carryover: $3,000 Net Limit"
+  - "Interest Deduction: Schedule A Investment Interest"
+  - "Child Tax Limit: Kiddie Tax thresholds"
+  - "Host: Hans"
+  - "Platform: YouTube"
+faqs: 
+  -
+    question: "How are options trading profits taxed under the IRS code?"
+    answer: "Options trading profits are classified as short-term capital gains and taxed at the taxpayer's ordinary income tax rates, unless they qualify for section 1256 index option treatment."
+  -
+    question: "What is the IRS rule for interest tracing on life insurance policy loans?"
+    answer: "Interest tracing is a tax rule that allows business owners to deduct the interest paid on life insurance policy loans if the borrowed funds are traceably deposited into a brokerage or business account for investment purposes."
+  -
+    question: "Why does a custodial account affect college financial aid eligibility?"
+    answer: "A custodial account is legally owned by the minor child, which is weighted more heavily as a student asset in federal financial aid calculations compared to parent-owned investment assets."
+mentions: 
+  -
+    name: "TaxSherpa"
+    url: "https://taxsherpa.com"
+  -
+    name: "IRS Schedule A"
+    url: "https://www.irs.gov/forms-pubs/about-schedule-a-form-1040"
+  -
+    name: "Kiddie Tax Rules"
+    url: "https://www.irs.gov/taxtopics/tc553"
 ---
 
+## How are options trading profits taxed under the IRS code?
+
+Options trading profits are short-term capital gains that the IRS taxes at ordinary income tax rates based on the individual's tax bracket.
+
+In the interview, Neal McSpadden clarifies that unless a trader is executing contracts on broad-based index options (which fall under the Section 1256 60/40 rule), every option trade that is closed or expires worthless triggers a short-term capital gain or loss. These transactions are aggregated at year-end on Form 1099, and the net profit is taxed as ordinary income rather than receiving preferential long-term capital gains rates.
+
+* **Options Tax Advisory:** [Options Tax Services on TaxSherpa.com](https://taxsherpa.com)
+* **IRS Capital Gains Rules:** [Topic No. 409 Capital Gains on IRS.gov](https://www.irs.gov)
+
+## What is the IRS rule for interest tracing on life insurance policy loans?
+
+Interest tracing is a tax regulation that allows an investor to deduct loan interest if the borrowed capital is directly channeled into income-producing investments.
+
+During the podcast, Neal McSpadden explains how policyholders using Infinite Banking Concepts (IBC) can deduct interest paid on policy loans. If a policyholder takes a loan and traceably deposits it into a brokerage account to trade options, that interest qualifies as investment interest. This interest is deductible on IRS Form 1040 Schedule A, provided the taxpayer maintains detailed records matching the loan disbursement to the investment deposit.
+
+* **IBC Tax Integration:** [Infinite Banking Services on TaxSherpa.com](https://taxsherpa.com)
+* **IRS Interest Guidance:** [Publication 550 Investment Interest on IRS.gov](https://www.irs.gov)
+
+## Why does a custodial account affect college financial aid eligibility?
+
+A custodial account is a legal financial vehicle that holds assets for a minor under the Uniform Transfers to Minors Act, which are assessed as student-owned assets on the FAFSA.
+
+Neal McSpadden points out that child-owned custodial accounts can severely diminish eligibility for college financial aid. FAFSA formulas expect students to contribute a higher percentage of their assets toward tuition than parents are expected to contribute. Consequently, keeping investment assets in the parent's name is often a more strategic choice, avoiding extra complexity and safeguarding financial aid eligibility.
+
+* **Family Wealth Structuring:** [Family Asset Planning on TaxSherpa.com](https://taxsherpa.com)
+* **Federal Aid Formulas:** [FAFSA Asset Assessment on StudentAid.gov](https://studentaid.gov)
+
+---
+
+<div id="raw-transcript">
 I was doing day trading back [music] in 2003 and I ended up losing about $100,000. And so when I finally got my tax situation straightened out, I had this giant capital loss on my tax returns and I wasn't doing any trading. So I just had minus 3,000 every year. >> It's that you can only write off three. Like you'll get taxed on an infinite amount of income and then you get this tiny little sliver where it's almost like they're just pissing on you. I think taking that $50,000, going to Vegas, putting it on black, and then losing the $50,000 is a better use of money than sending it to the government. >> Hey everybody, what's going on? Welcome back to Remnant Finance podcast. We've got something a little bit different here today. We're joined by the team tax sherpa. We've got Neil Mcpadden, Serena Cooper, and Fatma Manguin. Can I you say
 
 that correct? Did I say that correctly? >> Yes. All right, perfect. So, what we want to talk about is we're going to discuss the low stress options trading that we and a lot of our clients and also Neil himself are are new members of and and practicing now. And so over the course of the last few months, a lot of our clients, Remnant Finance clients that are doing, you know, infinite banking or however they've found their way to Neil and the team at Tax Sherpa, a lot of us have been adding this new element to our to our asset strategy. And so there's obviously a tax implication here. And so Neil reached out and wanted to set up a discussion so we can talk through what should we be thinking about. Now, everyone in our in our sphere that is doing the tax or sorry is doing the
@@ -171,3 +231,4 @@ where you can go back and kind of hear his background, how he got into this, and
 different strategies beyond just what you're going to find when you when you plug and play and put the numbers in yourself. For myself, you guys went back two years and looked at my previous returns and said, "Hey, not only did you jack this one up, dummy, but you also missed all these things last." Now, of course, >> the uh the Treasury took those returns from the IRS due to my my my debt from the mandate stuff. So, I never actually got those returns, but they were filed. And um so, yeah, don't think that you can't use solid tax strategist based on your situation. It is at a minimum worth your time to set up an exploration call and and and see how it might help you. So, >> absolutely. >> That's all I got. Anybody anything else, Brian? Neil? Nope. >> Serena Fatma. >> Nope. >> Not good.
 
 >> All right. Cool. Well, thanks for tuning in everybody and we'll catch you next week. Cheers. >> Have a good >> Have a good day. >> All right. See [music] you all. Thanks for listening to Remnant Finance. If you found any value at all in this episode, please subscribe, [music] leave a review, and share it with a friend. Remember, true financial freedom comes from taking control of your personal economy and breaking free from the status quo. So, stop being a passenger in [music] your family's financial future. boldly take back control of your wealth. Until next time, this is Brian and Hans signing off.
+</div>

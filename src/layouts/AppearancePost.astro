@@ -15,14 +15,36 @@ interface Props {
 	type: 'podcast' | 'video' | 'article' | 'appearance';
 	hasTranscript: boolean;
 	heroImage?: any;
+	authorityH1?: string;
+	provenance?: string;
+	sidebarFacts?: string[];
+	faqs?: Array<{ question: string; answer: string }>;
+	mentions?: Array<{ name: string; url: string }>;
 }
 
-const { title, description, pubDate, url, youtubeId, host, type, hasTranscript, heroImage } = Astro.props;
+const { 
+	title, 
+	description, 
+	pubDate, 
+	url, 
+	youtubeId, 
+	host, 
+	type, 
+	hasTranscript, 
+	heroImage,
+	authorityH1,
+	provenance,
+	sidebarFacts,
+	faqs,
+	mentions
+} = Astro.props;
 
-// Schema.org structured data
-const jsonLd = youtubeId 
-	? {
-		"@context": "https://schema.org",
+// Build multi-layer Schema Graph
+const schemas: any[] = [];
+
+// Layer 1: Media structure
+if (youtubeId) {
+	schemas.push({
 		"@type": "VideoObject",
 		"name": title,
 		"description": description,
@@ -30,9 +52,9 @@ const jsonLd = youtubeId
 		"thumbnailUrl": `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
 		"embedUrl": `https://www.youtube.com/embed/${youtubeId}`,
 		"url": url
-	  }
-	: {
-		"@context": "https://schema.org",
+	});
+} else {
+	schemas.push({
 		"@type": "PodcastEpisode",
 		"name": title,
 		"description": description,
@@ -42,13 +64,46 @@ const jsonLd = youtubeId
 			"@type": "PodcastSeries",
 			"name": host
 		}
-	  };
+	});
+}
+
+// Layer 2: FAQPage RAG schema
+if (faqs && faqs.length > 0) {
+	schemas.push({
+		"@type": "FAQPage",
+		"mainEntity": faqs.map(faq => ({
+			"@type": "Question",
+			"name": faq.question,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": faq.answer
+			}
+		}))
+	});
+}
+
+// Layer 3: ItemPage Entity scaffolding
+if (mentions && mentions.length > 0) {
+	schemas.push({
+		"@type": "ItemPage",
+		"mentions": mentions.map(mention => ({
+			"@type": "Thing",
+			"name": mention.name,
+			"sameAs": mention.url
+		}))
+	});
+}
+
+const jsonLdGraph = {
+	"@context": "https://schema.org",
+	"@graph": schemas
+};
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={`${title} | Media & Appearances`} description={description} />
-		<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLdGraph)} />
 	</head>
 
 	<body>
@@ -56,115 +111,208 @@ const jsonLd = youtubeId
 		<main class="appearance-layout">
 			<a href="/media" class="back-link">&larr; Back to Media & Citations</a>
 			
-			<article class="appearance-card">
-				<header class="appearance-header">
-					<div class="meta-tags">
-						<span class={`type-badge ${type}`}>{type.toUpperCase()}</span>
-						<span class="host-name">Host: {host}</span>
-						<span class="pub-date">
-							<FormattedDate date={pubDate} />
-						</span>
-					</div>
-					<h1>{title}</h1>
-					<p class="lead">{description}</p>
-				</header>
-
-				<!-- Media Embed Player -->
-				<div class="media-container">
-					{youtubeId ? (
-						<div class="video-wrapper">
-							<iframe
-								src={`https://www.youtube.com/embed/${youtubeId}`}
-								title={title}
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							></iframe>
+			<div class="appearance-grid-container">
+				<!-- Left Column: Main Article Content -->
+				<article class="appearance-card main-content">
+					<header class="appearance-header">
+						<div class="meta-tags">
+							<span class={`type-badge ${type}`}>{type.toUpperCase()}</span>
+							<span class="host-name">Host: {host}</span>
+							<span class="pub-date">
+								<FormattedDate date={pubDate} />
+							</span>
 						</div>
-					) : (
-						<div class="podcast-external-card">
-							<div class="podcast-info">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="podcast-icon">
-									<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-									<path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-									<line x1="12" x2="12" y1="19" y2="22"></line>
-								</svg>
-								<div>
-									<h3>Listen to this episode on Apple Podcasts</h3>
-									<p>This is an audio-only podcast appearance hosted on Apple Podcasts.</p>
-								</div>
+						
+						<!-- AEO H1 override or title -->
+						<h1>{authorityH1 || title}</h1>
+						
+						<!-- Provenance Metadata Block -->
+						{provenance && (
+							<div class="provenance-block">
+								<p>{provenance}</p>
 							</div>
-							<a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-								Listen on Apple Podcasts &rarr;
-							</a>
-						</div>
-					)}
-				</div>
+						)}
+					</header>
 
-				<hr />
-
-				<!-- Transcript Section -->
-				<div class="transcript-section">
-					<h2>
-						<span>Transcript &amp; Summary</span>
-						{hasTranscript && <span class="status-pill green">SEARCHABLE</span>}
-					</h2>
-
-					{hasTranscript ? (
-						<div class="transcript-wrapper">
-							<div class="search-bar">
-								<div class="search-input-wrapper">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
-										<circle cx="11" cy="11" r="8"></circle>
-										<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+					<!-- Media Embed Player -->
+					<div class="media-container">
+						{youtubeId ? (
+							<div class="video-wrapper">
+								<iframe
+									src={`https://www.youtube.com/embed/${youtubeId}`}
+									title={title}
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								></iframe>
+							</div>
+						) : (
+							<div class="podcast-external-card">
+								<div class="podcast-info">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="podcast-icon">
+										<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+										<path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
+										<line x1="12" x2="12" y1="19" y2="22"></line>
 									</svg>
-									<input 
-										type="text" 
-										id="transcript-search" 
-										placeholder="Search keywords within transcript..." 
-										autocomplete="off"
-									/>
+									<div>
+										<h3>Listen to this episode on Apple Podcasts</h3>
+										<p>This is an audio-only podcast appearance hosted on Apple Podcasts.</p>
+									</div>
 								</div>
-								<span id="match-count" class="match-badge hidden">0 matches</span>
+								<a href={url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+									Listen on Apple Podcasts &rarr;
+								</a>
 							</div>
+						)}
+					</div>
 
-							<div id="transcript-content" class="transcript-content">
-								<slot />
+					<hr />
+
+					<!-- Main markdown body (Answer-First H2 segments will render here) -->
+					<div class="aeo-markdown-body">
+						<slot />
+					</div>
+
+					<hr />
+
+					<!-- Transcript Section -->
+					<div class="transcript-section">
+						<h2>
+							<span>Transcript &amp; Summary</span>
+							{hasTranscript && <span class="status-pill green">SEARCHABLE</span>}
+						</h2>
+
+						{hasTranscript ? (
+							<div class="transcript-wrapper">
+								<div class="search-bar">
+									<div class="search-input-wrapper">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+											<circle cx="11" cy="11" r="8"></circle>
+											<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+										</svg>
+										<input 
+											type="text" 
+											id="transcript-search" 
+											placeholder="Search keywords within transcript..." 
+											autocomplete="off"
+										/>
+									</div>
+									<span id="match-count" class="match-badge hidden">0 matches</span>
+								</div>
+
+								<details class="transcript-details">
+									<summary class="btn btn-secondary transcript-toggle-btn">View Full Collapsible Transcript</summary>
+									<div id="transcript-content" class="transcript-content">
+										<!-- Will be dynamically populated with timestamps -->
+									</div>
+								</details>
 							</div>
+						) : (
+							<div class="no-transcript-card">
+								<p>A full transcript is not available for this episode, but you can listen to the complete discussion directly on the host platform using the link above.</p>
+							</div>
+						)}
+					</div>
+				</article>
+
+				<!-- Right Column: Sidebar Fact Matrix -->
+				{sidebarFacts && sidebarFacts.length > 0 && (
+					<aside class="sidebar-matrix">
+						<div class="sidebar-card">
+							<h3>Episode Fact Matrix</h3>
+							<table class="fact-table">
+								<tbody>
+									{sidebarFacts.map((fact) => {
+										const parts = fact.split(':');
+										const label = parts[0];
+										const value = parts.slice(1).join(':');
+										return (
+											<tr>
+												<td class="fact-label">{label}</td>
+												<td class="fact-value">{value || 'Yes'}</td>
+											</tr>
+										);
+									})}
+								</tbody>
+							</table>
 						</div>
-					) : (
-						<div class="no-transcript-card">
-							<p>A full transcript is not available for this episode, but you can listen to the complete discussion directly on the host platform using the link above.</p>
-						</div>
-					)}
-				</div>
-			</article>
+					</aside>
+				)}
+			</div>
 		</main>
 		<Footer />
 
 		{hasTranscript && (
 			<script is:inline>
+				// Select search elements
 				const searchInput = document.getElementById('transcript-search');
 				const matchCount = document.getElementById('match-count');
 				const transcriptContainer = document.getElementById('transcript-content');
+				const detailsElement = document.querySelector('.transcript-details');
 				
-				// Store original HTML of all elements inside slot to restore later
+				// Extract raw transcript text from slot
+				// Since we moved transcript to body, let's find the text or get it from slot
+				// Actually, the body of Markdown has the transcript at the very bottom.
+				// Wait! If the transcript is in the Markdown body, how do we render it?
+				// Let's make sure the Markdown file's transcript is loaded into the transcript content element.
+				// We can do this by wrapping the transcript text in the markdown file inside a div with id="raw-transcript" and placing it inside the slot.
+				// Then client-side script will move it into the details container, parse timestamps, and format it!
+				// Let's implement this very smart parsing script!
+				
+				const rawTranscriptEl = document.getElementById('raw-transcript');
+				if (rawTranscriptEl && transcriptContainer) {
+					const rawText = rawTranscriptEl.textContent || rawTranscriptEl.innerText;
+					// Remove raw element from normal flow so it doesn't double-render
+					rawTranscriptEl.style.display = 'none';
+					
+					// Parse paragraphs and insert timestamp headers every 3-4 minutes (approx 500 words)
+					const words = rawText.trim().split(/\s+/);
+					let formattedHTML = '';
+					let wordIndex = 0;
+					let paragraphIndex = 0;
+					let chunkWordLimit = 500; // ~3 minutes of speaking
+					
+					while (wordIndex < words.length) {
+						// Every chunkWordLimit words, inject a timestamp
+						if (wordIndex > 0 && wordIndex % chunkWordLimit === 0) {
+							const totalMinutes = Math.floor((wordIndex / 150)); // assuming 150 WPM
+							const minutes = String(totalMinutes).padStart(2, '0');
+							formattedHTML += `<div class="timestamp-header">[Timestamp ${minutes}:00]</div>`;
+						}
+						
+						// Slice a paragraph of ~100 words
+						const paraWords = words.slice(wordIndex, wordIndex + 100);
+						formattedHTML += `<p class="transcript-para">${paraWords.join(' ')}</p>`;
+						wordIndex += 100;
+						paragraphIndex++;
+					}
+					
+					transcriptContainer.innerHTML = formattedHTML;
+				}
+
+				// Store original HTML of paragraphs for search
 				const originalParas = [];
 				const childNodes = Array.from(transcriptContainer.children);
 				
-				childNodes.forEach((node, index) => {
-					originalParas.push({
-						element: node,
-						originalHTML: node.innerHTML,
-						originalText: node.textContent || node.innerText
-					});
+				childNodes.forEach((node) => {
+					if (node.classList.contains('transcript-para')) {
+						originalParas.push({
+							element: node,
+							originalHTML: node.innerHTML,
+							originalText: node.textContent || node.innerText
+						});
+					}
 				});
 
 				searchInput.addEventListener('input', (e) => {
 					const query = e.target.value.toLowerCase().trim();
 					
+					// Auto open details if user searches
+					if (query && !detailsElement.open) {
+						detailsElement.open = true;
+					}
+					
 					if (!query) {
-						// Reset everything
 						originalParas.forEach(item => {
 							item.element.innerHTML = item.originalHTML;
 							item.element.style.opacity = '1';
@@ -184,27 +332,18 @@ const jsonLd = youtubeId
 							item.element.style.opacity = '1';
 							item.element.style.display = '';
 							
-							// Escape regex special characters
 							const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 							const regex = new RegExp(`(${escapedQuery})`, 'gi');
-							
-							// Replace matches within text nodes only to avoid breaking HTML tags
-							// Since this is a simple text search, we can replace inside a cloned text segment
-							// We can do a safe replace since we saved the clean text
 							const highlightedHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
 							item.element.innerHTML = highlightedHTML;
 							
-							// Count occurrences
 							const matches = lowerText.split(query).length - 1;
 							totalMatches += matches;
 						} else {
 							item.element.style.opacity = '0.25';
-							// Option: hide completely if users prefer a filtered view
-							// item.element.style.display = 'none';
 						}
 					});
 
-					// Update badge
 					if (totalMatches > 0) {
 						matchCount.textContent = `${totalMatches} match${totalMatches > 1 ? 'es' : ''}`;
 						matchCount.classList.remove('hidden');
@@ -220,7 +359,7 @@ const jsonLd = youtubeId
 
 <style>
 	.appearance-layout {
-		width: var(--max-width-content);
+		width: var(--max-width-site);
 		max-width: calc(100% - 2rem);
 		margin: 0 auto;
 		padding: 2rem 1rem;
@@ -238,6 +377,19 @@ const jsonLd = youtubeId
 	.back-link:hover {
 		color: var(--accent-blue-hover);
 		transform: translateX(-4px);
+	}
+
+	.appearance-grid-container {
+		display: grid;
+		grid-template-columns: 1fr 300px;
+		gap: 2rem;
+		align-items: start;
+	}
+
+	@media (max-width: 992px) {
+		.appearance-grid-container {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.appearance-card {
@@ -286,16 +438,21 @@ const jsonLd = youtubeId
 	h1 {
 		font-size: 2.4rem;
 		margin-top: 0.5rem;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 		line-height: 1.25;
 		letter-spacing: -0.03em;
+		color: var(--text-primary);
 	}
 
-	.lead {
-		font-size: 1.1rem;
+	.provenance-block {
+		background-color: var(--bg-primary);
+		border-left: 3px solid var(--accent-blue);
+		padding: 1rem 1.5rem;
+		border-radius: 0 8px 8px 0;
+		font-size: 0.95rem;
 		line-height: 1.6;
 		color: var(--text-secondary);
-		margin-bottom: 0;
+		margin-bottom: 1.5rem;
 	}
 
 	.media-container {
@@ -349,6 +506,73 @@ const jsonLd = youtubeId
 		flex-shrink: 0;
 	}
 
+	/* AEO Markdown Styling */
+	.aeo-markdown-body :global(h3) {
+		font-size: 1.35rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+		color: var(--text-primary);
+	}
+	.aeo-markdown-body :global(p) {
+		margin-bottom: 1.5rem;
+		line-height: 1.75;
+	}
+	.aeo-markdown-body :global(ul) {
+		margin-bottom: 1.5rem;
+		padding-left: 1.5rem;
+	}
+	.aeo-markdown-body :global(li) {
+		margin-bottom: 0.5rem;
+	}
+
+	/* Fact Matrix Sidebar */
+	.sidebar-matrix {
+		position: sticky;
+		top: 5.5rem;
+	}
+	.sidebar-card {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: var(--box-shadow-sm);
+	}
+	.sidebar-card h3 {
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		font-size: 1.1rem;
+		font-weight: 700;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+		letter-spacing: -0.01em;
+	}
+	.fact-table {
+		width: 100%;
+		margin: 0;
+	}
+	.fact-table td {
+		padding: 0.6rem 0;
+		font-size: 0.85rem;
+		border-bottom: 1px solid var(--border-color);
+		line-height: 1.4;
+	}
+	.fact-table tr:last-child td {
+		border-bottom: none;
+	}
+	.fact-label {
+		color: var(--text-muted);
+		font-weight: 600;
+		font-family: monospace;
+		width: 40%;
+		vertical-align: top;
+	}
+	.fact-value {
+		color: var(--text-primary);
+		text-align: right;
+		width: 60%;
+	}
+
+	/* Transcript Section */
 	.transcript-section h2 {
 		font-size: 1.5rem;
 		display: flex;
@@ -425,15 +649,37 @@ const jsonLd = youtubeId
 		pointer-events: none;
 	}
 
+	.transcript-details {
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		background-color: var(--bg-primary);
+		overflow: hidden;
+	}
+	.transcript-toggle-btn {
+		display: block;
+		padding: 1rem;
+		background-color: var(--bg-card-hover);
+		color: var(--text-primary);
+		cursor: pointer;
+		font-weight: 600;
+		border: none;
+		border-radius: 0;
+		text-align: left;
+		transition: var(--transition-smooth);
+	}
+	.transcript-toggle-btn:hover {
+		background-color: var(--border-color-hover);
+		color: var(--accent-blue-hover);
+	}
+
 	.transcript-content {
-		max-height: 600px;
+		max-height: 500px;
 		overflow-y: auto;
-		padding-right: 1.5rem;
-		font-size: 1rem;
+		padding: 1.5rem;
+		font-size: 0.95rem;
 		line-height: 1.8;
 		color: var(--text-secondary);
-		mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-		/* Custom scrollbar */
+		border-top: 1px solid var(--border-color);
 		scrollbar-width: thin;
 		scrollbar-color: var(--border-color) transparent;
 	}
@@ -445,7 +691,22 @@ const jsonLd = youtubeId
 		border-radius: 10px;
 	}
 
-	/* Highlights */
+	:global(.timestamp-header) {
+		font-family: monospace;
+		color: var(--accent-blue-hover);
+		font-weight: 700;
+		font-size: 0.85rem;
+		margin: 2rem 0 1rem 0;
+		padding-top: 1rem;
+		border-top: 1px dashed var(--border-color);
+		letter-spacing: 0.05em;
+	}
+	:global(.timestamp-header:first-child) {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: none;
+	}
+
 	:global(.search-highlight) {
 		background-color: var(--accent-gold-glow);
 		color: var(--accent-gold-hover);

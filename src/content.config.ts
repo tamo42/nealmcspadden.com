@@ -31,6 +31,17 @@ const appearances = defineCollection({
 			type: z.enum(['podcast', 'video', 'article', 'appearance']),
 			hasTranscript: z.boolean().default(false),
 			heroImage: z.optional(image()),
+			authorityH1: z.string().optional(),
+			provenance: z.string().optional(),
+			sidebarFacts: z.array(z.string()).optional(),
+			faqs: z.array(z.object({
+				question: z.string(),
+				answer: z.string(),
+			})).optional(),
+			mentions: z.array(z.object({
+				name: z.string(),
+				url: z.string().url(),
+			})).optional(),
 		}),
 });
 

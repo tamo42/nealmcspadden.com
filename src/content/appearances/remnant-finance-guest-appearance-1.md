@@ -8,8 +8,62 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-1.jpg"
+authorityH1: "Neal McSpadden on Proactive S-Corporation Setup and Real Estate Depreciation"
+provenance: "This appearance features Neal McSpadden in conversation with host Hans on Remnant Finance. Recorded in June 2025, the episode breaks down the differences between S-Corporation and sole proprietorship models, along with audit defense strategies. It expands upon the foundational concept of tax avoidance vs tax evasion using the IRS tax code."
+sidebarFacts: 
+  - "IRS Section: Section 469 Passive Losses"
+  - "IRS Section: Section 162 Business Expenses"
+  - "Structure: S-Corporation"
+  - "Audit Rate: 0.5% average"
+  - "Host: Hans"
+  - "Platform: YouTube"
+faqs: 
+  -
+    question: "What is the difference between tax avoidance and tax evasion?"
+    answer: "Tax avoidance is the legal usage of the tax regime to minimize tax liability, whereas tax evasion is the illegal practice of not paying or underpaying taxes."
+  -
+    question: "How does the IRS calculate tax liability for unfiled tax returns?"
+    answer: "The IRS files a Substitute for Return (SFR) using third-party reports under the least favorable assumptions, which generally maximizes the tax liability and penalties for the taxpayer."
+  -
+    question: "How does S-Corporation payroll structure save on self-employment taxes?"
+    answer: "S-Corporation payroll structure separates business income into a reasonable salary subject to FICA taxes and shareholder distributions that are exempt from FICA taxes."
+mentions: 
+  -
+    name: "TaxSherpa"
+    url: "https://taxsherpa.com"
+  -
+    name: "IRS Substitute for Return"
+    url: "https://www.irs.gov/individuals/substitute-for-return-sfr-program"
 ---
 
+## What is the difference between tax avoidance and tax evasion?
+
+Tax avoidance is a legal tax reduction method that leverages specific code provisions to minimize the tax a business owes, while tax evasion is an illegal action to conceal income.
+
+During the interview, Neal McSpadden references the massive size of the internal revenue code, noting that while the definition of income is short, the rest of the book maps out legal ways to avoid paying it. Utilizing these carrots and sticks provided by Congress is the foundation of tax planning, distinguishing it from unlawful non-payment.
+
+* **Tax Planning Services:** [Tax Structuring on TaxSherpa.com](https://taxsherpa.com)
+
+## How does the IRS calculate tax liability for unfiled tax returns?
+
+A Substitute for Return (SFR) is a tax assessment compiled by the IRS using third-party information to estimate a non-filer's tax liability under the worst possible assumptions.
+
+Neal McSpadden shares his personal experience of facing a $1.3 million IRS bill, explaining that because he did not file his day-trading returns, the IRS calculated his taxes based on gross stock sales without deducting his cost basis. This highlights the critical importance of proactive filing to establish accurate numbers rather than letting the IRS generate an unfavorable estimate.
+
+* **Audit Defense Guide:** [Audit Services on TaxSherpa.com](https://taxsherpa.com)
+* **IRS Program Details:** [SFR Program on IRS.gov](https://www.irs.gov)
+
+## How does S-Corporation payroll structure save on self-employment taxes?
+
+S-Corporation payroll structure is a tax classification that allows business owners to divide company profits between W-2 wages and shareholder distributions, avoiding FICA taxes on the distributions.
+
+During the interview, Neal McSpadden details how sole proprietors pay FICA tax on all net profits. By transitioning to an S-Corporation, owners only pay FICA tax on a 'reasonable salary,' allowing the remainder of the business income to flow out as FICA-exempt distributions, legally saving thousands of dollars annually.
+
+* **Entity Setup:** [S-Corp Optimization on TaxSherpa.com](https://taxsherpa.com)
+
+---
+
+<div id="raw-transcript">
 If you take your money and take it to Vegas and put it on black and lose, that's still a better use in my opinion than handing it over to the government. That's the goal is to keep money in your pocket and not in the government. Taxes is something we all have to deal with. There's no getting around it. You cannot escape it unless you know exactly what to do. And if you're not aware of it, it's going to eat you alive. I've been a strict W2 earner and there's absolutely nothing you can do. You're going to be taxed at the highest rate possible as a W2 earner. I don't think a lot of people even think about what that means. If there's any principle at all in taxation, the guiding principle for business is that [Music] welcome everybody back to the best podcast on the net, Remnant Finance.
 
 We're once again welcoming for the second time our first repeat interview, I believe, our good friend Neil Mcpadden with Tact Sherpa. He's been representing us for a couple years. Neil has we talked about his background on the last one, but just quick a quick recap. He had a background where his his story I'll let you tell your story, Neil, of how you got started actually because you can do it just as better than I can even though I've heard it 10 times. Yeah. You know, it's it's a story that is not too uncommon for many entrepreneurial types where, you know, you go a few years and suddenly you start getting nasty letters from the IRS. So, my nasty letters said I owed them about a little over $1.3 million. And this was back in 2007 this started. And that was the beginning of my tax journey. So like most people, I
@@ -183,3 +237,4 @@ not thinking about this and you don't have a strategy at all and your only strat
 today, if if if there's a single piece that didn't make sense to you, it's worth exploring. You should pull every thread and make sure that you've got this thing buttoned up because they have a plan for you and it is suffocating. And that's all I got. Yeah. And I will say on my end of it, you know, the without even talking about what the fee is, but the fee was it's worth it. I mean, what what what you pay to get good tax advice and keep more money in your life is worth every penny. We always want our clients to be in a in a positive situation. So, whatever we cost, you know, we will save you, you know, multiples of that. Y can confirm. All right, Charlie, you got anything else? No, man. Just check out Neil at Tax Sherpa. Like said the uh we'll link
 
 to that in the show notes and please like, subscribe, share this, and give him a call. I I promise it'll be worth at least an exploratory discussion, especially if you're a business owner. All right, cheers, y'all. See you. [Music]
+</div>
