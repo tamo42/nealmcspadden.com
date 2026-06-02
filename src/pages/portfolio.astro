@@ -27,6 +27,24 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<p class="desc">Strategic tax planning and financial control for growth-stage businesses. Implementing proactive advisory workflows to insulate founders from compliance risk.</p>
 					<a href="https://taxsherpa.com" target="_blank" class="card-link">taxsherpa.com &rarr;</a>
 				</div>
+				<div class="portfolio-card active-product">
+					<div class="card-badge-blue">AI PRODUCT</div>
+					<h3>Bookkeeping Buddy</h3>
+					<p class="desc">AI-powered bookkeeping automation software for business owners. Drag and drop bank statements to instantly reconcile transactions, categorize ledger items, and generate real-time cash flow insights.</p>
+					<a href="https://usebookkeepingbuddy.com" target="_blank" class="card-link-blue">usebookkeepingbuddy.com &rarr;</a>
+				</div>
+				<div class="portfolio-card active-product">
+					<div class="card-badge-blue">AI PRODUCT</div>
+					<h3>Council of Ages</h3>
+					<p class="desc">AI-powered cognitive consensus platform. Consult a virtual advisory board composed of historical and contemporary thought leaders to get multi-perspective feedback and strategic dialectic reasoning on complex decisions.</p>
+					<a href="https://councilofages.com/" target="_blank" class="card-link-blue">councilofages.com &rarr;</a>
+				</div>
+				<div class="portfolio-card active-product">
+					<div class="card-badge-blue">AI PRODUCT</div>
+					<h3>Ad Creative Strategist</h3>
+					<p class="desc">Competitive intelligence and ad creative strategy engine. Leverage AI-driven competitor analysis to identify content gaps, brainstorm high-converting angles, and script hooks for performance marketing campaigns.</p>
+					<a href="https://adbrief.ai/" target="_blank" class="card-link-blue">adbrief.ai &rarr;</a>
+				</div>
 				<div class="portfolio-card">
 					<h3>Resilient Roots</h3>
 					<p class="desc">Agricultural strategy, rural land development, and ecological asset management focused on long-term sustainability and resource independence.</p>
@@ -138,6 +156,39 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		border-top: 1px solid var(--border-color);
 		padding-top: 0.75rem;
 		margin-top: auto;
+	}
+	
+	.portfolio-card.active-product:hover {
+		border-color: var(--accent-blue);
+		box-shadow: 0 8px 30px rgba(59, 130, 246, 0.12);
+		background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.02), transparent 60%), var(--bg-card);
+	}
+	.card-badge-blue {
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+		font-family: monospace;
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: var(--accent-blue);
+		background: rgba(59, 130, 246, 0.1);
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		border: 1px solid rgba(59, 130, 246, 0.2);
+	}
+	.card-link-blue {
+		color: var(--accent-blue);
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: var(--transition-smooth);
+		margin-top: auto;
+		display: inline-flex;
+		align-items: center;
+	}
+	.card-link-blue:hover {
+		color: var(--accent-blue-hover);
+		transform: translateX(4px);
 	}
 	
 	@media (max-width: 768px) {
