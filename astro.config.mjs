@@ -4,11 +4,46 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
+function remarkGithubAlerts() {
+	return (tree) => {
+		function walk(node) {
+			if (node.type === 'blockquote') {
+				const firstChild = node.children?.[0];
+				if (firstChild && firstChild.type === 'paragraph') {
+					const firstTextNode = firstChild.children?.[0];
+					if (firstTextNode && firstTextNode.type === 'text') {
+						const text = firstTextNode.value;
+						const match = text.match(/^\[!(NOTE|IMPORTANT|WARNING|TIP|CAUTION)\]\s*(?:\r?\n)?/i);
+						if (match) {
+							const type = match[1].toLowerCase();
+							firstTextNode.value = text.slice(match[0].length);
+							
+							node.data = node.data || {};
+							node.data.hProperties = node.data.hProperties || {};
+							node.data.hProperties.class = `alert-box alert-${type}`;
+							node.data.hProperties.className = ['alert-box', `alert-${type}`];
+						}
+					}
+				}
+			}
+			if (node.children) {
+				node.children.forEach(walk);
+			}
+		}
+		walk(tree);
+	};
+}
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://nealmcspadden.com',
+	markdown: {
+		remarkPlugins: [remarkGithubAlerts],
+	},
 	integrations: [
-		mdx(),
+		mdx({
+			remarkPlugins: [remarkGithubAlerts],
+		}),
 		sitemap({
 			filter: (page) => !page.includes('/secret-route') && !page.includes('/success'),
 			serialize: (item) => {

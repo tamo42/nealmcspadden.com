@@ -9,7 +9,7 @@ heroImage: '../../assets/nothing-for-nothing.png'
 
 > [!NOTE]
 > **BLUF (Bottom Line Up Front):**
-> For complex individuals and multi-entity operators, bad bookkeeping is not a mere administrative inconvenience—it is a critical system failure. Without granular, high-fidelity financial tracking, operators fall victim to the sunk-cost fallacy, allowing profitable units to silently cross-subsidize unproductive, non-core activities. This doesn't just bleed capital; it consumes the finite cognitive bandwidth (the $7 \pm 2$ limits of attention) required to manage the business. To protect both wealth and attention, operators must use precision bookkeeping as a sensor network to identify when to prune operations and outsource to external providers, balancing economic productivity against structural transaction risks.
+> For complex individuals and multi-entity operators, bad bookkeeping is not a mere administrative inconvenience—it is a critical system failure. Without granular, high-fidelity financial tracking, operators fall victim to the sunk-cost fallacy, allowing profitable units to silently cross-subsidize unproductive, non-core activities. This doesn't just bleed capital; it consumes the finite cognitive bandwidth (the 7 ± 2 limits of attention) required to manage the business. To protect both wealth and attention, operators must use precision bookkeeping as a sensor network to identify when to prune operations and outsource to external providers, balancing economic productivity against structural transaction risks.
 
 ---
 
@@ -18,7 +18,7 @@ heroImage: '../../assets/nothing-for-nothing.png'
 To construct a rational framework for resource deployment, we must establish three foundational axioms:
 
 *   **Axiom 1: The Salatin Principle of Economic Productivity:** Every discrete business unit, internal function, or role must be economically productive over the long term. This means its yield must exceed the cost of outsourcing it. Or, in the words of Joel Salatin's father: *"might as well do nothing for nothing."*
-*   **Axiom 2: Miller's Law of Organizational Attention (And the Overlap Corollary):** Human attention is a strictly finite resource capped at roughly $7 \pm 2$ items. Organizations inherit this bottleneck, but with a critical constraint: individual attention pools overlap only partially. As organizational size grows, the shared, aligned attention budget shrinks reductionistically. If this mutual focus overlap drops to zero, economic production grinds to a halt.
+*   **Axiom 2: Miller's Law of Organizational Attention (And the Overlap Corollary):** Human attention is a strictly finite resource capped at roughly 7 ± 2 items. Organizations inherit this bottleneck, but with a critical constraint: individual attention pools overlap only partially. As organizational size grows, the shared, aligned attention budget shrinks reductionistically. If this mutual focus overlap drops to zero, economic production grinds to a halt.
 *   **Axiom 3: Transaction Cost Economics and Structural Risk:** Outsourcing non-core competencies reduces cognitive drag but introduces structural transaction risks, including counterparty failure, pricing volatility, and quality control bottlenecks.
 
 ---
@@ -68,7 +68,7 @@ Why? Because of the limits of organizational attention.
 
 Psychologist George Miller’s famous research showed that the human mind can only hold about seven pieces of information in active memory at once. Organizations, as collections of humans, suffer from the same constraint. As you add business units, projects, and specialized internal functions, you add exponential relational links and cognitive drag. 
 
-Every non-core business unit you maintain internally—whether it is a custom software tool, an in-house bookkeeping team, or a delivery fleet—demands a slot in your organizational attention budget. When you exceed the $7 \pm 2$ limit, the operational synthesis of the firm degrades. The executive team becomes distracted, quality drops, and the core competencies that actually generate the firm’s premium margin are neglected. 
+Every non-core business unit you maintain internally—whether it is a custom software tool, an in-house bookkeeping team, or a delivery fleet—demands a slot in your organizational attention budget. When you exceed the 7 ± 2 limit, the operational synthesis of the firm degrades. The executive team becomes distracted, quality drops, and the core competencies that actually generate the firm’s premium margin are neglected. 
 
 ### The Overlap Corollary: Attention Alignment in Teams
 
@@ -99,13 +99,13 @@ This advantage is dictated by scale and economic necessity. A massive conglomera
 
 To achieve this efficiency, small business employees must be cross-domain specialists by necessity. Rather than building a rigid, siloed bureaucracy where separate individuals manage sales, fulfillment, and support, a small business can leverage a single agile employee to manage a portfolio spanning multiple domains (e.g., both sales and fulfillment). 
 
-However, a cross-domain specialist does not magically get more attention capacity; the biological limit of $7 \pm 2$ items is absolute. If you throw a generalist into multiple domains without structure, their attention pool thins out, their overlap with the team collapses, and operational errors spike. 
+However, a cross-domain specialist does not magically get more attention capacity; the biological limit of 7 ± 2 items is absolute. If you throw a generalist into multiple domains without structure, their attention pool thins out, their overlap with the team collapses, and operational errors spike. 
 
 Therefore, the system itself must be built to support cross-domain execution. The operational architecture—codified via clear operating frameworks, automated routing of routine tasks, and functional bookkeeping—must act as a **cognitive exoskeleton**. In a small team, this exoskeleton requires three operating rules:
 
 1.  **Temporal Domain Decoupling:** A generalist cannot focus on sales and fulfillment at the same time. Their schedule must be structured to block focus domains (e.g., Sales focus on Monday/Wednesday mornings, Fulfillment focus on Tuesday/Thursday).
 2.  **Frictionless Context Restores:** Because generalists switch contexts, they must have access to highly codified, step-by-step operating procedures (SOPs) that act as an external "RAM chip," allowing them to resume work without cognitive reboot lag.
-3.  **Programmatic Task Queuing:** Tasks must be automatically categorized and routed by the system (e.g., client requests go to a unified queue) so the employee does not spend their finite $7\pm 2$ attention slots deciding *what* to do next.
+3.  **Programmatic Task Queuing:** Tasks must be automatically categorized and routed by the system (e.g., client requests go to a unified queue) so the employee does not spend their finite 7 ± 2 attention slots deciding *what* to do next.
 
 By building this exoskeleton, the owner ensures that cross-domain specialists can coordinate effectively with the team and pivot between portfolios without triggering cognitive burnout. 
 
@@ -147,7 +147,7 @@ Poor bookkeeping hides the reality of cross-subsidization. When your financial r
 
 But the cost of keeping Unit Y alive is not just the cash it drains from Unit X. The far more damaging cost is **cognitive pollution**. You are forcing your executive team to waste valuable attention slots managing an unproductive, non-core unit. In trying to run an unprofitable internal unit, you are paying a high premium in management time, meeting hours, and operational stress—all for a function that could be handled by a third party. Bad bookkeeping doesn't just leak dollars; it actively starves your core competencies of the attention they need to survive.
 
-Consider again the client with three businesses who failed to book the intercompany employee lease. The true damage of this bookkeeping shortcut was not a tax filing discrepancy; it was cognitive pollution. Because the books commingled the employee’s costs, the owner had no objective way to measure the employee’s true cost-to-value ratio. She was forced to spend her own finite $7\pm 2$ attention slots managing a worker whose economic productivity was mathematically invisible to her. She was paying a high premium in management time and operational stress to run a system she could not audit.
+Consider again the client with three businesses who failed to book the intercompany employee lease. The true damage of this bookkeeping shortcut was not a tax filing discrepancy; it was cognitive pollution. Because the books commingled the employee’s costs, the owner had no objective way to measure the employee’s true cost-to-value ratio. She was forced to spend her own finite 7 ± 2 attention slots managing a worker whose economic productivity was mathematically invisible to her. She was paying a high premium in management time and operational stress to run a system she could not audit.
 
 ### Synthesis 2: Precision Outsourcing vs. Structural Risk
 

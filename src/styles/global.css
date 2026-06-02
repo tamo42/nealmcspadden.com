@@ -316,3 +316,71 @@ th {
 	}
 }
 
+/* Alert Boxes (Obsidian style) */
+blockquote.alert-box {
+	font-style: normal;
+	color: var(--text-secondary);
+	padding: 1.25rem 1.5rem;
+	margin: 2rem 0;
+	box-shadow: var(--box-shadow-sm);
+}
+
+blockquote.alert-box p:last-child {
+	margin-bottom: 0;
+}
+
+blockquote.alert-box::before {
+	font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+	font-weight: 700;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+blockquote.alert-note {
+	border-left-color: var(--accent-blue);
+}
+
+blockquote.alert-note::before {
+	content: "Note";
+	color: var(--accent-blue);
+}
+
+blockquote.alert-important {
+	border-left-color: var(--accent-gold);
+}
+
+blockquote.alert-important::before {
+	content: "Important";
+	color: var(--accent-gold);
+}
+
+blockquote.alert-warning {
+	border-left-color: hsl(28, 90%, 55%);
+}
+
+blockquote.alert-warning::before {
+	content: "Warning";
+	color: hsl(28, 90%, 55%);
+}
+
+blockquote.alert-tip {
+	border-left-color: hsl(142, 70%, 45%);
+}
+
+blockquote.alert-tip::before {
+	content: "Tip";
+	color: hsl(142, 70%, 45%);
+}
+
+blockquote.alert-caution {
+	border-left-color: hsl(0, 85%, 60%);
+}
+
+blockquote.alert-caution::before {
+	content: "Caution";
+	color: hsl(0, 85%, 60%);
+}
+
