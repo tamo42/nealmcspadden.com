@@ -39,6 +39,13 @@ mentions:
   -
     name: "S-Corporation tax information"
     url: "https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations"
+semanticConcepts:
+  - name: "Augusta Rule (280A)"
+    snippet: "Identifies the Augusta Rule (Section 280A) as a core strategy to rent personal properties back to corporations tax-free."
+  - name: "S-Corp Structure"
+    snippet: "Briefs the S-Corporation tax status as the main vehicle solopreneurs use to avoid self-employment taxes."
+  - name: "QBI Deduction"
+    snippet: "Outlines Section 199A Qualified Business Income deduction maximization strategies for small business owners."
 ---
 
 ## What are the five primary tax planning strategies for small business owners?

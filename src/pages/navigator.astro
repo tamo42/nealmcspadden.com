@@ -1,0 +1,1163 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+import { getOntology, generateOntologyJsonLd } from '../utils/ontology';
+
+const ontology = await getOntology();
+
+const pageTitle = `Semantic Concept Navigator | ${SITE_TITLE}`;
+const pageDescription = "Explore the semantic core of Neal McSpadden's frameworks, essays, and business operations, from advanced tax planning to systems design.";
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://nealmcspadden.com';
+const jsonLd = generateOntologyJsonLd(ontology.nodes, siteUrl);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={pageTitle} description={pageDescription} />
+		<script type="application/ld+json" set:html={jsonLd} />
+		<script src="https://cdn.jsdelivr.net/npm/d3@7" is:inline></script>
+	</head>
+	<body>
+		<Header />
+		<main class="navigator-main">
+			<section class="intro-section">
+				<div class="subtitle">KNOWLEDGE ARCHITECTURE // CONCEPT ONTOLOGY</div>
+				<h1 class="aeo-speakable-title">Semantic Web Navigator</h1>
+				<p class="bluf aeo-speakable-bluf">
+					An interactive ontology mapping the relationships between advanced tax optimization, systems control planes, organizational human dynamics, and macro resilience. Click any node to center the graph, pull connected concepts close, and reveal the corpus snippets and strategic conversion anchors.
+				</p>
+			</section>
+
+			<div class="navigator-container">
+				<!-- Search and Filter Controls -->
+				<div class="controls-overlay">
+					<div class="search-box">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="11" cy="11" r="8"></circle>
+							<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+						</svg>
+						<input type="text" id="node-search" placeholder="Search concepts (e.g. S-Corp, Ledger)..." autocomplete="off" />
+					</div>
+					<div class="legend">
+						<span class="legend-item"><span class="color-dot dot-tax"></span> Tax & Wealth</span>
+						<span class="legend-item"><span class="color-dot dot-systems"></span> Systems</span>
+						<span class="legend-item"><span class="color-dot dot-human"></span> Dynamics</span>
+						<span class="legend-item"><span class="color-dot dot-macro"></span> Resilience</span>
+					</div>
+				</div>
+
+				<!-- Left Side: Interactive SVG Graph Canvas -->
+				<div class="canvas-container" id="canvas-container">
+					<div class="mobile-sitemap-list" id="mobile-sitemap">
+						<h3>Semantic Concepts Index</h3>
+						<p class="mobile-instructions">Click a concept to read detailed descriptions and snippets.</p>
+						<div class="accordion-group">
+							{ontology.nodes.map(node => (
+								<details class="mobile-details" data-id={node.id}>
+									<summary class={`summary-badge badge-${node.category}`}>
+										<span class="summary-label">{node.label}</span>
+									</summary>
+									<div class="mobile-content">
+										<p class="node-desc">{node.description}</p>
+										<div class="sidebar-links-list">
+											{node.posts.map(post => (
+												<div class="post-snippet-item">
+													<a href={post.url} class="post-title-link">
+														{post.title} 
+														<span class={`type-indicator ind-${post.type}`}>{post.type}</span>
+													</a>
+													<blockquote class="post-snippet-quote">"{post.snippet}"</blockquote>
+												</div>
+											))}
+										</div>
+										<div class="cta-container-mobile">
+											{node.category === 'tax-wealth' && (
+												<a href="https://taxsherpa.com" target="_blank" class="btn btn-gold btn-sm">Optimize with Tax Sherpa &rarr;</a>
+											)}
+											{node.category === 'systems-control' && (
+												<a href="/frameworks/clearpath" class="btn btn-blue btn-sm">Review ClearPath Framework &rarr;</a>
+											)}
+											{node.category === 'human-dynamics' && (
+												<a href="/frameworks/partnership-blueprint" class="btn btn-emerald btn-sm">Audit Partnership Risks &rarr;</a>
+											)}
+											{node.category === 'macro-resilience' && (
+												<a href="https://taxsherpa.com" target="_blank" class="btn btn-purple btn-sm">Align Operations &rarr;</a>
+											)}
+										</div>
+									</div>
+								</details>
+							))}
+						</div>
+					</div>
+					<svg id="navigator-svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice"></svg>
+					<div class="zoom-controls">
+						<button id="zoom-in" title="Zoom In">+</button>
+						<button id="zoom-out" title="Zoom Out">−</button>
+						<button id="zoom-reset" title="Reset View">⟲</button>
+					</div>
+				</div>
+
+				<!-- Right Side: Glassmorphic Sidebar Drawer -->
+				<aside class="details-panel" id="details-panel">
+					<div id="default-sidebar-content" class="sidebar-default">
+						<div class="sidebar-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="12" cy="12" r="10"></circle>
+								<line x1="12" y1="16" x2="12" y2="12"></line>
+								<line x1="12" y1="8" x2="12.01" y2="8"></line>
+							</svg>
+						</div>
+						<h3>Concept Details</h3>
+						<p>Click on any floating concept bubble in the network to inspect its semantic definition, view snippets from related articles, and discover relevant control plane solutions.</p>
+					</div>
+
+					<div id="active-sidebar-content" class="sidebar-active hidden">
+						<div class="badge-row">
+							<span id="sidebar-badge" class="category-badge">TAX & WEALTH</span>
+						</div>
+						<h2 id="sidebar-title">Concept Label</h2>
+						<p id="sidebar-desc" class="concept-description">Concept global description goes here...</p>
+						
+						<hr />
+						
+						<div class="references-section">
+							<h4>Corpus References & Snippets</h4>
+							<div id="sidebar-posts-list" class="posts-list">
+								<!-- Dynamically populated -->
+							</div>
+						</div>
+
+						<div id="sidebar-cta-box" class="cta-box">
+							<!-- Dynamically populated CTA -->
+						</div>
+					</div>
+				</aside>
+			</div>
+
+			<!-- Visually Hidden Shadow Sitemap DOM for SEO/AEO Bot Crawlers -->
+			<div class="sr-only" aria-hidden="true">
+				<h2>Dynamic Semantic Site Map Index</h2>
+				<p>This section indexes the semantic concepts discussed across the website, forming an explicit entity map for AI Answer Engines and search spiders.</p>
+				{ontology.nodes.map(node => (
+					<section id={`aeo-${node.id}`} class="aeo-node-record">
+						<h3>{node.label}</h3>
+						<p>{node.description}</p>
+						<ul>
+							{node.posts.map(post => (
+								<li>
+									<a href={post.url}>{post.title}</a> (Type: {post.type})
+									<blockquote>"{post.snippet}"</blockquote>
+								</li>
+							))}
+						</ul>
+					</section>
+				))}
+			</div>
+
+			<!-- Serialize Compiled Data for D3 script -->
+			<div id="ontology-payload" data-payload={JSON.stringify(ontology)} class="sr-only"></div>
+		</main>
+		<Footer />
+
+		<!-- Client side D3 and UI controller script -->
+		<script is:inline>
+			function initOntology() {
+				const payloadEl = document.getElementById('ontology-payload');
+				if (!payloadEl) return;
+
+				const ontology = JSON.parse(payloadEl.dataset.payload);
+				const svgEl = document.getElementById('navigator-svg');
+				const containerEl = document.getElementById('canvas-container');
+				
+				// Elements for sidebar
+				const defaultSidebar = document.getElementById('default-sidebar-content');
+				const activeSidebar = document.getElementById('active-sidebar-content');
+				const sidebarBadge = document.getElementById('sidebar-badge');
+				const sidebarTitle = document.getElementById('sidebar-title');
+				const sidebarDesc = document.getElementById('sidebar-desc');
+				const sidebarPostsList = document.getElementById('sidebar-posts-list');
+				const sidebarCtaBox = document.getElementById('sidebar-cta-box');
+				
+				// Search input
+				const searchInput = document.getElementById('node-search');
+
+				// Setup dimensions based on bounding client rect
+				let width = containerEl.clientWidth || 800;
+				let height = 550;
+				
+				if (window.innerWidth < 768) {
+					// We are on mobile, D3 canvas is hidden in CSS, sitemap accordion list shown.
+					return;
+				}
+
+				const svg = d3.select('#navigator-svg')
+					.attr('width', '100%')
+					.attr('height', height);
+
+				// Create zoom behavior container
+				const zoomG = svg.append('g').attr('class', 'zoom-group');
+
+				// Subtle Grid Background pattern helper
+				const gridPattern = svg.append('defs')
+					.append('pattern')
+					.attr('id', 'dot-grid')
+					.attr('width', 24)
+					.attr('height', 24)
+					.attr('patternUnits', 'userSpaceOnUse');
+
+				gridPattern.append('circle')
+					.attr('cx', 1.5)
+					.attr('cy', 1.5)
+					.attr('r', 1)
+					.attr('fill', '#1e2538');
+
+				// Apply pattern background
+				svg.insert('rect', ':first-child')
+					.attr('width', '100%')
+					.attr('height', '100%')
+					.attr('fill', 'url(#dot-grid)');
+
+				// Zoom configuration
+				const zoom = d3.zoom()
+					.scaleExtent([0.4, 2.5])
+					.on('zoom', (event) => {
+						zoomG.attr('transform', event.transform);
+					});
+
+				svg.call(zoom);
+
+				// Handle Zoom Buttons
+				d3.select('#zoom-in').on('click', (event) => {
+					event.stopPropagation();
+					svg.transition().duration(300).call(zoom.scaleBy, 1.3);
+				});
+
+				d3.select('#zoom-out').on('click', (event) => {
+					event.stopPropagation();
+					svg.transition().duration(300).call(zoom.scaleBy, 0.7);
+				});
+
+				d3.select('#zoom-reset').on('click', (event) => {
+					event.stopPropagation();
+					resetFocus();
+				});
+
+				// Category coloring maps
+				const categoryColors = {
+					'tax-wealth': 'var(--accent-gold)',
+					'systems-control': 'var(--accent-blue)',
+					'human-dynamics': '#10b981', // emerald
+					'macro-resilience': '#a855f7', // purple
+					'uncategorized': '#94a3b8' // slate
+				};
+
+				const getRadius = (d) => {
+					return 18 + (d.weight * 5);
+				};
+
+				// Elastic physics force simulation
+				const simulation = d3.forceSimulation(ontology.nodes)
+					.force('link', d3.forceLink(ontology.links).id(d => d.id).distance(130).strength(0.3))
+					.force('charge', d3.forceManyBody().strength(-220))
+					.force('center', d3.forceCenter(width / 2, height / 2))
+					.force('x', d3.forceX(width / 2).strength(0.08))
+					.force('y', d3.forceY(height / 2).strength(0.08))
+					.force('collide', d3.forceCollide().radius(d => getRadius(d) + 12));
+
+				// Draw link lines
+				const link = zoomG.append('g')
+					.attr('class', 'links')
+					.selectAll('line')
+					.data(ontology.links)
+					.enter()
+					.append('line')
+					.attr('stroke', 'var(--border-color)')
+					.attr('stroke-width', 2.5)
+					.attr('stroke-opacity', 0.6)
+					.style('transition', 'stroke 0.25s ease, stroke-opacity 0.25s ease');
+
+				// Draw node group containers
+				const node = zoomG.append('g')
+					.attr('class', 'nodes')
+					.selectAll('g')
+					.data(ontology.nodes)
+					.enter()
+					.append('g')
+					.attr('class', 'node-group')
+					.call(d3.drag()
+						.on('start', dragstarted)
+						.on('drag', dragged)
+						.on('end', dragended));
+
+				// Node circles
+				node.append('circle')
+					.attr('class', 'node-circle')
+					.attr('r', d => getRadius(d))
+					.attr('fill', 'var(--bg-card)')
+					.attr('stroke', d => categoryColors[d.category] || categoryColors.uncategorized)
+					.attr('stroke-width', 2)
+					.style('cursor', 'pointer')
+					.style('transition', 'stroke-width 0.2s ease, filter 0.2s ease')
+					.on('mouseover', function(e, d) {
+						if (focusedNode === d) return;
+						d3.select(this)
+							.attr('stroke-width', 4)
+							.style('filter', `drop-shadow(0 0 10px ${categoryColors[d.category]})`);
+					})
+					.on('mouseout', function(e, d) {
+						if (focusedNode === d) return;
+						d3.select(this)
+							.attr('stroke-width', 2)
+							.style('filter', 'none');
+					});
+
+				// Node text labels
+				node.append('text')
+					.text(d => d.label)
+					.attr('text-anchor', 'middle')
+					.attr('dy', '.3em')
+					.attr('font-size', d => Math.max(10, 11 + d.weight * 0.5) + 'px')
+					.attr('font-weight', '700')
+					.attr('fill', 'var(--text-primary)')
+					.style('pointer-events', 'none')
+					.style('text-shadow', '0 2px 4px rgba(0,0,0,0.9)');
+
+				// Physics updates
+				simulation.on('tick', () => {
+					link
+						.attr('x1', d => d.source.x)
+						.attr('y1', d => d.source.y)
+						.attr('x2', d => d.target.x)
+						.attr('y2', d => d.target.y);
+
+					node
+						.attr('transform', d => `translate(${d.x},${d.y})`);
+				});
+
+				// Focus states tracking
+				let focusedNode = null;
+
+				// Clicking node moves focus
+				node.on('click', (event, d) => {
+					event.stopPropagation();
+					selectNode(d);
+				});
+
+				// Click on empty canvas resets focus
+				svg.on('click', () => {
+					resetFocus();
+				});
+
+				function selectNode(selectedNode) {
+					focusedNode = selectedNode;
+
+					// 1. Shift Viewport Zoom centering on node
+					const scale = 1.3;
+					svg.transition()
+						.duration(800)
+						.call(
+							zoom.transform,
+							d3.zoomIdentity
+								.translate(width / 2, height / 2)
+								.scale(scale)
+								.translate(-selectedNode.x, -selectedNode.y)
+						);
+
+					// 2. Adjust link strengths dynamically to attract neighbors and float others away
+					simulation.force('link').strength(l => {
+						const isConnected = l.source.id === selectedNode.id || l.target.id === selectedNode.id;
+						return isConnected ? 1.2 : 0.05;
+					});
+					simulation.alpha(0.4).restart();
+
+					// 3. Visual fade of non-connected elements
+					const neighborIds = new Set([selectedNode.id]);
+					ontology.links.forEach(l => {
+						if (l.source.id === selectedNode.id) neighborIds.add(l.target.id);
+						if (l.target.id === selectedNode.id) neighborIds.add(l.source.id);
+					});
+
+					node.selectAll('.node-circle')
+						.style('opacity', n => neighborIds.has(n.id) ? 1.0 : 0.2)
+						.attr('stroke-width', n => n.id === selectedNode.id ? 5 : 2)
+						.style('filter', n => n.id === selectedNode.id ? `drop-shadow(0 0 15px ${categoryColors[n.category]})` : 'none');
+
+					node.selectAll('text')
+						.style('opacity', n => neighborIds.has(n.id) ? 1.0 : 0.2);
+
+					link
+						.attr('stroke', l => {
+							const isConnected = l.source.id === selectedNode.id || l.target.id === selectedNode.id;
+							return isConnected ? categoryColors[selectedNode.category] : 'var(--border-color)';
+						})
+						.attr('stroke-opacity', l => {
+							const isConnected = l.source.id === selectedNode.id || l.target.id === selectedNode.id;
+							return isConnected ? 1.0 : 0.08;
+						});
+
+					// 4. Update glassmorphic sidebar content
+					updateSidebar(selectedNode);
+				}
+
+				function resetFocus() {
+					focusedNode = null;
+
+					// Reset link strengths
+					simulation.force('link').strength(0.3);
+					simulation.alpha(0.2).restart();
+
+					// Reset zoom view
+					svg.transition()
+						.duration(800)
+						.call(zoom.transform, d3.zoomIdentity);
+
+					// Reset opacities
+					node.selectAll('.node-circle')
+						.style('opacity', 1.0)
+						.attr('stroke-width', 2)
+						.style('filter', 'none');
+					
+					node.selectAll('text')
+						.style('opacity', 1.0);
+
+					link
+						.attr('stroke', 'var(--border-color)')
+						.attr('stroke-opacity', 0.6);
+
+					// Show default sidebar info
+					defaultSidebar.classList.remove('hidden');
+					activeSidebar.classList.add('hidden');
+				}
+
+				function updateSidebar(d) {
+					defaultSidebar.classList.add('hidden');
+					activeSidebar.classList.remove('hidden');
+
+					// Update badge & title
+					sidebarTitle.textContent = d.label;
+					sidebarDesc.textContent = d.description;
+
+					const categoryLabels = {
+						'tax-wealth': 'TAX & WEALTH',
+						'systems-control': 'SYSTEMS & CONTROL',
+						'human-dynamics': 'HUMAN DYNAMICS',
+						'macro-resilience': 'MACRO RESILIENCE',
+						'uncategorized': 'UNCATEGORIZED'
+					};
+
+					sidebarBadge.textContent = categoryLabels[d.category] || d.category.toUpperCase();
+					
+					// Clear old styles and apply category class for badge color
+					sidebarBadge.className = 'category-badge';
+					sidebarBadge.classList.add(`badge-${d.category}`);
+
+					// Populate referenced articles list
+					sidebarPostsList.innerHTML = '';
+					
+					if (d.posts && d.posts.length > 0) {
+						d.posts.forEach(post => {
+							const item = document.createElement('div');
+							item.className = 'post-ref-item';
+							
+							const typeLabel = post.type === 'blog' ? 'Essay' : 'Media';
+							
+							item.innerHTML = `
+								<div class="post-ref-header">
+									<a href="${post.url}" class="post-ref-title">${post.title}</a>
+									<span class="post-type-pill pill-${post.type}">${typeLabel}</span>
+								</div>
+								<blockquote class="post-ref-snippet">"${post.snippet}"</blockquote>
+							`;
+							sidebarPostsList.appendChild(item);
+						});
+					} else {
+						sidebarPostsList.innerHTML = `<p class="no-posts">No articles currently tagged with this concept.</p>`;
+					}
+
+					// Populate CTA Box
+					sidebarCtaBox.innerHTML = '';
+					let ctaHTML = '';
+					
+					if (d.category === 'tax-wealth') {
+						ctaHTML = `
+							<a href="https://taxsherpa.com" target="_blank" class="btn btn-gold btn-full">
+								Optimize This with Tax Sherpa
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+									<polyline points="12 5 19 12 12 19"></polyline>
+								</svg>
+							</a>
+						`;
+					} else if (d.category === 'systems-control') {
+						ctaHTML = `
+							<a href="/frameworks/clearpath" class="btn btn-blue btn-full">
+								Apply ClearPath Framework
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+									<polyline points="12 5 19 12 12 19"></polyline>
+								</svg>
+							</a>
+						`;
+					} else if (d.category === 'human-dynamics') {
+						ctaHTML = `
+							<a href="/frameworks/partnership-blueprint" class="btn btn-emerald btn-full">
+								Audit Partnership Risk
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+									<polyline points="12 5 19 12 12 19"></polyline>
+								</svg>
+							</a>
+						`;
+					} else {
+						ctaHTML = `
+							<a href="https://taxsherpa.com" target="_blank" class="btn btn-primary btn-full">
+								Schedule a Strategy Session
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+									<polyline points="12 5 19 12 12 19"></polyline>
+								</svg>
+							</a>
+						`;
+					}
+					
+					sidebarCtaBox.innerHTML = ctaHTML;
+				}
+
+				// Search filter implementation
+				searchInput.addEventListener('input', (e) => {
+					const term = e.target.value.toLowerCase().trim();
+					if (term === '') {
+						resetFocus();
+						return;
+					}
+
+					// Find matching node
+					const match = ontology.nodes.find(n => 
+						n.label.toLowerCase().includes(term) || 
+						n.description.toLowerCase().includes(term)
+					);
+
+					if (match) {
+						// Fade unrelated, keep match and neighbors highlighted
+						selectNode(match);
+					}
+				});
+
+				// Drag simulation helper functions
+				function dragstarted(event, d) {
+					if (!event.active) simulation.alphaTarget(0.3).restart();
+					d.fx = d.x;
+					d.fy = d.y;
+				}
+
+				function dragged(event, d) {
+					d.fx = event.x;
+					d.fy = event.y;
+				}
+
+				function dragended(event, d) {
+					if (!event.active) simulation.alphaTarget(0);
+					d.fx = null;
+					d.fy = null;
+				}
+
+				// Resize handler
+				window.addEventListener('resize', () => {
+					width = containerEl.clientWidth || 800;
+					simulation.force('center', d3.forceCenter(width / 2, height / 2));
+					simulation.force('x', d3.forceX(width / 2).strength(0.08));
+					simulation.force('y', d3.forceY(height / 2).strength(0.08));
+					simulation.alpha(0.1).restart();
+				});
+				
+				// Handle URL focal queries e.g. /navigator?focus=augusta-rule
+				const urlParams = new URLSearchParams(window.location.search);
+				const focusQuery = urlParams.get('focus');
+				if (focusQuery) {
+					const targetNode = ontology.nodes.find(n => n.id === focusQuery);
+					if (targetNode) {
+						// Delay slightly to let simulation settle
+						setTimeout(() => {
+							selectNode(targetNode);
+						}, 300);
+					}
+				}
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initOntology);
+			} else {
+				initOntology();
+			}
+		</script>
+	</body>
+</html>
+
+<style>
+	.navigator-main {
+		width: var(--max-width-site);
+		max-width: calc(100% - 2rem);
+		margin: 0 auto;
+		padding: 3rem 1rem;
+	}
+
+	.intro-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.subtitle {
+		font-family: monospace;
+		font-size: 0.85rem;
+		color: var(--accent-blue);
+		letter-spacing: 0.2em;
+		margin-bottom: 0.75rem;
+		font-weight: 600;
+	}
+
+	h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		letter-spacing: -0.04em;
+		background: linear-gradient(to right, var(--text-primary) 50%, var(--text-secondary));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.bluf {
+		font-size: 1.15rem;
+		color: var(--text-secondary);
+		line-height: 1.7;
+		max-width: 900px;
+	}
+
+	/* Main visualizer grid layout */
+	.navigator-container {
+		display: grid;
+		grid-template-columns: 1fr 360px;
+		gap: 2rem;
+		height: 600px;
+		position: relative;
+		margin-top: 2rem;
+	}
+
+	/* Controls HUD block overlay */
+	.controls-overlay {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		pointer-events: none;
+	}
+
+	.search-box, .legend {
+		background: rgba(16, 20, 30, 0.8);
+		backdrop-filter: blur(8px);
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		padding: 0.5rem 0.75rem;
+		pointer-events: auto;
+		display: flex;
+		align-items: center;
+		box-shadow: var(--box-shadow-sm);
+	}
+
+	.search-box {
+		width: 320px;
+		color: var(--text-muted);
+		gap: 0.5rem;
+	}
+
+	.search-box input {
+		background: transparent;
+		border: none;
+		outline: none;
+		color: var(--text-primary);
+		font-size: 0.85rem;
+		width: 100%;
+		font-family: inherit;
+	}
+
+	.search-box input::placeholder {
+		color: var(--text-muted);
+	}
+
+	.legend {
+		display: flex;
+		gap: 1rem;
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--text-muted);
+	}
+
+	.legend-item {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.color-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+
+	.dot-tax { background-color: var(--accent-gold); }
+	.dot-systems { background-color: var(--accent-blue); }
+	.dot-human { background-color: #10b981; }
+	.dot-macro { background-color: #a855f7; }
+
+	/* Left side canvas styles */
+	.canvas-container {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+	}
+
+	/* Zoom controls overlay styles */
+	.zoom-controls {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.zoom-controls button {
+		background: rgba(16, 20, 30, 0.8);
+		backdrop-filter: blur(8px);
+		border: 1px solid var(--border-color);
+		border-radius: 6px;
+		color: var(--text-primary);
+		font-weight: 700;
+		font-size: 1.1rem;
+		width: 36px;
+		height: 36px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: var(--transition-smooth);
+		box-shadow: var(--box-shadow-sm);
+	}
+
+	.zoom-controls button:hover {
+		background-color: var(--bg-card-hover);
+		border-color: var(--accent-blue);
+		color: var(--accent-blue-hover);
+		transform: translateY(-1px);
+	}
+
+	#navigator-svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Right side glassmorphic sidebar panel */
+	.details-panel {
+		background: rgba(16, 20, 30, 0.65);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid var(--border-color);
+		border-radius: 12px;
+		padding: 1.75rem;
+		overflow-y: auto;
+		height: 100%;
+		box-shadow: var(--box-shadow-md);
+		display: flex;
+		flex-direction: column;
+		transition: var(--transition-smooth);
+	}
+
+	/* Sidebar default state styling */
+	.sidebar-default {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		height: 100%;
+		color: var(--text-muted);
+		padding: 2rem 0;
+	}
+
+	.sidebar-icon {
+		margin-bottom: 1.25rem;
+		opacity: 0.6;
+	}
+
+	.sidebar-default h3 {
+		color: var(--text-primary);
+		font-size: 1.25rem;
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+	}
+
+	.sidebar-default p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* Sidebar active state styles */
+	.sidebar-active.hidden {
+		display: none;
+	}
+
+	.sidebar-active {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.badge-row {
+		margin-bottom: 0.75rem;
+	}
+
+	.category-badge {
+		font-family: monospace;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		border: 1px solid transparent;
+	}
+
+	.category-badge.badge-tax-wealth {
+		color: var(--accent-gold);
+		background: rgba(245, 158, 11, 0.1);
+		border-color: rgba(245, 158, 11, 0.2);
+	}
+
+	.category-badge.badge-systems-control {
+		color: var(--accent-blue);
+		background: rgba(59, 130, 246, 0.1);
+		border-color: rgba(59, 130, 246, 0.2);
+	}
+
+	.category-badge.badge-human-dynamics {
+		color: #10b981;
+		background: rgba(16, 185, 129, 0.1);
+		border-color: rgba(16, 185, 129, 0.2);
+	}
+
+	.category-badge.badge-macro-resilience {
+		color: #a855f7;
+		background: rgba(168, 85, 247, 0.1);
+		border-color: rgba(168, 85, 247, 0.2);
+	}
+
+	.sidebar-active h2 {
+		font-size: 1.6rem;
+		margin-top: 0;
+		margin-bottom: 1rem;
+		border-bottom: none;
+		padding-bottom: 0;
+		letter-spacing: -0.02em;
+		color: var(--text-primary);
+	}
+
+	.concept-description {
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+	}
+
+	.references-section h4 {
+		font-size: 0.85rem;
+		font-family: monospace;
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	.posts-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		margin-bottom: 1.5rem;
+	}
+
+	/* CSS styles injected on runtime inside sidebar list items */
+	:global(.post-ref-item) {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		padding: 1rem;
+		transition: var(--transition-smooth);
+	}
+
+	:global(.post-ref-item:hover) {
+		border-color: var(--border-color-hover);
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	:global(.post-ref-header) {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 0.75rem;
+		margin-bottom: 0.5rem;
+	}
+
+	:global(.post-ref-title) {
+		font-size: 0.9rem;
+		font-weight: 700;
+		line-height: 1.3;
+		color: var(--text-primary);
+	}
+
+	:global(.post-ref-title:hover) {
+		color: var(--accent-blue-hover);
+	}
+
+	:global(.post-type-pill) {
+		font-family: monospace;
+		font-size: 0.65rem;
+		font-weight: 600;
+		padding: 0.1rem 0.4rem;
+		border-radius: 4px;
+	}
+
+	:global(.pill-blog) {
+		color: var(--accent-blue);
+		background: rgba(59, 130, 246, 0.1);
+	}
+
+	:global(.pill-appearance) {
+		color: #a855f7;
+		background: rgba(168, 85, 247, 0.1);
+	}
+
+	:global(.post-ref-snippet) {
+		border-left: 2px solid var(--border-color);
+		padding-left: 0.75rem;
+		margin: 0;
+		font-style: italic;
+		font-size: 0.8rem;
+		line-height: 1.5;
+		color: var(--text-muted);
+	}
+
+	/* Action buttons in sidebar drawer */
+	.cta-box {
+		margin-top: auto;
+		padding-top: 1rem;
+	}
+
+	:global(.btn-full) {
+		width: 100%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.8rem 1.2rem;
+		font-size: 0.9rem !important;
+	}
+
+	:global(.btn-gold) {
+		background-color: var(--accent-gold);
+		border-color: var(--accent-gold);
+		color: var(--bg-primary);
+	}
+
+	:global(.btn-gold:hover) {
+		background-color: var(--accent-gold-hover);
+		border-color: var(--accent-gold-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px var(--accent-gold-glow);
+	}
+
+	:global(.btn-blue) {
+		background-color: var(--accent-blue);
+		border-color: var(--accent-blue);
+		color: var(--bg-primary);
+	}
+
+	:global(.btn-blue:hover) {
+		background-color: var(--accent-blue-hover);
+		border-color: var(--accent-blue-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px var(--accent-blue-glow);
+	}
+
+	:global(.btn-emerald) {
+		background-color: #10b981;
+		border-color: #10b981;
+		color: var(--bg-primary);
+	}
+
+	:global(.btn-emerald:hover) {
+		background-color: #34d399;
+		border-color: #34d399;
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+	}
+
+	/* Mobile interactive sitemap fallback styling */
+	.mobile-sitemap-list {
+		display: none;
+		padding: 1.5rem;
+		background: var(--bg-card);
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	/* Responsive media queries */
+	@media (max-width: 768px) {
+		.navigator-container {
+			grid-template-columns: 1fr;
+			height: auto;
+		}
+
+		.controls-overlay {
+			position: static;
+			width: 100%;
+			pointer-events: auto;
+			margin-bottom: 1.5rem;
+		}
+
+		.search-box {
+			width: 100%;
+		}
+
+		.canvas-container {
+			height: auto;
+			border: none;
+		}
+
+		#navigator-svg {
+			display: none;
+		}
+
+		.mobile-sitemap-list {
+			display: block;
+		}
+
+		.details-panel {
+			display: none;
+		}
+
+		.zoom-controls {
+			display: none;
+		}
+
+		/* Mobile Accordion items */
+		.mobile-details {
+			margin-bottom: 1rem;
+			border: 1px solid var(--border-color);
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.01);
+			overflow: hidden;
+			transition: var(--transition-smooth);
+		}
+
+		.mobile-details[open] {
+			background: rgba(255, 255, 255, 0.02);
+			border-color: var(--border-color-hover);
+		}
+
+		.summary-badge {
+			padding: 1rem;
+			cursor: pointer;
+			font-weight: 700;
+			display: flex;
+			align-items: center;
+			list-style: none;
+			outline: none;
+		}
+
+		.summary-badge::-webkit-details-marker {
+			display: none;
+		}
+
+		.summary-label {
+			font-size: 1.05rem;
+			color: var(--text-primary);
+		}
+
+		.summary-badge.badge-tax-wealth { border-left: 4px solid var(--accent-gold); }
+		.summary-badge.badge-systems-control { border-left: 4px solid var(--accent-blue); }
+		.summary-badge.badge-human-dynamics { border-left: 4px solid #10b981; }
+		.summary-badge.badge-macro-resilience { border-left: 4px solid #a855f7; }
+
+		.mobile-content {
+			padding: 1rem;
+			border-top: 1px solid var(--border-color);
+		}
+
+		.node-desc {
+			font-size: 0.9rem;
+			line-height: 1.6;
+			color: var(--text-secondary);
+			margin-bottom: 1.25rem;
+		}
+
+		.post-snippet-item {
+			background: rgba(255, 255, 255, 0.02);
+			border: 1px solid var(--border-color);
+			border-radius: 6px;
+			padding: 0.75rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.post-title-link {
+			font-size: 0.85rem;
+			font-weight: 700;
+			color: var(--text-primary);
+			display: block;
+			margin-bottom: 0.35rem;
+		}
+
+		.type-indicator {
+			font-family: monospace;
+			font-size: 0.6rem;
+			padding: 0.05rem 0.25rem;
+			border-radius: 3px;
+			margin-left: 0.5rem;
+			display: inline-block;
+		}
+
+		.ind-blog { color: var(--accent-blue); background: rgba(59, 130, 246, 0.1); }
+		.ind-appearance { color: #a855f7; background: rgba(168, 85, 247, 0.1); }
+
+		.post-snippet-quote {
+			margin: 0;
+			border-left: 2px solid var(--border-color);
+			padding-left: 0.5rem;
+			font-size: 0.75rem;
+			font-style: italic;
+			color: var(--text-muted);
+			line-height: 1.4;
+		}
+
+		.cta-container-mobile {
+			margin-top: 1.25rem;
+		}
+
+		:global(.btn-sm) {
+			width: 100%;
+			padding: 0.6rem 1rem;
+			font-size: 0.8rem !important;
+			justify-content: center;
+		}
+	}
+</style>

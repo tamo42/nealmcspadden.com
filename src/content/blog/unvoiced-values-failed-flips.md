@@ -3,6 +3,11 @@ title: 'Unvoiced Values: How a $5,000 Fee Destroyed a Real Estate Partnership'
 description: 'A case study on how tiny ethical compromises and silent disagreements compound into structural business failures.'
 pubDate: 'May 27 2026'
 heroImage: '../../assets/failed-flips.png'
+semanticConcepts:
+  - name: "Unvoiced Values"
+    snippet: "Illustrates the risk of unvoiced disagreements in core ethics (like bypassing a wholesaler), showing how values gaps compound into structural failure."
+  - name: "Partnership Risk"
+    snippet: "Case study on how values misalignment during early phases triggers future operational splits and emotional debt."
 ---
 
 # Unvoiced Values: How a $5,000 Fee Destroyed a Real Estate Partnership

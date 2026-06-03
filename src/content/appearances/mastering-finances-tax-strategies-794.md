@@ -38,6 +38,13 @@ mentions:
   -
     name: "S-Corporation definition"
     url: "https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations"
+semanticConcepts:
+  - name: "Augusta Rule (280A)"
+    snippet: "Briefs how corporate board meetings rented under 280A provide tax-free distributions to owner households."
+  - name: "S-Corp Structure"
+    snippet: "Break-down of sole proprietorship S-Corp conversion thresholds ($30k-$40k net) and tax savings calculations."
+  - name: "Clean Bookkeeping"
+    snippet: "Highlights how regular monthly ledger reviews buy back strategic cognitive focus for entrepreneurs."
 ---
 
 ## What is the income threshold to transition a business to an S-Corporation?

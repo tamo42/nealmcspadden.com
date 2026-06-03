@@ -3,6 +3,13 @@ title: 'The Metabolic Cost of the Horizon: Why I’m Building a Permaculture Far
 description: 'Exploring the decision to build a permaculture farm as a sovereign base of health and autonomy, measured against the legacy window of parenting.'
 pubDate: 'May 28 2026'
 heroImage: '../../assets/metabolic-horizon.png'
+semanticConcepts:
+  - name: "Metabolic Horizon"
+    snippet: "Formulates the need for a physical, sovereign agriculture farm to protect metabolic health and cognitive focus from digital burnouts."
+  - name: "Permaculture Farming"
+    snippet: "Outlines a capital-intensive rotational livestock model running on automated D2C marketing systems, built without owner labor."
+  - name: "Lifestyle Efficiency Rate"
+    snippet: "Defines the ultimate parenting metric (kids wanting to spend time in their twenties/thirties) as the core anchor of lifestyle optimization."
 ---
 
 # The Metabolic Cost of the Horizon: Why I’m Building a Permaculture Farm to Protect My Brain

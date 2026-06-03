@@ -14,6 +14,12 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			semanticConcepts: z.array(
+				z.object({
+					name: z.string(),
+					snippet: z.string(),
+				})
+			).optional(),
 		}),
 });
 
@@ -42,6 +48,12 @@ const appearances = defineCollection({
 				name: z.string(),
 				url: z.string().url(),
 			})).optional(),
+			semanticConcepts: z.array(
+				z.object({
+					name: z.string(),
+					snippet: z.string(),
+				})
+			).optional(),
 		}),
 });
 

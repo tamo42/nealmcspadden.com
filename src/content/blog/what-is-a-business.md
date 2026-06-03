@@ -3,6 +3,11 @@ title: 'What is a Business, Really? (And the Leverage of the Unique Worldview)'
 description: 'Exploring the true nature of a business as a unique worldview and operating architecture.'
 pubDate: 'May 30 2026'
 heroImage: '../../assets/what-is-business.png'
+semanticConcepts:
+  - name: "Unique Worldview"
+    snippet: "Formulates a business not as its physical assets, but as the proprietary worldview it uses to transform raw reality into subjective value."
+  - name: "Builders vs. Narrators"
+    snippet: "Contrasts consensus-driven optimization with the visionary rearrangement of reality by Builders who enforce their worldview on the market."
 ---
 
 # What is a Business, Really? (And the Leverage of the Unique Worldview)

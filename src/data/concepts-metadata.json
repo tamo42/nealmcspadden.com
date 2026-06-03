@@ -1,0 +1,98 @@
+{
+  "augusta-rule": {
+    "label": "Augusta Rule (280A)",
+    "category": "tax-wealth",
+    "description": "IRS Section 280A(g) allows business owners to rent their primary residence to their S-Corporation for up to 14 days per year tax-free for corporate meetings.",
+    "related": ["s-corp-structure", "ledger-of-truth"]
+  },
+  "s-corp-structure": {
+    "label": "S-Corp Structure",
+    "category": "tax-wealth",
+    "description": "A tax classification that passes corporate income, losses, deductions, and credits through to shareholders, optimizing self-employment taxes.",
+    "related": ["qbi-deduction", "ledger-of-truth", "private-equity"]
+  },
+  "qbi-deduction": {
+    "label": "QBI Deduction",
+    "category": "tax-wealth",
+    "description": "Qualified Business Income deduction allowing self-employed individuals and pass-through entities to deduct up to 20% of their business income.",
+    "related": ["s-corp-structure"]
+  },
+  "ledger-of-truth": {
+    "label": "Ledger of Truth",
+    "category": "systems-control",
+    "description": "The objective system of record where business numbers, contracts, and metrics perfectly align with physical and legal reality.",
+    "related": ["clean-bookkeeping", "context-layer", "partnership-risk", "unique-worldview"]
+  },
+  "clean-bookkeeping": {
+    "label": "Clean Bookkeeping",
+    "category": "systems-control",
+    "description": "Rigorous transactional bookkeeping that eliminates unit-economic distortions and protects cognitive bandwidth.",
+    "related": ["ledger-of-truth", "context-layer", "lifestyle-efficiency-rate"]
+  },
+  "context-layer": {
+    "label": "The Context Layer",
+    "category": "systems-control",
+    "description": "The explanatory layer overlaying raw data tables, translating numeric values into version-controlled, operational decisions.",
+    "related": ["ledger-of-truth", "clean-bookkeeping", "clearpath-framework"]
+  },
+  "clearpath-framework": {
+    "label": "ClearPath Framework",
+    "category": "systems-control",
+    "description": "A diagnostic roadmap designed to audit operational leakages and align bookkeeping data with strategic, tax-efficient board meetings.",
+    "related": ["context-layer", "ledger-of-truth"]
+  },
+  "lifestyle-efficiency-rate": {
+    "label": "Lifestyle Efficiency Rate (LER)",
+    "category": "systems-control",
+    "description": "A core operational metric measuring your net financial return relative to the personal time and cognitive energy expended.",
+    "related": ["clean-bookkeeping", "metabolic-horizon"]
+  },
+  "builders-narrators": {
+    "label": "Builders vs. Narrators",
+    "category": "human-dynamics",
+    "description": "The operational paradigm separating active producers of systemic value (Builders) from verbal rationalizers (Narrators).",
+    "related": ["partnership-risk", "unvoiced-values", "unique-worldview"]
+  },
+  "partnership-risk": {
+    "label": "Partnership Risk",
+    "category": "human-dynamics",
+    "description": "The systemic friction and risk associated with misaligned co-founders, mitigated through structured diagnostic checkups.",
+    "related": ["builders-narrators", "unvoiced-values", "ledger-of-truth", "shiny-object-syndrome"]
+  },
+  "unvoiced-values": {
+    "label": "Unvoiced Values",
+    "category": "human-dynamics",
+    "description": "Implicit cultural expectations and personal parameters that, when left unarticulated, lead to business and investment failures.",
+    "related": ["partnership-risk", "builders-narrators"]
+  },
+  "shiny-object-syndrome": {
+    "label": "Shiny Object Syndrome",
+    "category": "human-dynamics",
+    "description": "The strategic risk of deploying capital into opportunities without active operating control, diluting organizational focus.",
+    "related": ["partnership-risk", "ledger-of-truth"]
+  },
+  "unique-worldview": {
+    "label": "Unique Worldview",
+    "category": "human-dynamics",
+    "description": "An operator's proprietary insights and philosophical primitives that form the ultimate leverage for enterprise value.",
+    "related": ["ledger-of-truth", "builders-narrators"]
+  },
+  "metabolic-horizon": {
+    "label": "Metabolic Horizon",
+    "category": "macro-resilience",
+    "description": "The cognitive boundary where the systemic demands of scaling require establishing physical, grounded lifelines.",
+    "related": ["permaculture-farming", "lifestyle-efficiency-rate"]
+  },
+  "permaculture-farming": {
+    "label": "Permaculture Farming",
+    "category": "macro-resilience",
+    "description": "The physical implementation of sustainable agricultural systems, serving as an operational hedge against economic entropy.",
+    "related": ["metabolic-horizon"]
+  },
+  "private-equity": {
+    "label": "Private Equity Dynamics",
+    "category": "macro-resilience",
+    "description": "The structural models private equity firms use to acquire and leverage small businesses, highlighting the risks of owner decoupling.",
+    "related": ["s-corp-structure", "ledger-of-truth"]
+  }
+}

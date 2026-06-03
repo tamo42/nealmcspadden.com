@@ -3,6 +3,11 @@ title: 'The Death of the Spreadsheet and the Rise of the Context Layer'
 description: 'Why spreadsheets suffer from ontological debt and the rise of the Context Architect.'
 pubDate: 'May 29 2026'
 heroImage: '../../assets/death-spreadsheets.png'
+semanticConcepts:
+  - name: "The Context Layer"
+    snippet: "Details the structural transition from fragile, coordinate-locked spreadsheets to decoupled, version-controlled markdown context files."
+  - name: "Ledger of Truth"
+    snippet: "Explains how spreadsheet-centric systems accumulate 'ontological debt', driving down equity valuations compared to decoupled ledger systems."
 ---
 
 # The Death of the Spreadsheet and the Rise of the Context Layer

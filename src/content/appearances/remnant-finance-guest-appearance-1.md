@@ -34,6 +34,11 @@ mentions:
   -
     name: "IRS Substitute for Return"
     url: "https://www.irs.gov/individuals/substitute-for-return-sfr-program"
+semanticConcepts:
+  - name: "Augusta Rule (280A)"
+    snippet: "Briefs how renting primary residences to an S-Corporation for corporate meetings generates tax-free income."
+  - name: "S-Corp Structure"
+    snippet: "Breaks down transition thresholds and reasonable payroll allocations to save on self-employment taxes."
 ---
 
 ## What is the difference between tax avoidance and tax evasion?
