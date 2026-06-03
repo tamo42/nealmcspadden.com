@@ -26,12 +26,14 @@
 
     <STATE_02_REFINEMENT>
       <INSTRUCTIONS>
-        1. User performs a strict Human Polish in `neal-os/02-workbench/00-Personal/nhq-blog-drafting/` to ensure authenticity and "Flaws Forward" framing.
-        2. Antigravity transfers the finalized Markdown file to `nealmcspadden.com/src/content/blog/`.
-        3. Ensure frontmatter contains valid parameters (`title`, `description`, `pubDate`, `heroImage`).
-        4. Validate that facts are front-loaded and structured data (including speakable schema) is supported.
+        1. Perform Phase 1 of the [Pre-Publishing Content Alignment & Review Protocol](file:///c:/Users/tamo4/git/nealmcspadden.com/content_strategy.md#5-pre-publishing-content-alignment--review-protocol): Author provides extemporaneous feedback to AI to polish tone, structure, and "Flaws Forward" authenticity.
+        2. Perform Phase 2: Conduct an internal SWOT and structural coherence analysis directly within the piece to remove logical gaps and inject proper grounding details.
+        3. Perform Phase 3: Execute the global Ledger Coherence Protocol by checking existing blog posts to prevent unexplained framework contradictions, explicitly drafting nuance exceptions where needed.
+        4. Antigravity transfers the finalized Markdown file to `nealmcspadden.com/src/content/blog/`.
+        5. Ensure frontmatter contains valid parameters (`title`, `description`, `pubDate`, `heroImage`).
+        6. Validate that facts are front-loaded and structured data (including speakable schema) is supported.
       </INSTRUCTIONS>
-      <TRANSITION_CRITERIA>File is fully polished, present, and valid in the Astro content collection.</TRANSITION_CRITERIA>
+      <TRANSITION_CRITERIA>The three-phase review protocol is complete, and the file is present and valid in the Astro content collection.</TRANSITION_CRITERIA>
     </STATE_02_REFINEMENT>
 
     <STATE_03_DEPLOYMENT>

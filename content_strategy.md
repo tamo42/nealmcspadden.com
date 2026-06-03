@@ -110,3 +110,32 @@ Insert a JSON-LD structured script tag in the `<head>` of the page layout:
 </script>
 ```
 Ensure classes `.aeo-speakable-title` and `.aeo-speakable-bluf` are applied to the title heading and the BLUF text respectively.
+
+---
+
+## 5. Pre-Publishing Content Alignment & Review Protocol
+
+Before any piece of content transitions from drafting (`neal-os/02-workbench`) to live production (`nealmcspadden.com/src/content/blog/`), it must undergo a rigorous three-phase audit. This workflow ensures that each essay represents a polished, logically sound, and globally coherent addition to the overall personal brand and knowledge architecture.
+
+### Phase 1: Extemporaneous Feedback & Narrative Refinement
+* **Objective:** Polish the piece into its strongest narrative voice.
+* **Process:**
+  1. The author conducts a walkthrough of the initial AI-formatted draft, injecting extemporaneous thoughts, stylistic preferences, and specific positioning feedback (using the "Flaws Forward" paradigm).
+  2. The draft is revised to incorporate these authentic nuances, ensuring it retains the voice of a real-world operator rather than a generic or corporate voice.
+
+### Phase 2: Internal Logical Coherence & SWOT Analysis
+* **Objective:** Ensure the piece is structurally airtight and free of logical flaws.
+* **Process:**
+  1. Run a SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis *on the core assertions and logic within the piece itself*.
+  2. **Strengths:** Identify the core thesis. Is the diagnostic engine or operational insight clearly defined?
+  3. **Weaknesses:** Uncover logical leaps, oversimplifications, or unbacked claims.
+  4. **Opportunities:** Determine where to inject stronger grounding elements (e.g., Quantum Field Theory, standard economic definitions, physical law metaphors).
+  5. **Threats:** Anticipate misinterpretations or common counterarguments, and refine the text to explicitly address or defuse them.
+
+### Phase 3: Global Systemic Coherence Check (The Ledger Coherence Protocol)
+* **Objective:** Ensure the piece fits harmoniously with the existing corpus.
+* **Process:**
+  1. Cross-reference the draft's core principles against already-published essays (e.g., *Metabolic Horizon*, *Builders & Narrators*, *Lifestyle Efficiency Rate*, *Nothing for Nothing*, and the *ClearPath* framework).
+  2. Scan for direct or indirect contradictions (e.g., recommending a practice in this post that contradicts a rule laid out in another post).
+  3. **The Nuance Resolution:** If a principle is context-dependent, resolve the apparent contradiction by adding explicit context. For example, clarify: *"Principle A applies in Situation X due to scale dynamics, but does not apply in Situation Y where transaction cost risks dominate."* There may be nuance, but there must be zero unexplained contradictions.
+
