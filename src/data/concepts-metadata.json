@@ -94,5 +94,23 @@
     "category": "macro-resilience",
     "description": "The structural models private equity firms use to acquire and leverage small businesses, highlighting the risks of owner decoupling.",
     "related": ["s-corp-structure", "ledger-of-truth"]
+  },
+  "axioms-of-perception": {
+    "label": "Axioms of Perception",
+    "category": "human-dynamics",
+    "description": "The unconscious, pre-linguistic assumptions and cognitive structures that filter sensory input and determine what an individual can perceive.",
+    "related": ["unique-worldview", "ledger-of-truth"]
+  },
+  "cognitive-mindbugs": {
+    "label": "Cognitive Mindbugs",
+    "category": "human-dynamics",
+    "description": "Root assumptions that act as corrupt database validation rules, rejecting reality-conforming data before it can be processed.",
+    "related": ["axioms-of-perception", "builders-narrators"]
+  },
+  "trauma-as-schema-corruption": {
+    "label": "Trauma as Schema Corruption",
+    "category": "human-dynamics",
+    "description": "The breaking of core mental axioms due to severe constraint violations, resulting in system crashes and requiring a schema migration.",
+    "related": ["axioms-of-perception", "metabolic-horizon"]
   }
 }
