@@ -94,6 +94,7 @@ We will bypass Google Tag Manager entirely and inject the Umami tracker directly
 ## 4. Setup & Credentials Notes
 
 *   **Google Search Console**: The profile for `nealmcspadden.com` is verified and tied to the personal Gmail account: `tamo42@gmail.com`.
+*   **Domain Registration**: Registered at **Namecheap** under the `colodne` account.
 *   **Umami Analytics**:
     *   **Deployment URL**: `https://umami-production-26bd.up.railway.app`
     *   **Credentials**: The updated admin password is saved in **LastPass** under the Railway URL entry.
