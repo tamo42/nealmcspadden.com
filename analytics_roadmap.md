@@ -88,3 +88,13 @@ We will bypass Google Tag Manager entirely and inject the Umami tracker directly
 *   [x] **Push and Deploy**: Commit the code changes and push to git (`git push`). Railway will automatically build and deploy.
 *   [x] **Verify Live Script**: Open the live site in your browser and inspect the source code to verify the Umami script is loaded.
 *   [x] **Verify GSC Verification**: Add the domain in Google Search Console using the TXT DNS record method to verify ownership without injecting heavy Google script tags.
+
+---
+
+## 4. Setup & Credentials Notes
+
+*   **Google Search Console**: The profile for `nealmcspadden.com` is verified and tied to the personal Gmail account: `tamo42@gmail.com`.
+*   **Umami Analytics**:
+    *   **Deployment URL**: `https://umami-production-26bd.up.railway.app`
+    *   **Credentials**: The updated admin password is saved in **LastPass** under the Railway URL entry.
+
