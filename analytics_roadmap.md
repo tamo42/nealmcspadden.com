@@ -44,7 +44,7 @@ We recommend a self-hosted analytics stack optimized for absolute zero client-si
 ### Phase 1: Deploy Umami on Railway
 1.  Log in to your **Railway** dashboard.
 2.  Click **New Project** &rarr; **Deploy from Template**.
-3.  Search for **Umami** and select the template (this configures the Umami Node.js service and a PostgreSQL database).
+3.  Search for **Umami** and select the template by **Brody's Projects** (this is the most popular/well-maintained template with 1,500+ deploys and a 100% success rate, which automatically provisions both the Umami Node.js container and a PostgreSQL database).
 4.  Click **Deploy**. Railway will build the containers and assign a public URL (e.g., `https://umami-production-xxx.up.railway.app`).
 
 ### Phase 2: Setup the Website in Umami
@@ -74,8 +74,8 @@ We will bypass Google Tag Manager entirely and inject the Umami tracker directly
   <script 
     async 
     defer 
-    src="https://umami-production-xxx.up.railway.app/script.js" 
-    data-website-id="YOUR-UNIQUE-WEBSITE-ID"
+    src="https://umami-production-26bd.up.railway.app/script.js" 
+    data-website-id="5f6d65ed-aec6-4195-8133-04e853a0add3"
   ></script>
 )}
 ```
@@ -84,7 +84,7 @@ We will bypass Google Tag Manager entirely and inject the Umami tracker directly
 
 ## 3. Verification & SEO Setup
 
-*   [ ] **Test Locally**: Run `npm run build` to verify there are no compilation issues.
+*   [x] **Test Locally**: Run `npm run build` to verify there are no compilation issues.
 *   [ ] **Push and Deploy**: Commit the code changes and push to git (`git push`). Railway will automatically build and deploy.
 *   [ ] **Verify Live Script**: Open the live site in your browser and inspect the source code to verify the Umami script is loaded.
 *   [ ] **Verify GSC Verification**: Add the domain in Google Search Console using the TXT DNS record method to verify ownership without injecting heavy Google script tags.
