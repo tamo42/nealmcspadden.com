@@ -61,6 +61,9 @@ export function toSlug(name: string): string {
 	if (slug === 'metabolic-horizon') return 'metabolic-horizon';
 	if (slug === 'permaculture' || slug === 'permaculture-farming') return 'permaculture-farming';
 	if (slug === 'private-equity' || slug === 'private-equity-dynamics') return 'private-equity';
+	if (slug === 'axioms' || slug === 'perception-axioms' || slug === 'axioms-of-perception') return 'axioms-of-perception';
+	if (slug === 'mindbugs' || slug === 'cognitive-mindbug' || slug === 'cognitive-mindbugs') return 'cognitive-mindbugs';
+	if (slug === 'trauma' || slug === 'schema-corruption' || slug === 'trauma-as-schema-corruption') return 'trauma-as-schema-corruption';
 	
 	return slug;
 }
