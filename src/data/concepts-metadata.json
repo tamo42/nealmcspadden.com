@@ -112,5 +112,17 @@
     "category": "human-dynamics",
     "description": "The breaking of core mental axioms due to severe constraint violations, resulting in system crashes and requiring a schema migration.",
     "related": ["axioms-of-perception", "metabolic-horizon"]
+  },
+  "systems-as-art": {
+    "label": "Systems as Art",
+    "category": "systems-control",
+    "description": "The perspective that building operational architectures and configuring relationships between entities is a creative artistic medium designed to produce clarity, order, and peace.",
+    "related": ["ledger-of-truth", "context-layer", "unique-worldview", "epistemic-humility"]
+  },
+  "epistemic-humility": {
+    "label": "Epistemic Humility",
+    "category": "human-dynamics",
+    "description": "The recognition that human operational systems and scientific models are local maps rather than absolute territory, always subject to logical breakpoints.",
+    "related": ["systems-as-art", "axioms-of-perception", "cognitive-mindbugs"]
   }
 }
