@@ -88,6 +88,7 @@ We will bypass Google Tag Manager entirely and inject the Umami tracker directly
 *   [x] **Push and Deploy**: Commit the code changes and push to git (`git push`). Railway will automatically build and deploy.
 *   [x] **Verify Live Script**: Open the live site in your browser and inspect the source code to verify the Umami script is loaded.
 *   [x] **Verify GSC Verification**: Add the domain in Google Search Console using the TXT DNS record method to verify ownership without injecting heavy Google script tags.
+*   [x] **Sitemap Processing**: Submitted `sitemap-index.xml` to Google Search Console. Google successfully processed it on June 5, 2026, discovering 30 initial pages.
 
 ---
 
