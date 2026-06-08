@@ -1,0 +1,606 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const pageTitle = `Tax Optimization Blueprints: Advanced Structures & Deductions | Frameworks | ${SITE_TITLE}`;
+const description = `A systems-level structural tax framework. Learn how to isolate assets, execute deduction levers, and optimize S-Corp reasonable compensation and exotics.`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={pageTitle} description={description} />
+		<!-- Speakable Schema for AEO/SEO Optimization -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"name": "Tax Optimization Blueprints: Advanced Structures & Deductions",
+				"description": "Advanced structural tax strategies and deduction frameworks used to minimize liability and maximize wealth retention.",
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<main class="framework-layout">
+			<!-- Index Map (Sidebar Table of Contents) -->
+			<aside class="index-map-sidebar">
+				<div class="sidebar-sticky">
+					<div class="sidebar-title">INDEX MAP</div>
+					<nav class="index-map-nav">
+						<a href="#bluf" class="sidebar-link active">01. BLUF Summary</a>
+						<a href="#compliance-vs-engineering" class="sidebar-link">02. Compliance vs. Engineering</a>
+						<a href="#layer-1" class="sidebar-link">03. Layer 1: Entity Structure</a>
+						<a href="#layer-2" class="sidebar-link">04. Layer 2: Deductions</a>
+						<a href="#layer-3" class="sidebar-link">05. Layer 3: Optimization</a>
+						<a href="#layer-4" class="sidebar-link">06. Layer 4: Exotics</a>
+						<a href="#application-protocol" class="sidebar-link">07. Fact-Pattern Protocol</a>
+					</nav>
+				</div>
+			</aside>
+
+			<!-- Framework Content -->
+			<article class="framework-content-body">
+				<header class="framework-header">
+					<div class="category-tag">PROPRIETARY FRAMEWORK // TAX ARCHITECTURE</div>
+					<h1 class="aeo-speakable-title">Tax Optimization Blueprints</h1>
+					<p class="subtitle-desc">A hierarchical control stack designed to isolate assets, evaporate net income through structural deductions, and optimize residual tax liability.</p>
+				</header>
+
+				<!-- BLUF Section -->
+				<section id="bluf" class="content-section">
+					<h2>01. Bottom Line Up Front</h2>
+					<div class="bluf-box aeo-speakable-bluf">
+						<p><strong>BLUF:</strong> Tax strategy is not a grab-bag of isolated write-offs; it is a structured, hierarchical stack of controls. The sovereign operator must prioritize complete control over their capital allocation by exhausting entity layouts (Layer 1), deduction levers (Layer 2), and internal optimization math (Layer 3) before conceding frictional fees to third-party exotic vehicles (Layer 4). While individual tactics are activated case-by-case based on localized facts and brackets, the structural framework remains absolute.</p>
+					</div>
+				</section>
+
+				<!-- Compliance vs. Engineering -->
+				<section id="compliance-vs-engineering" class="content-section">
+					<h2>02. Compliance vs. Systems Engineering</h2>
+					<p>
+						The average CPA operates as a historian. They look backward, tally up the damage, and file reports to keep you out of trouble. This is **defensive compliance**, and it represents a passive cost center. 
+					</p>
+					<p>
+						In contrast, a wealth-maximizing operator treats the IRS tax code as a **deterministic software environment**. The code contains loops, conditional statements, and logical gates. By approaching tax strategy as a systems engineering problem, we build a multi-layered infrastructure that automatically routes cash flows, shifts tax brackets, and converts personal overhead into corporate capital before tax is ever calculated.
+					</p>
+
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Strategic Dimension</th>
+									<th>Traditional CPA (The Historian)</th>
+									<th>The Tax Guru (The Hack Seller)</th>
+									<th>High-End Wealth Firm (Complexity Seller)</th>
+									<th>Sovereign Systems Engineer</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Philosophical View</strong></td>
+									<td>A rigid set of rules designed to keep you out of trouble.</td>
+									<td>A list of "secrets" and loopholes to exploit for quick wins.</td>
+									<td>An opaque maze that requires paying them massive retainers.</td>
+									<td><strong>A deterministic software environment containing loops, gates, and logical rules.</strong></td>
+								</tr>
+								<tr>
+									<td><strong>Structuring Logic</strong></td>
+									<td>Flat. They file standard Schedule Cs or S-Corps in isolation.</td>
+									<td>Tactical grab-bag. They pitch Augusta rules or hiring kids standalone.</td>
+									<td>High-friction complexity (offshore trusts, captives, private placements).</td>
+									<td><strong>A hierarchical 4-Layer stack. Exhaust internal control before exotics.</strong></td>
+								</tr>
+								<tr>
+									<td><strong>Administrative Time</strong></td>
+									<td>"Keep receipts in a shoebox and send a spreadsheet in February."</td>
+									<td>Completely ignores the time drag. They hide the work to sell the tax save.</td>
+									<td>Outsources the admin to expensive coordinators, eating into net yields.</td>
+									<td><strong>Linked to LER. Admin is minimized via automated document sweeps and batched rhythms.</strong></td>
+								</tr>
+								<tr>
+									<td><strong>Audit Defense</strong></td>
+									<td>Fear-based. "Don't claim home office or you'll trigger an audit."</td>
+									<td>Ignoring it. "The IRS doesn't have the staff to audit everyone."</td>
+									<td>Retrospective defense (relying on expensive tax lawyers after the fact).</td>
+									<td><strong>Contemporaneous validation. Real-time uncompromised SMS audit logs and vaults.</strong></td>
+								</tr>
+								<tr>
+									<td><strong>Core Outcome</strong></td>
+									<td>Defensive compliance and passive cost drag.</td>
+									<td>High tactical debt and unmanaged audit exposure.</td>
+									<td>Dependency on external firms who hold the keys to your structure.</td>
+									<td><strong>Sovereign operational control and systemic wealth velocity.</strong></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>
+						Each of the traditional models is grounded in a slice of reality: claiming home office deductions on standard tax forms *does* increase audit risk; the IRS *is* statistically understaffed; and retrospective defense *was* the only industry standard because the technology did not exist to make contemporaneous evidence collection frictionless. The systems-engineering approach does not deny these facts; it builds proactive infrastructure to address them. Instead of operating from fear, statistical luck, or expensive retrospective clean-up, we construct automated capture loops that neutralize the vulnerability before it ever materializes.
+					</p>
+				</section>
+
+				<!-- Layer 1: Entity Structure (Asset Allocation) -->
+				<section id="layer-1" class="content-section">
+					<h2>03. Layer 1: Entity Structure (Asset Allocation)</h2>
+					<p>
+						Layer 1 is the physical architecture of your wealth. If you put the wrong asset in the wrong box, no amount of tactical write-off hunting can repair the structural damage. Your entities must isolate risk, optimize flow, and establish bracket-shifting pathways.
+					</p>
+
+					<h3>The Architectural Components</h3>
+					<ul class="blueprint-list">
+						<li><strong>S-Corporation / Operating LLC:</strong> The default operational cash-flow engine. It shields personal assets from business risks and serves as the primary conduit for split W-2 salary and dividend distributions, allowing you to bypass FICA on distributions.</li>
+						<li><strong>C-Corporation:</strong> Deployed selectively as a tax arbitrage sandbox:
+							<ul>
+								<li><em>Section 1202 QSBS:</em> Stock in a qualified small business C-Corp held for more than 5 years can qualify for a 100% federal capital gains exclusion (up to $10 million or 10x basis) upon exit. This turns business growth into tax-free wealth.</li>
+								<li><em>Fiscal Year Deferral:</em> By adopting a non-calendar fiscal year-end (e.g., January 31), C-Corps can legally defer tax liability across calendar years by timing corporate bonuses and management fee invoices.</li>
+								<li><em>Capital Raising:</em> The mandatory legal standard for raising institutional or venture-backed funds.</li>
+							</ul>
+						</li>
+						<li><strong>Family Management Company (FMC):</strong> A Sole Proprietorship or Partnership LLC owned directly by spouses. S-Corps invoice management fees (marketing, administration, support) to the FMC. The FMC then pays FICA-exempt wages to children (Ages 8-17) for actual, age-appropriate work. Employing children directly through an S-Corp loses the FICA exemption; routing through the FMC preserves it, shifting income to a 0% tax bracket.
+							<br />
+							<em>The Metaphysics of Distinction:</em> As explored in <a href="/thinking/alignment-and-the-ledger" class="gold-link">Alignment and the Ledger</a>, entity boundaries are not arbitrary legal constructs; they represent the operational equivalent of the First Distinction (establishing order out of chaos). Commingling personal and business funds, or failing to execute formal intercompany leases or service agreements, represents a "structural white lie" that pollutes your ledger of truth, inviting administrative chaos and audit risk.
+						</li>
+						<li><strong>Joint Venture Partnerships (Form 1065 LLCs):</strong> Multi-partner JVs. Crucial practice: hold your JV partnership interest *through* your S-Corp rather than personally. This isolates joint liability and feeds JV profit flows straight into your primary tax optimization engine.
+							<br />
+							<em>The Sovereign Firewall:</em> Under the <a href="/thinking/builders-narrators" class="gold-link">Builders and Narrators</a> framework, joint ventures present severe alignment risks if partners exhibit the performative blame-shifting of the "Narrator" archetype. Holding the JV inside your S-Corp creates a strict behavioral and legal firewall; if the partnership decays, the fallout is isolated to the S-Corp's JV holding node, preventing personal ledger and operational contagion.
+						</li>
+						<li><strong>Real Estate Holding LLCs:</strong> Pass-through entities designed strictly to hold real estate. <em>Rule:</em> Never hold real estate inside an S-Corp or C-Corp due to severe tax penalties on the distribution of appreciated property.</li>
+					</ul>
+
+					<!-- FMC Flowchart -->
+					<div class="flowchart">
+						<div class="flowchart-step">
+							<span class="step-number">STEP 01</span>
+							<h4>Primary Operating Entity</h4>
+							<p>S-Corp / Operating LLC. Invoices and pays management fees (for marketing, admin support) to the FMC.</p>
+						</div>
+						<div class="flowchart-connector">&rarr;</div>
+						<div class="flowchart-step">
+							<span class="step-number">STEP 02</span>
+							<h4>Family Management Company</h4>
+							<p>Sole Prop or Partnership LLC owned by spouses. Receives management fees and pays FICA-exempt wages.</p>
+						</div>
+						<div class="flowchart-connector">&rarr;</div>
+						<div class="flowchart-step">
+							<span class="step-number">STEP 03</span>
+							<h4>Children (Ages 8-17)</h4>
+							<p>Earn FICA-exempt wages (up to standard deduction) for age-appropriate services. Funds custodial Roth IRAs or personal expenses.</p>
+						</div>
+					</div>
+
+					<blockquote class="alert-box alert-warning">
+						<strong>Autonomous Compliance Guardrail:</strong> S-Corps and FMCs do not fail IRS audits due to structural theory; they fail because operators do not maintain records. To neutralize this threat, you must build systems that automatically and autonomously capture real-time operational records (timesheets, work outputs, contracts) as outlined in the upcoming <a href="/frameworks/audit-by-ai" class="gold-link">Audit by AI</a> framework, preventing IRS reclassification.
+						<br /><br />
+						<em>The Asynchronous SMS Audit Trail:</em> An elegant instantiation of this rule is executing your onboarding Summit Strategy Sessions and monthly board meetings asynchronously via SMS. By running a structured, text-based dialogue that walks the owner through their financials and captures operational decisions, the system automatically compiles these timestamped messages into an integrated document vault. Because the SMS log is maintained on a third-party server, it represents a legally uncompromised, third-party validated contemporaneous record of business intent, defusing IRS "sham transaction" challenges.
+					</blockquote>
+				</section>
+
+				<!-- Layer 2: Deduction Levers (Eliminating Net Income) -->
+				<section id="layer-2" class="content-section">
+					<h2>04. Layer 2: Deduction Levers (Eliminating Net Income)</h2>
+					<p>
+						Once your entity framework is established, your primary goal is to **liquidate taxable cash flow** within each entity using high-leverage business deductions. Rather than "saving money," deductions represent a mechanism to convert personal overhead into corporate capital.
+					</p>
+
+					<ul class="blueprint-list">
+						<li><strong>Accountable Plans (IRC § 62(a)(2)(A) &amp; § 274):</strong> A formal reimbursement arrangement allowing your business to reimburse you tax-free for home office, internet, phone, and vehicles.
+							<ul>
+								<li><em>Home Office "Executive Suite" (Rev. Ruling 99-7):</em> Designating a principal place of business at home converts your daily commute to other work sites from non-deductible personal miles into deductible business miles (the Commute Eraser).</li>
+								<li><em>Vehicle Depreciation:</em> Typically, actual expense reimbursement (based on business use allocation) is leveraged for newer, high-value cars, whereas standard mileage is best for older, high-mileage cars. The method per vehicle must be selected at the very beginning of its business use. GVWR >6,000 lbs vehicles unlock Section 179 / Bonus depreciation in year one under the actual expense method.</li>
+							</ul>
+						</li>
+						<li><strong>Section 127 Educational Assistance Plans:</strong> Deduct up to $5,250 per year per employee for tuition, books, and student loan payments tax-free. (Relatives are excluded under the 5% owner rule).
+							<ul>
+								<li><em>Family Workaround (Ages 18+):</em> Employ college-aged children through the FMC. Pay them standard, reasonable wages. While they are no longer FICA-exempt (being 18+), their wages are taxed at their low individual brackets instead of your high brackets, funding college costs with lower-taxed dollars.</li>
+							</ul>
+						</li>
+						<li><strong>Section 139 Disaster Relief Plans:</strong> A contingency "bonus opportunity." While every operating business should have a formal Section 139 plan document on file to cover tax-free, fully deductible disaster relief payments (for home office setups, utilities, and internet upgrades), you cannot predict when or where a federal disaster will be declared. FICA and FUTA taxes do not apply.</li>
+						<li><strong>Cost Segregation:</strong> Deployed in your Real Estate Holding LLCs to accelerate depreciation deductions by reclassifying building components to 5, 7, or 15-year recovery periods. <em>Limit:</em> These front-loaded write-offs can only offset active operating income in cases where you qualify as a Real Estate Professional (REPS claim) or utilize the Short-Term Rental (STR) "loophole" under the material participation standards (IRC § 469).</li>
+					</ul>
+
+					<blockquote class="alert-box alert-note">
+						<strong>Administrative Drag &amp; LER Resolution:</strong> In accordance with the <a href="/thinking/lifestyle-efficiency-rate" class="gold-link">Lifestyle Efficiency Rate (LER)</a> framework, administrative load does not magically disappear just because we say so. To optimize LER, you must design your bookkeeping and record-keeping systems for maximum automated efficiency (using automated document sweeps and batched schedules) to minimize the active time footprint, and then optimize the remaining manual overhead. This ensures that the cash yield from tax strategy directly increases your Real Income without inflating your Hours Worked.
+					</blockquote>
+
+					<blockquote class="accent-quote">
+						<strong>Reimbursement Potentials:</strong> A comprehensive Accountable Plan (covering home office space, internet, phone, utilities, and vehicle use) regularly yields tax-free reimbursements of <strong>$15,000 to $20,000</strong> annually.
+					</blockquote>
+				</section>
+
+				<!-- Layer 3: Net Income Optimization (Residual Tuning) -->
+				<section id="layer-3" class="content-section">
+					<h2>05. Layer 3: Net Income Optimization (Residual Tuning)</h2>
+					<p>
+						After exhausting deduction levers, any residual net income must be optimized. In Layer 3, the variables are highly interrelated and require precise mathematical balancing. Tuning one variable changes the output of the entire system.
+					</p>
+
+					<div class="equation-box">
+						<span class="eq-label">THE COMPENSATION MATRIX:</span>
+						<code>W-2 Salary &harr; QBI Deduction &harr; Solo 401k Allocations</code>
+					</div>
+
+					<ul class="blueprint-list">
+						<li><strong>Wage Optimization (Reasonable Compensation):</strong> The IRS requires S-Corp owners to pay a "reasonable salary" via W-2 before taking distributions. Underpaying salary to avoid FICA triggers audits; overpaying salary results in unnecessary FICA drag. Salary levels must be backed by comparability studies (e.g., RCReports).</li>
+						<li><strong>QBI (§ 199A) Optimization:</strong> The Qualified Business Income deduction allows S-Corp owners to write off 20% of their pass-through profit. However, for high earners, this deduction is capped based on W-2 wages paid. Your W-2 salary must be dialed in to find the mathematical crossover point where QBI is maximized without overpaying FICA.</li>
+						<li><strong>Retirement Plan Optimization (Solo 401k):</strong> Defer up to $22,500 (plus inflation adjustments) of W-2 salary pre-tax, plus a 25% corporate profit-sharing match. S-Corp W-2 wages must be coordinated to support this contribution.
+							<br />
+							<em>Retirement Alternatives:</em> Other arrangements exist, but Solo 401ks usually offer the best balance of contribution capacity and operational simplicity. While a Defined Benefit plan allows for much larger tax-deductible contributions, it introduces strict actuarial requirements and long-term funding commitments (e.g., guaranteeing $250k/year for 5 years). This creates a high risk of future liability against unpredictable business income, which most operators are unwilling to accept.
+							<br />
+							<em>ClearPath Insight Integration:</em> Under the <a href="/frameworks/clearpath" class="gold-link">ClearPath Insight Framework</a>, all tax-strategy cash flows (such as FMC management fees or Augusta Rule rentals) must be attributed directly to Owner Net Benefit. To prevent these allocations from distorting your operating metrics, structure your P&L chart of accounts so these tax plays appear under <strong>Other Expenses (Below the Line)</strong>. This allows you to discern operating income (core operational health) from taxable income at a glance, maintaining clean diagnostic lines for your ClearPath tranches.
+						</li>
+					</ul>
+				</section>
+
+				<!-- Layer 4: Exotics (High-Income Adjuncts) -->
+				<section id="layer-4" class="content-section">
+					<h2>06. Layer 4: Exotics (The Friction Frontier)</h2>
+					<p>
+						Layers 1 through 3 generally cover and optimize the first $500,000 of business income. When net income exceeds this threshold, you enter the territory of third-party exotic tax-planning vehicles to minimize exposure in the highest tax brackets (32% to 37%+).
+					</p>
+
+					<blockquote class="alert-box alert-important">
+						<strong>The 20% Friction Drag:</strong> Most exotic tax structures carry administrative, promoter, or insurance costs of around 20% of the plan value. Because of this built-in friction, they only yield positive arbitrage when offsetting income in the highest personal brackets.
+					</blockquote>
+
+					<ul class="blueprint-list">
+						<li><strong>Depreciation Granting Structures:</strong> Equipment leasing syndicates, ATM partnerships, and oil and gas ventures. These structures allow you to purchase equity in partnerships specifically to receive a disproportionate allocation of tax depreciation (often accelerated via Section 179 or bonus depreciation) to offset active operating income, carrying high compliance costs but yielding strong tax arbitrage in the highest brackets.</li>
+						<li><strong>Solar Tax Credits Exception:</strong> Solar energy tax credits trade at roughly 85 cents on the dollar, offering an immediate offset. Because they lack material participation requirements, they represent a rare blend of low transaction friction and high yield.</li>
+						<li><strong>Control-First Axiom:</strong> Never yield operational control of a dollar to a promoter until you have exhausted every mechanism to deploy it within your own ecosystem.</li>
+					</ul>
+
+					<div class="card-grid">
+						<div class="grid-card">
+							<div class="card-num">01 // COST BASELINE</div>
+							<h4>The Friction Drag</h4>
+							<p>Exotic options require paying promoter fees. They are only mathematically viable if your tax bracket exceeds the 32% baseline.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">02 // TAX SHIELDS</div>
+							<h4>Depreciation Granting</h4>
+							<p>Structures like ATM partnerships buy equipment to pass accelerated depreciation straight to your active income line.</p>
+						</div>
+						<div class="grid-card">
+							<div class="card-num">03 // THE SOVEREIGN RULE</div>
+							<h4>Control-First</h4>
+							<p>Always exhaust S-Corps, FMCs, Accountable Plans, and Solo 401ks (where you maintain 100% control over the capital) first.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Case-by-Case Application Protocol -->
+				<section id="application-protocol" class="content-section">
+					<h2>07. Fact-Pattern Application Protocol</h2>
+					<p>
+						While the hierarchical framework (Layers 1 to 4) is consistent for all business owners, the actual implementation of individual tactics is dependent on your specific facts, circumstances, and cost structures:
+					</p>
+
+					<div class="data-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Variable Fact Pattern</th>
+									<th>Impacted Tactic</th>
+									<th>Optimization Logic</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Owner's Home Cost of Living</strong></td>
+									<td>Accountable Plan</td>
+									<td>Higher square footage, utility costs, and high-value home office setups increase the tax-free reimbursement cap.</td>
+								</tr>
+								<tr>
+									<td><strong>Physical Location of Meetings</strong></td>
+									<td>Augusta Rule / Summit strategy sessions</td>
+									<td>Market rental rates for business meetings vary by zip code, altering the defensible daily rental deduction under Section 280A(g).</td>
+								</tr>
+								<tr>
+									<td><strong>Presence of Student Loans or Kids in College</strong></td>
+									<td>Section 127 / FMC College Workaround</td>
+									<td>Determines whether to set up a corporate tuition assistance program or employ older children via the FMC to shift college funding to lower brackets.</td>
+								</tr>
+								<tr>
+									<td><strong>Marginal Tax Bracket (Income &gt;$500k)</strong></td>
+									<td>Layer 4 Exotics vs. Solo 401k</td>
+									<td>Dictates the point where paying the 20% promoter fee on exotics or purchasing solar credits yields positive tax arbitrage over standard deductions.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="cta-box">
+						<h3>Audit Your Tax Architecture</h3>
+						<p>Establish a clean, reality-aligned financial control plane. Take our 4-Part Framework Survey to map your current setup and identify structural leaks, routing you toward a clean trek and ongoing compass checks.</p>
+						<a href="https://taxsherpa.com/survey" target="_blank" class="btn btn-primary-gold">Take the 4-Part Framework Survey &rarr;</a>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+
+		<!-- Sticky Sidebar Active Link Script -->
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				const links = document.querySelectorAll('.sidebar-link');
+				const sections = document.querySelectorAll('.content-section');
+
+				function changeActiveLink() {
+					let index = sections.length;
+
+					while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+					
+					links.forEach((link) => link.classList.remove('active'));
+					links[index].classList.add('active');
+				}
+
+				changeActiveLink();
+				window.addEventListener('scroll', changeActiveLink);
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.framework-layout {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		gap: 3rem;
+		width: var(--max-width-site);
+		margin: 0 auto;
+		padding: 4rem 1rem;
+	}
+	
+	/* Sidebar styling */
+	.index-map-sidebar {
+		position: relative;
+	}
+	.sidebar-sticky {
+		position: sticky;
+		top: 6rem;
+	}
+	.sidebar-title {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	.index-map-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.sidebar-link {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: var(--transition-smooth);
+		padding: 0.25rem 0;
+		border-left: 2px solid transparent;
+		padding-left: 0.75rem;
+	}
+	.sidebar-link:hover {
+		color: var(--text-primary);
+		padding-left: 1rem;
+	}
+	.sidebar-link.active {
+		color: var(--accent-blue-hover);
+		border-left-color: var(--accent-blue);
+		font-weight: 600;
+	}
+
+	/* Content Styling */
+	.framework-content-body {
+		max-width: var(--max-width-content);
+	}
+	.framework-header {
+		margin-bottom: 3.5rem;
+	}
+	.category-tag {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: 0.75rem;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		letter-spacing: -0.04em;
+	}
+	.subtitle-desc {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		line-height: 1.6;
+		margin: 0;
+	}
+	
+	.content-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 6rem;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-top: 0;
+		margin-bottom: 1.25rem;
+		border-bottom: 1px solid var(--border-color);
+		padding-bottom: 0.5rem;
+	}
+	
+	/* BLUF styling */
+	.bluf-box {
+		padding: 1.5rem 1.75rem;
+		background: rgba(59, 130, 246, 0.04);
+		border: 1px solid var(--border-color);
+		border-left: 4px solid var(--accent-blue);
+		border-radius: 0 10px 10px 0;
+	}
+	.bluf-box p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-primary);
+	}
+
+	/* Equation Boxes */
+	.equation-box {
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		padding: 1rem 1.5rem;
+		margin: 1.25rem 0;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	.eq-label {
+		font-family: monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--accent-blue);
+		letter-spacing: 0.1em;
+		flex-shrink: 0;
+	}
+	.equation-box code {
+		color: var(--text-primary);
+		font-size: 1rem;
+		border: none;
+		background: transparent;
+		padding: 0;
+	}
+
+	/* Tables */
+	.data-table-container {
+		margin: 2rem 0;
+		overflow-x: auto;
+		border: 1px solid var(--border-color);
+		border-radius: 8px;
+		background-color: var(--bg-card);
+	}
+	table {
+		margin: 0;
+	}
+	th {
+		background-color: rgba(0, 0, 0, 0.2);
+		white-space: nowrap;
+	}
+	tr:last-child td {
+		border-bottom: none;
+	}
+
+	/* Grid cards */
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.grid-card {
+		padding: 1.5rem;
+		background-color: var(--bg-card);
+		border: 1px solid var(--border-color);
+		border-radius: 10px;
+		transition: var(--transition-smooth);
+	}
+	.grid-card:hover {
+		border-color: var(--accent-blue);
+		box-shadow: var(--box-shadow-sm);
+	}
+	.card-num {
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--accent-blue);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	.grid-card h4 {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+	}
+	.grid-card p {
+		font-size: 0.85rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 0;
+	}
+
+	.accent-quote {
+		border-left-color: var(--accent-gold);
+		font-size: 1.05rem;
+		line-height: 1.6;
+		padding: 1.25rem 1.75rem;
+		color: var(--text-primary);
+		background-color: var(--bg-card);
+	}
+
+	.blueprint-list {
+		padding-left: 1.25rem;
+		margin: 1.5rem 0;
+	}
+	.blueprint-list li {
+		margin-bottom: 1.25rem;
+		line-height: 1.7;
+	}
+	.blueprint-list li strong {
+		color: var(--text-primary);
+	}
+
+	/* CTA Box */
+	.cta-box {
+		margin-top: 3rem;
+		padding: 2.25rem;
+		background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 60%), var(--bg-card);
+		border: 1px solid var(--border-gold);
+		border-radius: 12px;
+		box-shadow: var(--box-shadow-sm);
+	}
+	.cta-box h3 {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		color: var(--accent-gold);
+		font-size: 1.4rem;
+	}
+	.cta-box p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--text-secondary);
+		margin-bottom: 1.5rem;
+	}
+	.btn-primary-gold {
+		background-color: var(--accent-gold);
+		border-color: var(--accent-gold);
+		color: var(--bg-primary);
+		display: inline-block;
+	}
+	.btn-primary-gold:hover {
+		background-color: var(--accent-gold-hover);
+		border-color: var(--accent-gold-hover);
+		color: var(--bg-primary);
+		box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+	}
+
+	@media (max-width: 900px) {
+		.framework-layout {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 2rem 1rem;
+		}
+		.index-map-sidebar {
+			display: none;
+		}
+	}
+</style>
