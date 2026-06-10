@@ -20,6 +20,7 @@ interface Props {
 	sidebarFacts?: string[];
 	faqs?: Array<{ question: string; answer: string }>;
 	mentions?: Array<{ name: string; url: string }>;
+	semanticConcepts?: Array<{ name: string; snippet: string }>;
 }
 
 const { 
@@ -36,7 +37,8 @@ const {
 	provenance,
 	sidebarFacts,
 	faqs,
-	mentions
+	mentions,
+	semanticConcepts
 } = Astro.props;
 
 // Build multi-layer Schema Graph
@@ -103,7 +105,14 @@ schemas.push({
 	"speakable": {
 		"@type": "SpeakableSpecification",
 		"cssSelector": [".aeo-speakable-title", ".aeo-speakable-bluf"]
-	}
+	},
+	...(semanticConcepts && semanticConcepts.length > 0 && {
+		"about": semanticConcepts.map(concept => ({
+			"@type": "Thing",
+			"name": concept.name,
+			"description": concept.snippet
+		}))
+	})
 });
 
 const jsonLdGraph = {

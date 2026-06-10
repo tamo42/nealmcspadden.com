@@ -5,10 +5,11 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { AUTHOR_SAME_AS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, semanticConcepts } = Astro.props;
 
 const articleSchema = {
 	"@context": "https://schema.org",
@@ -21,7 +22,8 @@ const articleSchema = {
 	"author": {
 		"@type": "Person",
 		"name": "Neal McSpadden",
-		"url": "https://nealmcspadden.com/about/"
+		"url": "https://nealmcspadden.com/about/",
+		"sameAs": AUTHOR_SAME_AS
 	},
 	"publisher": {
 		"@type": "Organization",
@@ -34,7 +36,14 @@ const articleSchema = {
 	"mainEntityOfPage": {
 		"@type": "WebPage",
 		"@id": new URL(Astro.url.pathname, Astro.site || 'https://nealmcspadden.com').toString()
-	}
+	},
+	...(semanticConcepts && semanticConcepts.length > 0 && {
+		"about": semanticConcepts.map(concept => ({
+			"@type": "Thing",
+			"name": concept.name,
+			"description": concept.snippet
+		}))
+	})
 };
 
 const webpageSchema = {

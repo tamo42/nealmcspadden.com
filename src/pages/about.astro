@@ -1,6 +1,7 @@
 ---
 import AboutHeroImage from '../assets/neal-mcspadden-headshot.jpg';
 import Layout from '../layouts/BlogPost.astro';
+import { AUTHOR_SAME_AS } from '../consts';
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -40,12 +41,7 @@ const personSchema = {
     "Answer Engine Optimization"
   ],
   "publishingPrinciples": "https://nealmcspadden.com/about",
-  "sameAs": [
-    "https://taxsherpa.com",
-    "https://taxsherpa.com/about_neal",
-    "https://www.linkedin.com/in/neal-mcspadden/",
-    "https://www.youtube.com/@NealMcSpadden"
-  ]
+  "sameAs": AUTHOR_SAME_AS
 };
 
 const webpageSchema = {

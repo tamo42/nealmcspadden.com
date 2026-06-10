@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, AUTHOR_SAME_AS } from '../consts';
 
 const portfolioSchema = {
 	"@context": "https://schema.org",
@@ -13,7 +13,8 @@ const portfolioSchema = {
 	"about": {
 		"@type": "Person",
 		"name": "Neal McSpadden",
-		"url": "https://nealmcspadden.com/about/"
+		"url": "https://nealmcspadden.com/about/",
+		"sameAs": AUTHOR_SAME_AS
 	},
 	"mainEntity": {
 		"@type": "ItemList",
