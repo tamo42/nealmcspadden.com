@@ -124,5 +124,17 @@
     "category": "human-dynamics",
     "description": "The recognition that human operational systems and scientific models are local maps rather than absolute territory, always subject to logical breakpoints.",
     "related": ["systems-as-art", "axioms-of-perception", "cognitive-mindbugs"]
+  },
+  "live-context-injection": {
+    "label": "Live Context Injection",
+    "category": "systems-control",
+    "description": "The automated integration of real-time client transcripts and discovery briefs into customized, non-templated LLM workflows to generate highly personalized sales assets.",
+    "related": ["context-layer", "systems-as-art"]
+  },
+  "nerd-fight-club": {
+    "label": "Nerd Fight Club",
+    "category": "human-dynamics",
+    "description": "A mastermind debate structure focusing on active tool and workspace integrations, testing developer tools against real-world operations.",
+    "related": ["builders-narrators", "unique-worldview"]
   }
 }
