@@ -3,6 +3,7 @@ title: 'He Might as Well Do Nothing for Nothing: The Dangers of Bad Bookkeeping 
 description: 'Why poor bookkeeping is a silent engine of structural decay, masking cross-subsidies and draining organizational focus.'
 pubDate: 'June 2, 2026'
 heroImage: '../../assets/nothing-for-nothing.png'
+heroImageAlt: "Diagram illustrating the conservation of energy and value across interconnected business systems."
 semanticConcepts:
   - name: "Clean Bookkeeping"
     snippet: "Defines bookkeeping as an operational sensor network to isolate the unit economics of individual entities and prune hidden cross-subsidies."

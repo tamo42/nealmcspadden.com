@@ -3,6 +3,7 @@ title: 'The Margin Illusion: Why Private Equity Devours Small Businesses (And th
 description: 'An analysis of why private equity rolls up local service businesses and the hidden costs of removing the owner-node from the relationship web.'
 pubDate: 'May 27 2026'
 heroImage: '../../assets/margin-illusion.png'
+heroImageAlt: "Visual graph showcasing the illusion of profit margin hiding structural inefficiencies and decay."
 semanticConcepts:
   - name: "Private Equity Dynamics"
     snippet: "Analyzes roll-up strategies that strip founder lifestyle costs, treating local service companies as spreadsheet widgets."

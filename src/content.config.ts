@@ -14,6 +14,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			heroImageAlt: z.string().optional(),
 			semanticConcepts: z.array(
 				z.object({
 					name: z.string(),
@@ -37,6 +38,7 @@ const appearances = defineCollection({
 			type: z.enum(['podcast', 'video', 'article', 'appearance']),
 			hasTranscript: z.boolean().default(false),
 			heroImage: z.optional(image()),
+			heroImageAlt: z.string().optional(),
 			authorityH1: z.string().optional(),
 			provenance: z.string().optional(),
 			sidebarFacts: z.array(z.string()).optional(),

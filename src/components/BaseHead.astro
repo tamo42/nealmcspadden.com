@@ -66,3 +66,27 @@ const { title, description, image = FallbackImage } = Astro.props;
 	></script>
 )}
 
+<!-- Prevent FOUC: Apply accessibility settings immediately on load -->
+<script is:inline>
+	(function() {
+		try {
+			const font = localStorage.getItem('a11y-font');
+			const color = localStorage.getItem('a11y-color');
+			const size = localStorage.getItem('a11y-size');
+			const motion = localStorage.getItem('a11y-motion');
+			const root = document.documentElement;
+
+			if (font === 'dyslexic') root.classList.add('accessibility-dyslexic');
+			else if (font === 'sans') root.classList.add('accessibility-sans');
+
+			if (color && color !== 'default') root.classList.add('theme-' + color);
+
+			if (size === 'large') root.classList.add('accessibility-large-text');
+			else if (size === 'xlarge') root.classList.add('accessibility-xlarge-text');
+
+			if (motion === 'reduced') root.classList.add('accessibility-reduced-motion');
+		} catch (e) {
+			console.error('Failed to pre-apply accessibility settings:', e);
+		}
+	})();
+</script>

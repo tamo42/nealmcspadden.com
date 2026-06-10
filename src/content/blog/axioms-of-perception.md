@@ -3,6 +3,7 @@ title: 'Axioms of Perception: How Unconscious Schemas Edit Reality and Block the
 description: 'Why "mindbugs" and unconscious cognitive assumptions are not beliefs, but the pre-linguistic database schemas that dictate what we are literally capable of perceiving.'
 pubDate: 'June 4, 2026'
 heroImage: '../../assets/axioms-perception.png'
+heroImageAlt: "Abstract diagram of user experience perception loops and client interaction touchpoints."
 semanticConcepts:
   - name: "Axioms of Perception"
     snippet: "Argues that human perception is governed by pre-linguistic database schemas (axioms) that filter sensory input before beliefs can even form."

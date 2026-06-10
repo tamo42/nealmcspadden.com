@@ -3,6 +3,7 @@ title: 'Shiny Object Syndrome: The Cost of Capital Without Control'
 description: 'Why funding a partner without strict systems and accountability structures guarantees operational drift.'
 pubDate: 'May 28 2026'
 heroImage: '../../assets/shiny-objects.png'
+heroImageAlt: "Illustration showing the cost of distraction, distraction vectors, and focus drift in business operations."
 semanticConcepts:
   - name: "Shiny Object Syndrome"
     snippet: "Details the operational risks of abdicated capital deployment, where funding a partner without systems results in novelty-chasing and capital dissipation."

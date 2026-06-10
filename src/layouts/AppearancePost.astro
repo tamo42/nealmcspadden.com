@@ -15,6 +15,7 @@ interface Props {
 	type: 'podcast' | 'video' | 'article' | 'appearance';
 	hasTranscript: boolean;
 	heroImage?: any;
+	heroImageAlt?: string;
 	authorityH1?: string;
 	provenance?: string;
 	sidebarFacts?: string[];
@@ -33,6 +34,7 @@ const {
 	type, 
 	hasTranscript, 
 	heroImage,
+	heroImageAlt,
 	authorityH1,
 	provenance,
 	sidebarFacts,
@@ -43,7 +45,6 @@ const {
 
 // Build multi-layer Schema Graph
 const schemas: any[] = [];
-
 // Layer 1: Media structure
 if (youtubeId) {
 	schemas.push({
@@ -128,8 +129,9 @@ const jsonLdGraph = {
 	</head>
 
 	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<Header />
-		<main class="appearance-layout">
+		<main class="appearance-layout" id="main-content">
 			<a href="/media" class="back-link">&larr; Back to Media & Appearances</a>
 			
 			<div class="appearance-grid-container">

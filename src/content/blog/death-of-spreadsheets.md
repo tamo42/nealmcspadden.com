@@ -3,6 +3,7 @@ title: 'The Death of the Spreadsheet and the Rise of the Context Layer'
 description: 'Why spreadsheets suffer from ontological debt and the rise of the Context Architect.'
 pubDate: 'May 29 2026'
 heroImage: '../../assets/death-spreadsheets.png'
+heroImageAlt: "A grid-based spreadsheet dissolving into a fluid, modular, object-oriented workflow diagram."
 semanticConcepts:
   - name: "The Context Layer"
     snippet: "Details the structural transition from fragile, coordinate-locked spreadsheets to decoupled, version-controlled markdown context files."

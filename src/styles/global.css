@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic/index.css');
+
 /*
   Neal McSpadden Personal Control Plane - Premium Design System (Obsidian & Mountain Mist Theme)
   Designed for maximum readability, fast load times (AEO/SEO optimized), and visual excellence.
@@ -382,5 +384,157 @@ blockquote.alert-caution {
 blockquote.alert-caution::before {
 	content: "Caution";
 	color: hsl(0, 85%, 60%);
+}
+
+/* ==========================================================================
+   Accessibility Suite & Theme Overrides
+   ========================================================================== */
+
+/* Keyboard Skip Link Bypass */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--accent-blue);
+	color: var(--bg-primary) !important;
+	padding: 0.75rem 1.5rem;
+	font-weight: 700;
+	font-size: 0.95rem;
+	border-radius: 0 0 8px 8px;
+	z-index: 10000;
+	transition: top 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: var(--box-shadow-lg);
+	font-family: var(--font-atkinson), sans-serif;
+}
+.skip-link:focus {
+	top: 0;
+	outline: 3px solid var(--accent-gold) !important;
+}
+
+/* Accessible Focus Indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+	outline: 3px solid var(--accent-gold) !important;
+	outline-offset: 3px !important;
+	box-shadow: 0 0 12px var(--accent-gold-glow) !important;
+}
+
+/* Font Overrides */
+html.accessibility-dyslexic,
+html.accessibility-dyslexic * {
+	font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+html.accessibility-sans,
+html.accessibility-sans * {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Text Size Scaling */
+html.accessibility-large-text {
+	font-size: 21px !important;
+}
+@media (max-width: 768px) {
+	html.accessibility-large-text {
+		font-size: 19px !important;
+	}
+}
+
+html.accessibility-xlarge-text {
+	font-size: 24px !important;
+}
+@media (max-width: 768px) {
+	html.accessibility-xlarge-text {
+		font-size: 21px !important;
+	}
+}
+
+/* Color Blind Theme Overrides (Okabe-Ito / Wong Palette Adjustments) */
+
+/* 1. Deuteranopia (Red-Green Weakness) */
+html.theme-deuteranopia {
+	--accent-blue: hsl(203, 80%, 62%); /* Sky Blue #56B4E9 */
+	--accent-blue-hover: hsl(203, 100%, 70%);
+	--accent-blue-glow: rgba(86, 180, 233, 0.2);
+	
+	--accent-gold: hsl(41, 100%, 45%); /* Orange-Yellow #E69F00 */
+	--accent-gold-hover: hsl(41, 100%, 55%);
+	--accent-gold-glow: rgba(230, 159, 0, 0.2);
+	
+	--border-gold: hsl(41, 100%, 35%);
+}
+
+/* 2. Protanopia (Red Weakness) */
+html.theme-protanopia {
+	--accent-blue: hsl(210, 90%, 55%); /* Strong Blue #0072B2 */
+	--accent-blue-hover: hsl(210, 100%, 65%);
+	--accent-blue-glow: rgba(0, 114, 178, 0.2);
+	
+	--accent-gold: hsl(45, 100%, 48%); /* Bright Yellow #F0E442 */
+	--accent-gold-hover: hsl(45, 100%, 58%);
+	--accent-gold-glow: rgba(240, 228, 66, 0.2);
+	
+	--border-gold: hsl(45, 100%, 38%);
+}
+
+/* 3. Tritanopia (Blue-Yellow Weakness) */
+html.theme-tritanopia {
+	--accent-blue: hsl(26, 100%, 42%); /* Vermillion #D55E00 */
+	--accent-blue-hover: hsl(26, 100%, 52%);
+	--accent-blue-glow: rgba(213, 94, 0, 0.2);
+	
+	--accent-gold: hsl(164, 100%, 31%); /* Bluish Green #009E73 */
+	--accent-gold-hover: hsl(164, 100%, 41%);
+	--accent-gold-glow: rgba(0, 158, 115, 0.2);
+	
+	--border-gold: hsl(164, 100%, 25%);
+}
+
+/* 4. High Contrast (Ultra-Monochrome & High Contrast Accents) */
+html.theme-contrast {
+	--bg-primary: #000000;
+	--bg-card: #121212;
+	--bg-card-hover: #1e1e1e;
+	--text-primary: #ffffff;
+	--text-secondary: #f0f0f0;
+	--text-muted: #b0b0b0;
+	
+	--accent-blue: #ffff00; /* High Contrast Yellow */
+	--accent-blue-hover: #ffea00;
+	--accent-blue-glow: rgba(255, 255, 0, 0.3);
+	
+	--accent-gold: #00ffff; /* High Contrast Cyan */
+	--accent-gold-hover: #00e5ff;
+	--accent-gold-glow: rgba(0, 255, 255, 0.3);
+	
+	--border-color: #ffffff;
+	--border-color-hover: #e0e0e0;
+	--border-gold: #00ffff;
+}
+
+html.theme-contrast body::before {
+	display: none !important; /* Disable subtle glow radial gradient */
+}
+
+/* Reduced Motion Override */
+html.accessibility-reduced-motion,
+html.accessibility-reduced-motion * {
+	animation-delay: -1ms !important;
+	animation-duration: 1ms !important;
+	animation-iteration-count: 1 !important;
+	background-attachment: initial !important;
+	scroll-behavior: auto !important;
+	transition-delay: 0s !important;
+	transition-duration: 0s !important;
+	transform: none !important;
+}
+
+html.accessibility-reduced-motion body::before {
+	display: none !important;
 }
 

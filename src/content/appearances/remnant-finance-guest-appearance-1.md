@@ -8,6 +8,7 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-1.jpg"
+heroImageAlt: "Neal McSpadden as a guest on the first episode of Remnant Finance discussing operational resilience."
 authorityH1: "Neal McSpadden on Proactive S-Corporation Setup and Real Estate Depreciation"
 provenance: "This appearance features Neal McSpadden in conversation with host Hans on Remnant Finance. Recorded in June 2025, the episode breaks down the differences between S-Corporation and sole proprietorship models, along with audit defense strategies. It expands upon the foundational concept of tax avoidance vs tax evasion using the IRS tax code."
 sidebarFacts: 

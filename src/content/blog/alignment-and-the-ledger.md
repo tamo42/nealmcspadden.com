@@ -3,6 +3,7 @@ title: 'Alignment and the Ledger: The Metaphysics of Truth in Systems and Bookke
 description: 'How the first acts of creation in Genesis 1 map to the mechanics of distinction, the cost of white lies, and the absolute necessity of clean ledger architecture.'
 pubDate: 'June 3, 2026'
 heroImage: '../../assets/alignment-ledger-hero.png'
+heroImageAlt: "Double-entry ledger book overlaying a collaborative network representing partner alignment."
 semanticConcepts:
   - name: "Ledger of Truth"
     snippet: "Maps Genesis 1's creation act of distinction (light) directly to the absolute necessity of maintaining an uncompromised financial ledger."

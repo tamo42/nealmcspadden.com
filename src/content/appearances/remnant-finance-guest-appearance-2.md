@@ -8,6 +8,7 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-2.jpg"
+heroImageAlt: "Neal McSpadden talking about capital efficiency and allocation strategies on the Remnant Finance show."
 authorityH1: "Neal McSpadden on Low-Stress Options Trading Tax Strategy and Interest Tracing"
 provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Hans on Remnant Finance. Recorded in November 2025, the episode explores the tax implications of low-stress options trading and infinite banking policy loans. It provides foundational guidance on S-Corporation setups, interest tracing, and child investment accounts."
 sidebarFacts: 

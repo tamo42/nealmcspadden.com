@@ -1,0 +1,506 @@
+---
+// AccessibilitySettings.astro
+---
+
+<!-- Floating Trigger Button -->
+<button 
+	id="a11y-trigger" 
+	class="a11y-btn-trigger" 
+	aria-haspopup="dialog" 
+	aria-expanded="false" 
+	aria-controls="a11y-panel" 
+	aria-label="Accessibility settings"
+	title="Open accessibility menu"
+>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+		<circle cx="12" cy="12" r="10"></circle>
+		<line x1="12" x2="12" y1="8" y2="16"></line>
+		<line x1="8" x2="16" y1="12" y2="12"></line>
+	</svg>
+</button>
+
+<!-- Accessibility Options Dialog Drawer -->
+<div 
+	id="a11y-panel" 
+	class="a11y-panel-drawer hidden" 
+	role="dialog" 
+	aria-label="Accessibility settings panel"
+	aria-modal="true"
+>
+	<div class="a11y-panel-header">
+		<h3>Accessibility Preferences</h3>
+		<button id="a11y-close" class="a11y-btn-close" aria-label="Close accessibility panel">&times;</button>
+	</div>
+
+	<div class="a11y-panel-content">
+		<!-- Font Toggles -->
+		<fieldset class="a11y-section">
+			<legend>Dyslexia &amp; Readability Fonts</legend>
+			<div class="a11y-btn-group">
+				<button type="button" class="a11y-btn-opt" data-font="default" aria-pressed="true">
+					Atkinson
+				</button>
+				<button type="button" class="a11y-btn-opt" data-font="dyslexic" aria-pressed="false">
+					OpenDyslexic
+				</button>
+				<button type="button" class="a11y-btn-opt" data-font="sans" aria-pressed="false">
+					Sans-Serif
+				</button>
+			</div>
+		</fieldset>
+
+		<!-- Color Blind Palette Toggles -->
+		<fieldset class="a11y-section">
+			<legend>Color Schemes</legend>
+			<div class="a11y-grid-opts">
+				<button type="button" class="a11y-btn-opt" data-color="default" aria-pressed="true">
+					Standard Theme
+				</button>
+				<button type="button" class="a11y-btn-opt" data-color="deuteranopia" aria-pressed="false">
+					Deuteranopia <span class="a11y-desc">(Red-Green)</span>
+				</button>
+				<button type="button" class="a11y-btn-opt" data-color="protanopia" aria-pressed="false">
+					Protanopia <span class="a11y-desc">(Red-Green)</span>
+				</button>
+				<button type="button" class="a11y-btn-opt" data-color="tritanopia" aria-pressed="false">
+					Tritanopia <span class="a11y-desc">(Blue-Yellow)</span>
+				</button>
+				<button type="button" class="a11y-btn-opt" data-color="contrast" aria-pressed="false">
+					High Contrast <span class="a11y-desc">(Monochrome)</span>
+				</button>
+			</div>
+		</fieldset>
+
+		<!-- Text Resizing Toggles -->
+		<fieldset class="a11y-section">
+			<legend>Text Size scaling</legend>
+			<div class="a11y-btn-group">
+				<button type="button" class="a11y-btn-opt" data-size="default" aria-pressed="true">
+					Default (100%)
+				</button>
+				<button type="button" class="a11y-btn-opt" data-size="large" aria-pressed="false">
+					Large (120%)
+				</button>
+				<button type="button" class="a11y-btn-opt" data-size="xlarge" aria-pressed="false">
+					Extra Large (140%)
+				</button>
+			</div>
+		</fieldset>
+
+		<!-- Motion Toggle -->
+		<fieldset class="a11y-section">
+			<legend>Animations &amp; Effects</legend>
+			<div class="a11y-btn-group">
+				<button type="button" class="a11y-btn-opt" data-motion="default" aria-pressed="true">
+					Standard Motion
+				</button>
+				<button type="button" class="a11y-btn-opt" data-motion="reduced" aria-pressed="false">
+					Reduced Motion
+				</button>
+			</div>
+		</fieldset>
+
+		<!-- Reset Button -->
+		<button id="a11y-reset" class="a11y-btn-reset btn">
+			Reset to Default Settings
+		</button>
+	</div>
+</div>
+
+<style>
+	/* Floating Widget Button */
+	.a11y-btn-trigger {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		background-color: var(--accent-blue);
+		color: var(--bg-primary);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--accent-blue-glow);
+		z-index: 9999;
+		transition: var(--transition-smooth);
+	}
+	.a11y-btn-trigger:hover {
+		transform: scale(1.08) translateY(-2px);
+		background-color: var(--accent-blue-hover);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-blue);
+	}
+
+	/* Dialog Panel Drawer */
+	.a11y-panel-drawer {
+		position: fixed;
+		bottom: 6.5rem;
+		right: 2rem;
+		width: 350px;
+		max-width: calc(100vw - 4rem);
+		max-height: 75vh;
+		background: rgba(16, 19, 28, 0.85);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border: 1px solid var(--border-color);
+		border-radius: 14px;
+		box-shadow: var(--box-shadow-lg), 0 10px 40px rgba(0,0,0,0.5);
+		z-index: 9998;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+		transform-origin: bottom right;
+	}
+	
+	.a11y-panel-drawer.hidden {
+		display: none;
+		opacity: 0;
+		transform: scale(0.9) translateY(20px);
+		pointer-events: none;
+	}
+
+	/* Panel Header */
+	.a11y-panel-header {
+		padding: 1.25rem 1.5rem;
+		border-bottom: 1px solid var(--border-color);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: rgba(255, 255, 255, 0.02);
+	}
+	.a11y-panel-header h3 {
+		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: var(--text-primary);
+		letter-spacing: -0.02em;
+	}
+	.a11y-btn-close {
+		background: transparent;
+		border: none;
+		color: var(--text-muted);
+		font-size: 1.75rem;
+		font-weight: 300;
+		cursor: pointer;
+		line-height: 1;
+		transition: var(--transition-smooth);
+	}
+	.a11y-btn-close:hover {
+		color: var(--text-primary);
+	}
+
+	/* Panel Content */
+	.a11y-panel-content {
+		padding: 1.5rem;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		scrollbar-width: thin;
+	}
+	.a11y-panel-content::-webkit-scrollbar {
+		width: 4px;
+	}
+	.a11y-panel-content::-webkit-scrollbar-thumb {
+		background-color: var(--border-color);
+		border-radius: 4px;
+	}
+
+	/* Section Styles */
+	.a11y-section {
+		border: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.a11y-section legend {
+		font-family: monospace;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--accent-blue-hover);
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	/* Button Groups */
+	.a11y-btn-group {
+		display: flex;
+		gap: 0.5rem;
+		width: 100%;
+	}
+	.a11y-btn-group .a11y-btn-opt {
+		flex: 1;
+	}
+	
+	.a11y-grid-opts {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
+
+	/* Individual Option Buttons */
+	.a11y-btn-opt {
+		background-color: var(--bg-primary);
+		border: 1px solid var(--border-color);
+		border-radius: 6px;
+		color: var(--text-secondary);
+		padding: 0.55rem 0.75rem;
+		font-size: 0.85rem;
+		font-weight: 500;
+		cursor: pointer;
+		text-align: center;
+		transition: var(--transition-smooth);
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.a11y-btn-opt:hover {
+		border-color: var(--border-color-hover);
+		color: var(--text-primary);
+		background-color: var(--bg-card-hover);
+	}
+	.a11y-btn-opt[aria-pressed="true"] {
+		border-color: var(--accent-blue);
+		color: var(--accent-blue-hover);
+		background-color: var(--bg-card);
+		box-shadow: inset 0 0 8px var(--accent-blue-glow);
+		font-weight: 600;
+	}
+	.a11y-desc {
+		font-size: 0.7rem;
+		opacity: 0.7;
+		margin-top: 0.1rem;
+	}
+
+	/* Reset Button */
+	.a11y-btn-reset {
+		margin-top: 0.5rem;
+		text-align: center;
+		justify-content: center;
+		background-color: transparent;
+		border-color: var(--border-color);
+		font-size: 0.85rem;
+		padding: 0.6rem;
+		width: 100%;
+	}
+	.a11y-btn-reset:hover {
+		background-color: rgba(245, 158, 11, 0.05);
+		border-color: var(--accent-gold);
+		color: var(--accent-gold-hover);
+		box-shadow: 0 4px 12px var(--accent-gold-glow);
+	}
+
+	@media (max-width: 480px) {
+		.a11y-btn-trigger {
+			bottom: 1rem;
+			right: 1rem;
+		}
+		.a11y-panel-drawer {
+			bottom: 5rem;
+			right: 1rem;
+			max-width: calc(100vw - 2rem);
+		}
+	}
+</style>
+
+<script is:inline>
+	(function() {
+		// Accessibility Settings Manager
+		const triggerBtn = document.getElementById('a11y-trigger');
+		const panel = document.getElementById('a11y-panel');
+		const closeBtn = document.getElementById('a11y-close');
+		const resetBtn = document.getElementById('a11y-reset');
+
+		// Toggle Panel Open/Close
+		function openPanel() {
+			panel.classList.remove('hidden');
+			triggerBtn.setAttribute('aria-expanded', 'true');
+			// Shift focus to close button for accessibility
+			closeBtn.focus();
+		}
+
+		function closePanel() {
+			panel.classList.add('hidden');
+			triggerBtn.setAttribute('aria-expanded', 'false');
+			triggerBtn.focus();
+		}
+
+		triggerBtn.addEventListener('click', function(e) {
+			e.stopPropagation();
+			const isExpanded = triggerBtn.getAttribute('aria-expanded') === 'true';
+			if (isExpanded) {
+				closePanel();
+			} else {
+				openPanel();
+			}
+		});
+
+		closeBtn.addEventListener('click', closePanel);
+
+		// Click outside to close panel
+		document.addEventListener('click', function(event) {
+			const isExpanded = triggerBtn.getAttribute('aria-expanded') === 'true';
+			if (isExpanded && !panel.contains(event.target) && !triggerBtn.contains(event.target)) {
+				closePanel();
+			}
+		});
+
+		// ESC key to close panel
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && panel && !panel.classList.contains('hidden')) {
+				closePanel();
+			}
+		});
+
+		// Configuration states
+		const settings = {
+			font: 'default',
+			color: 'default',
+			size: 'default',
+			motion: 'default'
+		};
+
+		// Load settings from localStorage
+		function loadSettings() {
+			settings.font = localStorage.getItem('a11y-font') || 'default';
+			settings.color = localStorage.getItem('a11y-color') || 'default';
+			settings.size = localStorage.getItem('a11y-size') || 'default';
+			settings.motion = localStorage.getItem('a11y-motion') || 'default';
+		}
+
+		// Apply CSS classes to documentElement
+		function applySettings() {
+			const root = document.documentElement;
+
+			// 1. Font
+			root.classList.remove('accessibility-dyslexic', 'accessibility-sans');
+			if (settings.font === 'dyslexic') {
+				root.classList.add('accessibility-dyslexic');
+			} else if (settings.font === 'sans') {
+				root.classList.add('accessibility-sans');
+			}
+
+			// 2. Color Mode
+			root.classList.remove('theme-deuteranopia', 'theme-protanopia', 'theme-tritanopia', 'theme-contrast');
+			if (settings.color !== 'default') {
+				root.classList.add(`theme-${settings.color}`);
+			}
+
+			// 3. Text Size
+			root.classList.remove('accessibility-large-text', 'accessibility-xlarge-text');
+			if (settings.size === 'large') {
+				root.classList.add('accessibility-large-text');
+			} else if (settings.size === 'xlarge') {
+				root.classList.add('accessibility-xlarge-text');
+			}
+
+			// 4. Motion
+			root.classList.remove('accessibility-reduced-motion');
+			if (settings.motion === 'reduced') {
+				root.classList.add('accessibility-reduced-motion');
+			}
+
+			// Update active buttons states
+			updateButtonStates();
+		}
+
+		// Update aria-pressed attributes for buttons
+		function updateButtonStates() {
+			// Font buttons
+			document.querySelectorAll('[data-font]').forEach(btn => {
+				const active = btn.getAttribute('data-font') === settings.font;
+				btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+			});
+
+			// Color buttons
+			document.querySelectorAll('[data-color]').forEach(btn => {
+				const active = btn.getAttribute('data-color') === settings.color;
+				btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+			});
+
+			// Size buttons
+			document.querySelectorAll('[data-size]').forEach(btn => {
+				const active = btn.getAttribute('data-size') === settings.size;
+				btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+			});
+
+			// Motion buttons
+			document.querySelectorAll('[data-motion]').forEach(btn => {
+				const active = btn.getAttribute('data-motion') === settings.motion;
+				btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+			});
+		}
+
+		// Setup Click Handlers for Accessibility Options
+		function setupOptionHandlers() {
+			// Font Choices
+			document.querySelectorAll('[data-font]').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const val = this.getAttribute('data-font');
+					settings.font = val;
+					localStorage.setItem('a11y-font', val);
+					applySettings();
+				});
+			});
+
+			// Color Choices
+			document.querySelectorAll('[data-color]').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const val = this.getAttribute('data-color');
+					settings.color = val;
+					localStorage.setItem('a11y-color', val);
+					applySettings();
+				});
+			});
+
+			// Size Choices
+			document.querySelectorAll('[data-size]').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const val = this.getAttribute('data-size');
+					settings.size = val;
+					localStorage.setItem('a11y-size', val);
+					applySettings();
+				});
+			});
+
+			// Motion Choices
+			document.querySelectorAll('[data-motion]').forEach(btn => {
+				btn.addEventListener('click', function() {
+					const val = this.getAttribute('data-motion');
+					settings.motion = val;
+					localStorage.setItem('a11y-motion', val);
+					applySettings();
+				});
+			});
+
+			// Reset Button
+			if (resetBtn) {
+				resetBtn.addEventListener('click', function() {
+					settings.font = 'default';
+					settings.color = 'default';
+					settings.size = 'default';
+					settings.motion = 'default';
+
+					localStorage.removeItem('a11y-font');
+					localStorage.removeItem('a11y-color');
+					localStorage.removeItem('a11y-size');
+					localStorage.removeItem('a11y-motion');
+
+					applySettings();
+				});
+			}
+		}
+
+		// Initial load & setup
+		loadSettings();
+		applySettings();
+		setupOptionHandlers();
+	})();
+</script>

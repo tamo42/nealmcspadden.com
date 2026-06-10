@@ -8,6 +8,7 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-4.jpg"
+heroImageAlt: "Neal McSpadden as a guest on Remnant Finance discussing business exit planning and financial models."
 authorityH1: "Neal McSpadden on 50-Year Mortgages, Net Present Value, and Mortgage Recasting"
 provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Hans on Remnant Finance. Recorded in November 2025, the episode breaks down the economic realities of 40-year and 50-year mortgage proposals. It expands upon the Net Present Value formula, mortgage recasting strategies, and the integration of Infinite Banking Concepts for real estate financing."
 sidebarFacts: 

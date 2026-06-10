@@ -8,6 +8,7 @@ host: "Hans (Remnant Finance)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/remnant-finance-guest-appearance-3.jpg"
+heroImageAlt: "Neal McSpadden detailing advanced tax saving frameworks on the Remnant Finance podcast."
 authorityH1: "Neal McSpadden on Kamala's Unrealized Capital Gains Proposal and Macro Inflation"
 provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Hans on Remnant Finance. Recorded in September 2024, the episode deconstructs the economic and constitutional arguments surrounding unrealized capital gains taxes and price controls. It expands upon the foundational dynamics of monetary inflation, government spending, and wealth compounding."
 sidebarFacts: 

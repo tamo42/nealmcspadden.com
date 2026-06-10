@@ -3,6 +3,7 @@ title: 'The Lifestyle Efficiency Rate (LER): Your True Return on Life'
 description: 'Introducing the Lifestyle Efficiency Rate (LER) as a diagnostic tool for measuring the return on life of business activities.'
 pubDate: 'May 26 2026'
 heroImage: '../../assets/lifestyle-efficiency.png'
+heroImageAlt: "Sleek dashboard UI mockup representing lifestyle efficiency metrics and personal output tracking."
 semanticConcepts:
   - name: "Lifestyle Efficiency Rate"
     snippet: "Formulates a diagnostic metric calculating return on life as net household cash divided by operator hours worked."

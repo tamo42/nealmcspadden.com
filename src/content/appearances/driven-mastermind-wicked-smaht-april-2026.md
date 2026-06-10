@@ -8,6 +8,7 @@ host: "Driven Mastermind"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/driven-mastermind/driven-mastermind-presentation-close-neal.jpg"
+heroImageAlt: "Neal McSpadden presenting at the Driven Mastermind 'Wicked Smaht' event in April 2026."
 authorityH1: "Live Context Injection: Scaling Personalized Sales Assets via AI"
 provenance: "Presented at the Driven Mastermind in New Orleans (April 2026), Neal McSpadden demonstrates how injecting automated call-recording notes into NotebookLM generates custom sales presentations, resulting in an 8% absolute conversion rate lift."
 sidebarFacts:

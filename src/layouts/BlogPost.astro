@@ -9,7 +9,7 @@ import { AUTHOR_SAME_AS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, semanticConcepts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, semanticConcepts } = Astro.props;
 
 const articleSchema = {
 	"@context": "https://schema.org",
@@ -71,12 +71,13 @@ const jsonLdGraph = {
 	</head>
 
 	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<Header />
-		<main class="post-layout">
+		<main class="post-layout" id="main-content">
 			<article class="post-article">
 				{heroImage && (
 					<div class="hero-image">
-						<Image width={1020} src={heroImage} alt="" class="hero-img-element" />
+						<Image width={1020} src={heroImage} alt={heroImageAlt || ""} class="hero-img-element" />
 					</div>
 				)}
 				<div class="prose">

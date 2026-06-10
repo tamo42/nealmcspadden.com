@@ -8,6 +8,7 @@ host: "Christopher Loo (Mastering Your Finances)"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/mastering-finances-tax-strategies-794.jpg"
+heroImageAlt: "Podcast cover art representing tax intelligence and financial mastery strategies."
 authorityH1: "Neal McSpadden on Solopreneur S-Corporation Break-Evens and IRS Audit Avoidance"
 provenance: "This guest appearance features Neal McSpadden, founder of Tax Sherpa, in conversation with host Christopher Loo, MD, PhD, on the Mastering Your Finances podcast. Recorded in April 2024, the episode breaks down strategic tax planning for solopreneurs, highlighting S-Corporation elections, quarterly tax worksheets, and audit defense tactics. It expands upon the core principles of entity structuring and proactive cash value management."
 sidebarFacts: 

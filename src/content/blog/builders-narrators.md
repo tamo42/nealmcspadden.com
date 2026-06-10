@@ -3,6 +3,7 @@ title: 'Builders and Narrators: The Single Behavior Signal That Predicts Every B
 description: 'How to detect and avoid bad clients and team alignment issues early by filtering for the Narrator behavioral archetype.'
 pubDate: 'May 25 2026'
 heroImage: '../../assets/builders-narrators.png'
+heroImageAlt: "Split illustration contrasting the structured, reality-shaping Builder with the word-oriented Narrator."
 semanticConcepts:
   - name: "Builders vs. Narrators"
     snippet: "Identifies the Narrator archetype as a key risk vector in business operations, characterized by performative accountability and early behavioral inconsistencies."

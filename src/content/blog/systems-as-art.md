@@ -3,6 +3,7 @@ title: 'Systems as Art: The Architecture of Order and the Myth of the Blank Canv
 description: 'How setting hard constraints unlocks creative iteration, and why systems-building is the ultimate artistic medium for navigating an uncertain universe.'
 pubDate: 'Jun 05 2026'
 heroImage: '../../assets/systems-as-art.png'
+heroImageAlt: "Elegant abstract art piece representing structured systems architecture and clean operational flows."
 semanticConcepts:
   - name: "Systems as Art"
     snippet: "Defines the systems builder's medium as the configuration of relationships between things, designed to evoke emotional states of clarity, relief, and peace."

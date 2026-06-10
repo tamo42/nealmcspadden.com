@@ -8,6 +8,7 @@ host: "Kasim Aslam"
 type: "video"
 hasTranscript: true
 heroImage: "../../assets/worlds-greatest-minds-kasim-aslam.jpg"
+heroImageAlt: "Neal McSpadden appearing as a guest speaker on the Worlds Greatest Minds video podcast with host Kasim Aslam."
 authorityH1: "Neal McSpadden on Small Business Tax Deconstruction & Profit First Systems"
 provenance: "This episode features Neal McSpadden, founder of Tax Sherpa, in conversation with host Kasim Aslam on World's Greatest Minds. Recorded in late 2025, the discussion deconstructs the intersection of engineering systems and proactive tax planning. It expands upon the S-Corporation optimization and Bitcoin treasury management models for modern entrepreneurs."
 sidebarFacts: 

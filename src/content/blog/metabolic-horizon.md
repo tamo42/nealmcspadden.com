@@ -3,6 +3,7 @@ title: 'The Metabolic Cost of the Horizon: Why I’m Building a Permaculture Far
 description: 'Exploring the decision to build a permaculture farm as a sovereign base of health and autonomy, measured against the legacy window of parenting.'
 pubDate: 'May 28 2026'
 heroImage: '../../assets/metabolic-horizon.png'
+heroImageAlt: "Concept chart of infrastructure capacity vs business growth rate showing the metabolic horizon point."
 semanticConcepts:
   - name: "Metabolic Horizon"
     snippet: "Formulates the need for a physical, sovereign agriculture farm to protect metabolic health and cognitive focus from digital burnouts."
